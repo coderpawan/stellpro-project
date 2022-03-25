@@ -15,10 +15,10 @@ const Navbar = () => {
                 <img className="w-40" src={Logo} alt="Workflow" />
               </div>
               <div className="hidden md:block">
-                <div className="relative left-[40%] bottom-8 flex items-baseline space-x-4">
+                <div className="relative left-[50%] bottom-8 flex items-baseline space-x-1">
                   <Link
                     to="/"
-                    className=" text-black hover:text-[#0191B4] px-3 py-2 relative
+                    className=" text-black hover:text-[#0191B4] px-1 py-2 relative
                     top-8 rounded-md text-sm font-medium"
                   >
                     {" "}
@@ -27,35 +27,35 @@ const Navbar = () => {
 
                   <a
                     href="/"
-                    className="text-black hover:text-[#0191B4] px-3 py-2 relative top-8 rounded-md text-sm font-medium"
+                    className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
                   >
                     FIND SPECIALISTS
                   </a>
 
                   <Link
                     to="/upload"
-                    className="text-black hover:text-[#0191B4] px-3 py-2 relative top-8 rounded-md text-sm font-medium"
+                    className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
                   >
                     ASSESSMENTS
                   </Link>
 
                   <Link
                     to="/aboutus"
-                    className="text-black hover:text-[#0191B4] px-3 py-2 relative top-8 rounded-md text-sm font-medium"
+                    className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
                   >
                     LEARNING TOOLS
                   </Link>
 
                   <Link
                     to="/contactus"
-                    className="text-black hover:text-[#0191B4] px-3 py-2 relative top-8 rounded-md text-sm font-medium"
+                    className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
                   >
                     BLOG
                   </Link>
                   <div className="relative left-[8%]">
                     <Link
                       to="/signin"
-                      className="bg-[#FE7A15] text-white uppercase px-3 py-2 relative left-[10%] top-8 rounded-md text-sm font-medium"
+                      className="bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4] text-white uppercase px-3 py-2 relative left-[10%] top-8 rounded-md text-sm font-medium"
                     >
                       Signin/join
                     </Link>
@@ -63,7 +63,7 @@ const Navbar = () => {
                   {/* <UserCircleIcon className="h-8 cursor-pointer w-8 text-white relative left-[10%] top-10" /> */}
                   <Link
                     to="/contactus"
-                    className="bg-[#FE7A15] text-white px-3 py-2 relative left-[10%] top-8 rounded-md text-sm font-medium"
+                    className="bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4] text-white px-3 py-2 relative left-[10%] top-8 rounded-md text-sm font-medium"
                   >
                     FOR SPECIALISTS
                   </Link>
