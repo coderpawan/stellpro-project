@@ -8,14 +8,14 @@ const Navbar = () => {
   return (
     <div>
       <nav className="bg-white border-b-2 border-gray-400 ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-24">
+        <div className="px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-between h-24">
             <div className="flex items-center">
-              <div className="flex-shrink-0 relative right-[17%]">
+              <div className="flex-shrink-0">
                 <img className="w-40" src={Logo} alt="Workflow" />
               </div>
               <div className="hidden md:block">
-                <div className="relative left-[20%] bottom-8 flex items-baseline space-x-4">
+                <div className="relative left-[40%] bottom-8 flex items-baseline space-x-4">
                   <Link
                     to="/"
                     className=" text-black hover:text-[#0191B4] px-3 py-2 relative
@@ -55,18 +55,10 @@ const Navbar = () => {
                   <div className="relative left-[8%]">
                     <Link
                       to="/signin"
-                      className="text-black hover:text-[#0191B4] px-3 py-2 relative top-8 rounded-md text-sm font-medium"
+                      className="bg-[#FE7A15] text-white uppercase px-3 py-2 relative left-[10%] top-8 rounded-md text-sm font-medium"
                     >
                       Signin/join
                     </Link>
-                    <div className="ml-28">
-                      {/* <SearchIcon className="h-5 relative top-4 left-2 z-10 text-gray-300" />
-                      <input
-                        type="text"
-                        placeholder="Search"
-                        class="ring-1 ring-gray-300 w-80 text-[14px] md:text-[16px]  rounded-md relative bottom-6 px-10 py-2 mt-2 outline-none focus:ring-2 focus:ring-teal-300"
-                      /> */}
-                    </div>
                   </div>
                   {/* <UserCircleIcon className="h-8 cursor-pointer w-8 text-white relative left-[10%] top-10" /> */}
                   <Link

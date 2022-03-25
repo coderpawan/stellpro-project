@@ -28,7 +28,7 @@ const LandingPage = () => {
             FIND SPECIALISTS,THERAPISTS,THERAPY CENTRES IN YOUR AREA
           </div>
           <div className="flex justify-center mt-3">
-            <div className="bg-white w-64 p-2 flex items-center mb-3 border-2 border-gray-300">
+            <div className="bg-white rounded-l-2xl w-64 p-2 flex items-center mb-3 border-2 border-gray-300">
               <FaMapMarkerAlt className="text-gray-400 m-2" />
               <input
                 type="text"
@@ -37,7 +37,7 @@ const LandingPage = () => {
                 className="bg-white outline-none text-sm flex-1"
               />
             </div>
-            <div className="bg-white w-64 p-2 flex items-center mb-3 border-2 border-gray-300">
+            <div className="bg-white rounded-r-2xl w-64 p-2 flex items-center mb-3 border-2 border-gray-300">
               <FaSearchLocation className="text-gray-400 m-2" />
               <input
                 type="text"
@@ -51,20 +51,20 @@ const LandingPage = () => {
       </div>
       <div className="flex bg-[#0191B4] mt-10">
         <div className="text-center px-20 py-12 w-[60%]">
-          <div className="text-7xl px-20 pt-6">
+          <div className="text-7xl px-20 pt-6 text-white">
             Child Specialists Online Now
           </div>
-          <div className="text-[26px] font-bold pt-7">
+          <div className="text-[26px] font-bold pt-7 text-white">
             We help children aged 2-10 years with behavior, motor, academic, and
             speech delays or concerns
           </div>
-          <button className="bg-white px-10 py-4 text-xl border-2 mt-6">
+          <button className="px-10 py-4 text-xl border-2 mt-6 rounded-2xl bg-[#FE7A15]">
             BOOK A FREE CONSULTATION
           </button>
-          <div className="text-[26px] font-bold pt-8">
+          <div className="text-[26px] font-bold pt-8 text-white">
             Is your Child's development on Track{" "}
           </div>
-          <button className="bg-white px-10 py-4 text-xl border-2 mt-6">
+          <button className="px-10 py-4 text-xl border-2 mt-6 rounded-2xl bg-[#FE7A15]">
             TAKE FREE ASSESSMENT
           </button>
         </div>
