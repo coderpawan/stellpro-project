@@ -4,6 +4,9 @@ import SearchBar from "../components/SearchBar";
 import Doctors from "../images/doctors.png";
 import Treatment from "../images/treatment.png";
 import Consultation from "../images/consultation.jpg";
+import Footer from "../components/Footer";
+import Care1 from "../images/dravid.webp";
+import Logo from "../images/logo.png";
 
 const Cards = ({ title, content }) => {
   return (
@@ -25,24 +28,24 @@ const LandingPage = () => {
       <div className=""></div>
       <div className="flex bg-[#0191B4] mt-10">
         <div className="text-center px-20 py-12 w-[60%]">
-          <div className="text-6xl px-20 pt-6 text-white">
+          <div className="text-4xl px-20 pt-6 text-white">
             Child Specialists Online Now
           </div>
-          <div className="text-[26px] font-bold pt-7 text-white">
+          <div className="text-xl font-bold pt-7 text-white">
             We help children aged 2-10 years with behavior, motor, academic, and
             speech delays or concerns
           </div>
-          <button className="px-10 py-4 text-xl border-2 mt-6 rounded-2xl bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4]">
+          <button className="px-6 py-2 text-sm border-2 mt-6 rounded-2xl bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4]">
             BOOK A FREE CONSULTATION
           </button>
-          <div className="text-[26px] font-bold pt-8 text-white">
+          <div className="text-xl font-bold pt-8 text-white">
             Is your Child's development on Track{" "}
           </div>
-          <button className="px-10 py-4 text-xl border-2 mt-6 rounded-2xl bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4]">
+          <button className="px-6 py-2 text-sm border-2 mt-6 rounded-2xl bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4]">
             TAKE FREE ASSESSMENT
           </button>
         </div>
-        <img src={Doctors} alt="" className="w-[40%]" />
+        <img src={Doctors} alt="" className="w-[30%]" />
       </div>
       <div className="flex justify-center mt-24">
         <div className="w-[55%] text-center mt-3">
@@ -115,9 +118,22 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="">
-        <div className=""></div>
+      <div className="fixed left-[75%] top-[510px] flex bg-gradient-to-r from-[#d3dd18] to-[#ffffff] rounded-2xl z-50">
+        <div className="w-36 ml-3 mt-2">
+          <img src={Logo} alt="" className="w-20" />
+          <div className="mt-3">
+            <span className="font-extrabold">FREE</span>
+            <span className="font-bold ml-1">Consultation</span>
+          </div>
+          <div className="text-[12px]">with Demdee Care surgeon</div>
+          <button className="mt-3 text-[10px] px-2 py-1 bg-[#fe7a15] rounded-[8px]">
+            KNOW MORE
+          </button>
+        </div>
+        <img src={Care1} alt="" className="w-40 rounded-b-2xl" />
       </div>
+
+      <Footer />
     </div>
   );
 };

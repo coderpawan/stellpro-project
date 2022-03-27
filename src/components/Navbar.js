@@ -11,51 +11,53 @@ const Navbar = () => {
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-between h-24">
             <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <img className="w-40" src={Logo} alt="Workflow" />
-              </div>
+              <Link to="/">
+                <div className="flex-shrink-0">
+                  <img className="w-40" src={Logo} alt="Workflow" />
+                </div>
+              </Link>
               <div className="hidden md:block">
-                <div className="relative left-[50%] bottom-8 flex items-baseline space-x-1">
+                <div className="relative left-[80%] bottom-8 flex items-baseline space-x-1">
                   <Link
                     to="/"
                     className=" text-black hover:text-[#0191B4] px-1 py-2 relative
                     top-8 rounded-md text-sm font-medium"
                   >
                     {" "}
-                    HOME
+                    Home
                   </Link>
 
-                  <a
-                    href="/"
+                  <Link
+                    to="/searchdetails"
                     className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
                   >
-                    FIND SPECIALISTS
-                  </a>
+                    Find Specialists
+                  </Link>
 
                   <Link
                     to="/upload"
                     className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
                   >
-                    ASSESSMENTS
+                    Assessments
                   </Link>
 
                   <Link
                     to="/aboutus"
                     className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
                   >
-                    LEARNING TOOLS
+                    Learning Tools
                   </Link>
 
                   <Link
                     to="/contactus"
                     className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
                   >
-                    BLOG
+                    Blog
                   </Link>
                   <div className="relative left-[8%]">
                     <Link
                       to="/signin"
-                      className="bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4] text-white uppercase px-3 py-2 relative left-[10%] top-8 rounded-md text-sm font-medium"
+                      className="bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4] text-white px-3 py-2 relative left-[10%] top-8 rounded-md text-sm font-medium"
                     >
                       Signin/join
                     </Link>
