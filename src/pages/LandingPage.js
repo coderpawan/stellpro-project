@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
-import Doctors from "../images/doctors.png";
+import Doctors from "../images/Picture1.png";
+import LogoPro from "../images/Picture2.png";
 import Treatment from "../images/treatment.png";
 import Consultation from "../images/consultation.jpg";
 import Footer from "../components/Footer";
@@ -29,21 +30,22 @@ const LandingPage = () => {
       <div className="flex bg-[#0191B4] mt-10">
         <div className="text-center px-20 py-12 w-[60%]">
           <div className="text-4xl px-20 pt-6 text-white">
-            Child Specialists Online Now
+            Connect with Child Specialists Online at
           </div>
-          <div className="text-xl font-bold pt-7 text-white">
-            We help children aged 2-10 years with behavior, motor, academic, and
-            speech delays or concerns
+          <img src={LogoPro} alt="" className=" w-[50%] relative left-40" />
+          <div className="text-xl font-bold text-white">
+            Get professional help for children aged 2-10 years with academic,
+            speech, behavioral, motor and sensory delays or concerns
           </div>
-          <button className="px-6 py-2 text-sm border-2 mt-6 rounded-2xl bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4]">
-            BOOK A FREE CONSULTATION
-          </button>
-          <div className="text-xl font-bold pt-8 text-white">
-            Is your Child's development on Track{" "}
+          <div className="flex justify-center">
+            <button className="px-6 py-2 text-lg font-bold text-white border-2 mt-6 rounded-xl bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4]">
+              BOOK A FREE CONSULTATION
+            </button>
+
+            <button className="px-6 ml-3 py-2 font-bold text-white text-sm border-2 mt-6 rounded-xl bg-[#35bbca] hover:bg-[#f8d90f] hover:text-[#0191B4]">
+              KNOW MORE
+            </button>
           </div>
-          <button className="px-6 py-2 text-sm border-2 mt-6 rounded-2xl bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4]">
-            TAKE FREE ASSESSMENT
-          </button>
         </div>
         <img src={Doctors} alt="" className="w-[30%]" />
       </div>
