@@ -8,6 +8,8 @@ import Consultation from "../images/consultation.jpg";
 import Footer from "../components/Footer";
 import Care1 from "../images/dravid.webp";
 import Logo from "../images/logo.png";
+import { Link } from "react-router-dom";
+import Testimonial from "../components/Testimonial";
 
 const Cards = ({ title, content }) => {
   return (
@@ -27,7 +29,7 @@ const LandingPage = () => {
       <Navbar />
       <SearchBar />
       <div className=""></div>
-      <div className="flex bg-[#0191B4] mt-10">
+      <div className="flex bg-[#0191B4] mt-10 mx-16 rounded-3xl">
         <div className="text-center px-20 py-12 w-[60%]">
           <div className="text-4xl px-20 pt-6 text-white">
             Connect with Child Specialists Online at
@@ -41,10 +43,11 @@ const LandingPage = () => {
             <button className="px-6 py-2 text-lg font-bold text-white border-2 mt-6 rounded-xl bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4]">
               BOOK A FREE CONSULTATION
             </button>
-
-            <button className="px-6 ml-3 py-2 font-bold text-white text-sm border-2 mt-6 rounded-xl bg-[#35bbca] hover:bg-[#f8d90f] hover:text-[#0191B4]">
-              KNOW MORE
-            </button>
+            <Link to="care">
+              <button className="px-6 ml-3 py-3 font-bold text-white text-sm border-2 mt-6 rounded-xl bg-[#35bbca] hover:bg-[#f8d90f] hover:text-[#0191B4]">
+                KNOW MORE
+              </button>
+            </Link>
           </div>
         </div>
         <img src={Doctors} alt="" className="w-[30%]" />
@@ -76,6 +79,7 @@ const LandingPage = () => {
           <Cards title="Surgeries" content="Lorem ipsum dolor sit amet." />
         </div>
       </div>
+      <Testimonial />
       <div className="py-16">
         <div className="uppercase text-center">About us</div>
         <div className="text-4xl text-center mt-4">Company news</div>
@@ -128,9 +132,11 @@ const LandingPage = () => {
             <span className="font-bold ml-1">Consultation</span>
           </div>
           <div className="text-[12px]">with Demdee Care surgeon</div>
-          <button className="mt-3 text-[10px] px-2 py-1 bg-[#fe7a15] rounded-[8px]">
-            KNOW MORE
-          </button>
+          <Link to="care">
+            <button className="mt-3 text-[10px] px-2 py-1 bg-[#fe7a15] rounded-[8px]">
+              KNOW MORE
+            </button>
+          </Link>
         </div>
         <img src={Care1} alt="" className="w-40 rounded-b-2xl" />
       </div>
