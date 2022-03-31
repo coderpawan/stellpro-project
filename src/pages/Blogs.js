@@ -47,7 +47,7 @@ const Blogs = () => {
                       src={post.image}
                       class="max-h-40 w-full object-cover mb-4 rounded-3xl "
                     />
-                    <p class="text-gray-400 text-center  font-light text-md">
+                    <p class="text-black text-xl font-bold text-center px-3 text-md">
                       {post.topic}
                     </p>
 
