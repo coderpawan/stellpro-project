@@ -35,7 +35,7 @@ const Navbar = () => {
                   </Link>
 
                   <Link
-                    to="/upload"
+                    to="/assessments"
                     className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
                   >
                     Assessments
