@@ -64,7 +64,7 @@ const Navbar = () => {
                   </div>
                   {/* <UserCircleIcon className="h-8 cursor-pointer w-8 text-white relative left-[10%] top-10" /> */}
                   <Link
-                    to="/contactus"
+                    to="/specialists"
                     className="bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4] text-white px-3 py-2 relative left-[10%] top-8 rounded-md text-sm font-medium"
                   >
                     FOR SPECIALISTS

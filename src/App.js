@@ -6,6 +6,7 @@ import Blogs from "./pages/Blogs";
 import Assessments from "./pages/Assessments";
 import ScreeningPage from "./pages/ScreeningPage";
 import Autism from "./pages/Autism";
+import Specialists from "./pages/Specialists";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact path="/assessments" element={<Assessments />} />
           <Route exact path="/screening" element={<ScreeningPage />} />
           <Route exact path="/autism" element={<Autism />} />
+          <Route exact path="/specialists" element={<Specialists />} />
         </Routes>
       </Router>
     </div>

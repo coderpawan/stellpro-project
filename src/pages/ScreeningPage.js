@@ -26,11 +26,36 @@ const ScreeningPage = () => {
           illum.
         </div>
       </div>
+      <div className="mt-10">
+        <div className="text-4xl text-center font-bold">
+          Know wheter you need a Consultant?
+        </div>
+        <div className="flex ml-48 mt-8 w-[60%]">
+          <div className="text-xl">1)</div>
+          <div className="ml-2 text-xl">
+            if score less than 2 : Need Consultant{" "}
+          </div>
+        </div>
+        <div className="flex ml-48 mt-4 w-[60%]">
+          <div className="text-xl">2)</div>
+          <div className="ml-2 text-xl">
+            if score greater than 2 and less than 10 : Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Quisquam, quasi!{" "}
+          </div>
+        </div>
+        <div className="flex ml-48 mt-4 w-[60%]">
+          <div className="text-xl">3)</div>
+          <div className="ml-2 text-xl">
+            if score greater than 10 : Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Quisquam, quasi!{" "}
+          </div>
+        </div>
+      </div>
       <div className="justify-center my-20">
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSceIbdGm7lcRcJb_NycBNPKGRsgYW2q5tc_oM0cpqp7SOWCdQ/viewform?embedded=true"
           width="1100"
-          height="1239"
+          height="600"
           frameborder="0"
           marginheight="0"
           marginwidth="0"
@@ -38,6 +63,7 @@ const ScreeningPage = () => {
           Loading…
         </iframe>
       </div>
+
       <Footer />
     </div>
   );
