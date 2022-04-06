@@ -39,33 +39,37 @@ const Specialists = () => {
           </div>
         </div>
       </div>
-      <div className="">
-        <div className="flex w-[60%] relative left-[15%] my-20">
-          <img src={Artboard2} alt="" className="" />
-          <div className="ml-8 mt-2">
-            <div className="text-center text-2xl font-bold">
+      <div className="flex">
+        <div className="w-[20%] ml-20 relative left-[10%] my-20">
+          <img src={Artboard2} alt="" className="relative left-[20%]" />
+          <div className=" mt-2">
+            <div className="text-center text-2xl font-bold mt-6">
               Secured Earnings
             </div>
-            <div className="text-2xl mt-3">
+            <div className="text-xl mt-3">
               Earn per session starting from Rs 250 –Rs 500 depending on your
               experience
             </div>
           </div>
         </div>
-        <div className="flex flex-row-reverse w-[60%] relative left-[15%] my-20">
-          <img src={Artboard3} alt="" className="" />
-          <div className="ml-8 mt-2">
-            <div className="text-center text-2xl font-bold">Flexibility</div>
-            <div className="text-2xl mt-3">
+        <div className="w-[20%] ml-20 relative left-[10%] my-20">
+          <img src={Artboard3} alt="" className="relative left-[20%]" />
+          <div className=" mt-2">
+            <div className="text-center text-2xl font-bold mt-6">
+              Flexibility
+            </div>
+            <div className="text-xl mt-3">
               Work from Anywhere, set your own work hours
             </div>
           </div>
         </div>
-        <div className="flex w-[60%] relative left-[15%] my-20">
-          <img src={Artboard4} alt="" className="" />
-          <div className="ml-8 mt-2">
-            <div className="text-center text-2xl font-bold">Grow with Us</div>
-            <div className="text-2xl mt-3">
+        <div className="w-[20%] ml-20 relative left-[10%] my-20">
+          <img src={Artboard4} alt="" className="relative left-[20%]" />
+          <div className=" mt-2">
+            <div className="text-center text-2xl font-bold mt-6">
+              Grow with Us
+            </div>
+            <div className="text-xl mt-3">
               Gain experience and visibility Pan India , be part of upskilling
               programs.
             </div>
