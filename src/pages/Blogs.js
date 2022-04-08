@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Data from "../data/BlogsData";
+import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Blogs = () => {
@@ -35,12 +36,12 @@ const Blogs = () => {
           </button>
         </div>
       </div>
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 pb-10">
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12  py-10">
           {Data.map((post) => {
             return (
               <div class="overflow-hidden shadow-lg rounded-2xl h-90 w-60 md:w-80 cursor-pointer m-auto">
-                <a href="/" class="w-full block h-full">
+                <Link to="/blogdetails" class="w-full block h-full">
                   <div class="bg-white  w-full p-4">
                     <img
                       alt="blogphoto"
@@ -56,7 +57,7 @@ const Blogs = () => {
                       <span className="text-black">{post.tag}</span>
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             );
           })}

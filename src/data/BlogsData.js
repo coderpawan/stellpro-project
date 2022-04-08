@@ -1,11 +1,12 @@
 import Consultation from "../images/consultation.jpg";
+import OccupationalTherapy from "../images/occupational therapy.jpg";
 
 const Data = [
   {
     id: 1,
-    image: Consultation,
-    topic: "Parental Involvement In Online Speech Therapy",
-    date: "March 21,2002",
+    image: OccupationalTherapy,
+    topic: "Does my child need Occupational Therapy?",
+    date: "8 April,2022",
     tag: "Parenting",
   },
   {
