@@ -3,9 +3,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import OccupationalTherapy from "../images/occupational therapy.jpg";
 import Picture2 from "../images/Picture2.jpg";
-import { BsFacebook } from "react-icons/bs";
-import { RiWhatsappFill } from "react-icons/ri";
-import { AiFillInstagram } from "react-icons/ai";
 import { RWebShare } from "react-web-share";
 
 const BlogDetails = () => {
