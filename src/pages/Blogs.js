@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import Data from "../data/BlogsData";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { BiShareAlt } from "react-icons/bi";
+import { RWebShare } from "react-web-share";
 
 const Blogs = () => {
   return (
@@ -41,23 +43,37 @@ const Blogs = () => {
           {Data.map((post) => {
             return (
               <div class="overflow-hidden shadow-lg rounded-2xl h-90 w-60 md:w-80 cursor-pointer m-auto">
-                <Link to="/blogdetails" class="w-full block h-full">
+                <div class="w-full block h-full">
                   <div class="bg-white  w-full p-4">
-                    <img
-                      alt="blogphoto"
-                      src={post.image}
-                      class="max-h-40 w-full object-cover mb-4 rounded-3xl "
-                    />
-                    <p class="text-black text-xl font-bold text-center px-3 text-md">
-                      {post.topic}
-                    </p>
+                    <Link to="/blogdetails">
+                      <img
+                        alt="blogphoto"
+                        src={post.image}
+                        class="max-h-40 w-full object-cover mb-4 rounded-3xl "
+                      />
+                      <p class="text-black text-xl font-bold text-center px-3 text-md">
+                        {post.topic}
+                      </p>
 
-                    <p class="text-gray-400 text-center mt-5 mb-2">
-                      {post.date} in{" "}
-                      <span className="text-black">{post.tag}</span>
-                    </p>
+                      <p class="text-gray-400 text-center mt-5 mb-2">
+                        {post.date} in{" "}
+                        <span className="text-black">{post.tag}</span>
+                      </p>
+                    </Link>
+                    <RWebShare
+                      data={{
+                        text: "share this blog",
+                        url: "https://www.practo.com/healthfeed?utm_source=practo_home",
+                        title: "blog",
+                      }}
+                      onClick={() => console.log("shared successfully!")}
+                    >
+                      <div className="relative left-[10%] mt-4">
+                        <BiShareAlt />
+                      </div>
+                    </RWebShare>
                   </div>
-                </Link>
+                </div>
               </div>
             );
           })}
