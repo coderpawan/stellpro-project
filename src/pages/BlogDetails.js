@@ -3,6 +3,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import OccupationalTherapy from "../images/occupational therapy.jpg";
 import Picture2 from "../images/Picture2.jpg";
+import { BsFacebook } from "react-icons/bs";
+import { RiWhatsappFill } from "react-icons/ri";
+import { AiFillInstagram } from "react-icons/ai";
+import { RWebShare } from "react-web-share";
 
 const BlogDetails = () => {
   return (
@@ -176,6 +180,22 @@ const BlogDetails = () => {
           help your child overcome these difficulties and adapt to their
           surroundings.
         </div>
+
+        <button className="px-4 py-2 text-white bg-[#fe7a15] rounded-2xl relative left-[80%] mt-10">
+          Subscribe this Blog
+        </button>
+        <RWebShare
+          data={{
+            text: "share this blog",
+            url: "https://stellpro-learning.netlify.app/blogdetails",
+            title: "blog",
+          }}
+          onClick={() => console.log("shared successfully!")}
+        >
+          <button className="px-4 py-2 text-white bg-[#fe7a15] rounded-2xl mt-10 relative right-[13%]">
+            Share This Blog
+          </button>
+        </RWebShare>
       </div>
       <Footer />
     </div>
