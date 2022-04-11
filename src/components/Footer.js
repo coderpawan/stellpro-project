@@ -39,10 +39,10 @@ const Footer = () => {
               </h2>
               <ul>
                 <li class="mb-4 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
-                  <Link to="/">T&C</Link>
+                  <Link to="/terms">T&C</Link>
                 </li>
                 <li class="mb-4 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
-                  <Link to="/">Privacy Policy</Link>
+                  <Link to="/privacy">Privacy Policy</Link>
                 </li>
               </ul>
             </div>

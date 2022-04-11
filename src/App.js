@@ -8,6 +8,8 @@ import ScreeningPage from "./pages/ScreeningPage";
 import Autism from "./pages/Autism";
 import Specialists from "./pages/Specialists";
 import BlogDetails from "./pages/BlogDetails";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -24,6 +26,8 @@ const App = () => {
           <Route exact path="/autism" element={<Autism />} />
           <Route exact path="/specialists" element={<Specialists />} />
           <Route exact path="/blogdetails" element={<BlogDetails />} />
+          <Route exact path="/privacy" element={<Privacy />} />
+          <Route exact path="/terms" element={<Terms />} />
         </Routes>
       </Router>
     </div>
