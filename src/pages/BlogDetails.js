@@ -8,7 +8,6 @@ import { BsTwitter } from "react-icons/bs";
 import { BsWhatsapp } from "react-icons/bs";
 import { RiSignalTowerFill } from "react-icons/ri";
 import { IoDocumentTextOutline } from "react-icons/io5";
-import Consultation from "../images/consultation.jpg";
 import Recommended from "../data/RecommendedData";
 
 const BlogDetails = () => {
