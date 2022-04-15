@@ -4,8 +4,6 @@ import Footer from "../components/Footer";
 import Data from "../data/BlogsData";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { BiShareAlt } from "react-icons/bi";
-import { RWebShare } from "react-web-share";
 
 const Blogs = () => {
   return (
@@ -60,18 +58,6 @@ const Blogs = () => {
                         <span className="text-black">{post.tag}</span>
                       </p>
                     </Link>
-                    <RWebShare
-                      data={{
-                        text: "share this blog",
-                        url: "https://www.practo.com/healthfeed?utm_source=practo_home",
-                        title: "blog",
-                      }}
-                      onClick={() => console.log("shared successfully!")}
-                    >
-                      <div className="relative left-[10%] mt-4">
-                        <BiShareAlt />
-                      </div>
-                    </RWebShare>
                   </div>
                 </div>
               </div>

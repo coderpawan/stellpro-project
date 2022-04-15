@@ -53,15 +53,9 @@ const ScreeningPage = () => {
       </div>
       <div className="justify-center my-20">
         <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSceIbdGm7lcRcJb_NycBNPKGRsgYW2q5tc_oM0cpqp7SOWCdQ/viewform?embedded=true"
-          width="1100"
-          height="600"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-        >
-          Loading…
-        </iframe>
+          src="https://www.cognitoforms.com/f/bVGDwp8FUUSd87xqjt8kag/1"
+          height="869"
+        ></iframe>
       </div>
 
       <Footer />
