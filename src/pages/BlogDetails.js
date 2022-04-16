@@ -9,8 +9,14 @@ import { BsWhatsapp } from "react-icons/bs";
 import { RiSignalTowerFill } from "react-icons/ri";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import Recommended from "../data/RecommendedData";
+import {
+  WhatsappShareButton,
+  FacebookShareButton,
+  TwitterShareButton,
+} from "react-share";
 
 const BlogDetails = () => {
+  const url = window.location.href;
   return (
     <div>
       <Navbar />
@@ -187,19 +193,25 @@ const BlogDetails = () => {
 
           <div className="flex mt-12">
             <div className="">Share This With Your Friends</div>
-            <div className="flex border-solid border-blue-900 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
-              <FaFacebookF className="relative top-1 text-blue-900" />
-              <div className="ml-3 text-blue-900 font-bold">SHARE</div>
-            </div>
-            <div className="flex border-solid border-blue-400 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
-              <BsTwitter className="relative top-1 text-blue-400" />
-              <div className="ml-3 text-blue-400 font-bold">TWEET</div>
-            </div>
-            <div className="flex border-solid border-green-600 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
-              <BsWhatsapp className="relative top-1 text-green-600" />
-              <div className="ml-3 text-green-600 font-bold">SHARE</div>
-            </div>
-            <div className="flex border-solid border-orange-400 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
+            <FacebookShareButton url={url}>
+              <div className="flex cursor-pointer border-solid border-blue-900 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
+                <FaFacebookF className="relative top-1 text-blue-900" />
+                <div className="ml-3 text-blue-900 font-bold">SHARE</div>
+              </div>
+            </FacebookShareButton>
+            <TwitterShareButton url={url}>
+              <div className="flex cursor-pointer border-solid border-blue-400 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
+                <BsTwitter className="relative top-1 text-blue-400" />
+                <div className="ml-3 text-blue-400 font-bold">TWEET</div>
+              </div>
+            </TwitterShareButton>
+            <WhatsappShareButton url={url}>
+              <div className="flex cursor-pointer border-solid border-green-600 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
+                <BsWhatsapp className="relative top-1 text-green-600" />
+                <div className="ml-3 text-green-600 font-bold">SHARE</div>
+              </div>
+            </WhatsappShareButton>
+            <div className="flex cursor-pointer border-solid border-orange-400 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
               <RiSignalTowerFill className="relative top-1 text-orange-400" />
               <div className="ml-3 text-orange-400 font-bold">SUBSCRIBE</div>
             </div>
