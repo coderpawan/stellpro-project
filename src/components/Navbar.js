@@ -17,7 +17,7 @@ const Navbar = () => {
                 </div>
               </Link>
               <div className="hidden md:block">
-                <div className="relative left-[80%] bottom-8 flex items-baseline space-x-1">
+                <div className="relative xl:left-[80%] lg:left-[60%] bottom-8 flex items-baseline space-x-1">
                   <Link
                     to="/"
                     className=" text-black hover:text-[#0191B4] px-1 py-2 relative
