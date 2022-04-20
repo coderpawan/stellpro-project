@@ -3,7 +3,7 @@ import { FaSearchLocation, FaMapMarkerAlt } from "react-icons/fa";
 
 const SearchBar = () => {
   return (
-    <div className="mt-10">
+    <div className="pt-24">
       <div className="text-center">
         FIND SPECIALISTS,THERAPISTS,THERAPY CENTRES IN YOUR AREA
       </div>

@@ -1,82 +1,101 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import Logo from "../images/logo.png";
 import { Link } from "react-router-dom";
+import Logo from "../images/logo.png";
 
-const Navbar = () => {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <nav className="bg-white border-b-2 border-gray-400 ">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-between h-24">
-            <div className="flex items-center">
-              <Link to="/">
-                <div className="flex-shrink-0">
-                  <img className="w-40" src={Logo} alt="Workflow" />
-                </div>
-              </Link>
+      <nav className="bg-white shadow-sm fixed w-full z-10">
+        <div className="w-full">
+          <div className="flex items-center h-20 w-full">
+            <div className="flex items-center  mx-20  justify-between w-full">
+              <div className="flex justify-center items-center flex-shrink-0 ">
+                <img src={Logo} alt="" className="h-10" />
+              </div>
               <div className="hidden md:block">
-                <div className="relative xl:left-[80%] lg:left-[60%] bottom-8 flex items-baseline space-x-1">
+                <div className="ml-10 flex items-baseline space-x-4">
                   <Link
+                    activeClass="Home"
                     to="/"
-                    className=" text-black hover:text-[#0191B4] px-1 py-2 relative
-                    top-8 rounded-md text-sm font-medium"
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className="cursor-pointer text-[#FE7A15] font-semibold px-2 py-2 text-md hover:font-black"
                   >
-                    {" "}
                     Home
                   </Link>
-
                   <Link
-                    to="/searchdetails"
-                    className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
+                    activeClass="about"
+                    to="/about"
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-medium"
                   >
                     Find Specialists
                   </Link>
-
                   <Link
+                    activeClass="work"
                     to="/assessments"
-                    className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-medium"
                   >
                     Assessments
                   </Link>
 
                   <Link
-                    to="/aboutus"
-                    className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
+                    activeClass="Services"
+                    to="work"
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-medium"
                   >
                     Learning Tools
                   </Link>
-
                   <Link
+                    activeClass="Services"
                     to="/blogs"
-                    className="text-black hover:text-[#0191B4] px-1 py-2 relative top-8 rounded-md text-sm font-medium"
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-medium"
                   >
                     Blog
                   </Link>
-                  <div className="relative left-[8%]">
-                    <Link
-                      to="/signin"
-                      className="bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4] text-white px-3 py-2 relative left-[10%] top-8 rounded-md text-sm font-medium"
-                    >
-                      Signin/join
-                    </Link>
-                  </div>
-                  {/* <UserCircleIcon className="h-8 cursor-pointer w-8 text-white relative left-[10%] top-10" /> */}
+
                   <Link
-                    to="/specialists"
-                    className="bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4] text-white px-3 py-2 relative left-[10%] top-8 rounded-md text-sm font-medium"
+                    activeClass="contact"
+                    to="/"
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className="cursor-pointer bg-[#FE7A15] text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
                   >
-                    FOR SPECIALISTS
+                    SignIn
+                  </Link>
+                  <Link
+                    activeClass="contact"
+                    to="/specialists"
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className="cursor-pointer bg-[#FE7A15] text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
+                  >
+                    For Specialists
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="-mr-2 flex md:hidden">
+            <div className="mr-10 flex md:hidden ">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                className="bg-blue-600 inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-800 focus:ring-white"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
@@ -130,54 +149,66 @@ const Navbar = () => {
         >
           {(ref) => (
             <div className="md:hidden" id="mobile-menu">
-              <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <div
+                ref={ref}
+                className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
+              >
                 <Link
-                  to=""
-                  className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2
-                  rounded-md text-base font-medium"
+                  href="/home"
+                  activeClass="home"
+                  to="home"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  {" "}
-                  HOME
+                  Home
+                </Link>
+                <Link
+                  href="/about"
+                  activeClass="about"
+                  to="about"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  About
                 </Link>
 
                 <Link
-                  to=""
-                  className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  href="/work"
+                  activeClass="work"
+                  to="work"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  FIND SPECIALISTS
+                  Projects
+                </Link>
+                <Link
+                  href="/services"
+                  activeClass="services"
+                  to="services"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Services
                 </Link>
 
                 <Link
-                  to=""
-                  className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  href="/contact"
+                  activeClass="work"
+                  to="work"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  ASSESSMENTS
-                </Link>
-
-                <Link
-                  to=""
-                  className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  LEARNING TOOLS
-                </Link>
-
-                <Link
-                  to=""
-                  className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  BLOG
-                </Link>
-                <Link
-                  to="/signin"
-                  className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Signin/join
-                </Link>
-                <Link
-                  to="/contactus"
-                  className="bg-blue-700 text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  FOR SPECIALISTS
+                  Contact
                 </Link>
               </div>
             </div>
@@ -186,6 +217,6 @@ const Navbar = () => {
       </nav>
     </div>
   );
-};
+}
 
 export default Navbar;
