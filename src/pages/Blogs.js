@@ -10,7 +10,7 @@ const Blogs = () => {
     <div>
       <Navbar />
       <div className="">
-        <div className="text-center text-3xl text-[#0191B4] font-bold mt-10">
+        <div className="text-center text-3xl text-[#0191B4] font-bold pt-28">
           Blogs
         </div>
         <div className="text-center">

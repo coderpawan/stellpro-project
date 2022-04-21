@@ -17,22 +17,22 @@ function Navbar() {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
-                    activeClass="Home"
+                    activeClass="tab"
                     to="/"
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-pointer text-[#FE7A15] font-semibold px-2 py-2 text-md hover:font-black"
+                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
                   >
                     Home
                   </Link>
                   <Link
                     activeClass="about"
-                    to="/about"
+                    to="/searchdetails"
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-medium"
+                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
                   >
                     Find Specialists
                   </Link>
@@ -42,18 +42,18 @@ function Navbar() {
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-medium"
+                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
                   >
                     Assessments
                   </Link>
 
                   <Link
                     activeClass="Services"
-                    to="work"
+                    to="/"
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-medium"
+                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
                   >
                     Learning Tools
                   </Link>
@@ -63,7 +63,7 @@ function Navbar() {
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-medium"
+                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
                   >
                     Blog
                   </Link>

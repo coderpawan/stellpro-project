@@ -20,7 +20,7 @@ const BlogDetails = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex mx-28 my-16">
+      <div className="flex mx-28 pt-28 mb-16">
         <div className=" w-[70%]">
           <img src={OccupationalTherapy} alt="" className="" />
           <div className="text-4xl my-4">

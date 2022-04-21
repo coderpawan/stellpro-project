@@ -8,7 +8,7 @@ const Assessments = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex my-10 relative left-[10%]">
+      <div className="flex pt-28 relative left-[10%]">
         <img src={Autism} alt="" className="w-[450px]" />
         <div className="">
           <div className="text-3xl font-bold ">
