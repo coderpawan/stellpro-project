@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "../images/logo.png";
 
 function Navbar() {
@@ -16,8 +16,8 @@ function Navbar() {
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  <Link
-                    activeClass="tab"
+                  <NavLink
+                    activeclassname="tab"
                     to="/"
                     smooth={true}
                     offset={50}
@@ -25,9 +25,9 @@ function Navbar() {
                     className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
                   >
                     Home
-                  </Link>
-                  <Link
-                    activeClass="about"
+                  </NavLink>
+                  <NavLink
+                    activeclassname="tab"
                     to="/searchdetails"
                     smooth={true}
                     offset={50}
@@ -35,9 +35,9 @@ function Navbar() {
                     className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
                   >
                     Find Specialists
-                  </Link>
-                  <Link
-                    activeClass="work"
+                  </NavLink>
+                  <NavLink
+                    activeclassname="tab"
                     to="/assessments"
                     smooth={true}
                     offset={50}
@@ -45,10 +45,10 @@ function Navbar() {
                     className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
                   >
                     Assessments
-                  </Link>
+                  </NavLink>
 
-                  <Link
-                    activeClass="Services"
+                  <NavLink
+                    activeclassname="tab"
                     to="/"
                     smooth={true}
                     offset={50}
@@ -56,9 +56,9 @@ function Navbar() {
                     className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
                   >
                     Learning Tools
-                  </Link>
-                  <Link
-                    activeClass="Services"
+                  </NavLink>
+                  <NavLink
+                    activeclassname="tab"
                     to="/blogs"
                     smooth={true}
                     offset={50}
@@ -66,10 +66,10 @@ function Navbar() {
                     className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
                   >
                     Blog
-                  </Link>
+                  </NavLink>
 
-                  <Link
-                    activeClass="contact"
+                  <NavLink
+                    activeclassname="contact"
                     to="/"
                     smooth={true}
                     offset={50}
@@ -77,9 +77,9 @@ function Navbar() {
                     className="cursor-pointer bg-[#FE7A15] text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
                   >
                     SignIn
-                  </Link>
-                  <Link
-                    activeClass="contact"
+                  </NavLink>
+                  <NavLink
+                    activeclassname="contact"
                     to="/specialists"
                     smooth={true}
                     offset={50}
@@ -87,7 +87,7 @@ function Navbar() {
                     className="cursor-pointer bg-[#FE7A15] text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
                   >
                     For Specialists
-                  </Link>
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -153,9 +153,9 @@ function Navbar() {
                 ref={ref}
                 className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
               >
-                <Link
+                <NavLink
                   href="/home"
-                  activeClass="home"
+                  activeclassname="home"
                   to="home"
                   smooth={true}
                   offset={50}
@@ -163,10 +163,10 @@ function Navbar() {
                   className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Home
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   href="/about"
-                  activeClass="about"
+                  activeclassname="about"
                   to="about"
                   smooth={true}
                   offset={50}
@@ -174,11 +174,11 @@ function Navbar() {
                   className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   About
-                </Link>
+                </NavLink>
 
-                <Link
+                <NavLink
                   href="/work"
-                  activeClass="work"
+                  activeclassname="work"
                   to="work"
                   smooth={true}
                   offset={50}
@@ -186,10 +186,10 @@ function Navbar() {
                   className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Projects
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   href="/services"
-                  activeClass="services"
+                  activeclassname="services"
                   to="services"
                   smooth={true}
                   offset={50}
@@ -197,11 +197,11 @@ function Navbar() {
                   className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Services
-                </Link>
+                </NavLink>
 
-                <Link
+                <NavLink
                   href="/contact"
-                  activeClass="work"
+                  activeclassname="work"
                   to="work"
                   smooth={true}
                   offset={50}
@@ -209,7 +209,7 @@ function Navbar() {
                   className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Contact
-                </Link>
+                </NavLink>
               </div>
             </div>
           )}

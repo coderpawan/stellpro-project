@@ -30,31 +30,12 @@ const ScreeningPage = () => {
         <div className="text-4xl text-center font-bold">
           Know wheter you need a Consultant?
         </div>
-        <div className="flex ml-48 mt-8 w-[60%]">
-          <div className="text-xl">1)</div>
-          <div className="ml-2 text-xl">
-            if score less than 2 : Need Consultant{" "}
-          </div>
-        </div>
-        <div className="flex ml-48 mt-4 w-[60%]">
-          <div className="text-xl">2)</div>
-          <div className="ml-2 text-xl">
-            if score greater than 2 and less than 10 : Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Quisquam, quasi!{" "}
-          </div>
-        </div>
-        <div className="flex ml-48 mt-4 w-[60%]">
-          <div className="text-xl">3)</div>
-          <div className="ml-2 text-xl">
-            if score greater than 10 : Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Quisquam, quasi!{" "}
-          </div>
-        </div>
       </div>
       <div className="justify-center my-20">
         <iframe
           src="https://www.cognitoforms.com/f/bVGDwp8FUUSd87xqjt8kag/1"
           height="869"
+          width="1400"
         ></iframe>
       </div>
 
