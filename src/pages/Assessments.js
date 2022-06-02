@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Autism from "../images/child autism.png";
+import Autism from "../images/illustration_2.png";
 import { Link } from "react-router-dom";
 
 const Assessments = () => {

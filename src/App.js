@@ -10,6 +10,7 @@ import Specialists from "./pages/Specialists";
 import BlogDetails from "./pages/BlogDetails";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import VideoOnDemand from "./pages/VideoOnDemand";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           <Route exact path="/blogdetails" element={<BlogDetails />} />
           <Route exact path="/privacy" element={<Privacy />} />
           <Route exact path="/terms" element={<Terms />} />
+          <Route exact path="/videoondemand" element={<VideoOnDemand />} />
         </Routes>
       </Router>
     </div>

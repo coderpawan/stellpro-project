@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
 import Doctors from "../images/Picture1.png";
 import LogoPro from "../images/Picture2.png";
+import WhiteProLogo from "../images/white pro logo.jpeg";
 import Treatment from "../images/treatment.png";
 import Consultation from "../images/consultation.jpg";
 import Footer from "../components/Footer";
@@ -10,13 +11,19 @@ import Care1 from "../images/dravid.webp";
 import Logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import Testimonial from "../components/Testimonial";
+import Artboard1 from "../images/whatwedo.jpeg";
+import ChildAssesment from "../images/Child Assessment.jpeg";
+import FindSpecialist from "../images/FindSpecialist.jpeg";
+import OnlineSession from "../images/OnlineSession.jpeg";
+import ResourcesPrograms from "../images/Programs.jpeg";
+import JoinCommunity from "../images/JoinCommunity.jpeg";
 
-const Cards = ({ title, content }) => {
+const Cards = ({ title, content, image }) => {
   return (
     <div class="max-w-[230px] rounded-2xl overflow-hidden shadow-2xl mx-5">
-      <img class="w-full" src={Consultation} alt="Sunset in the mountains" />
+      <img class="w-full" src={image} alt="Sunset in the mountains" />
       <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">{title}</div>
+        <div class="font-bold text-gray-600 text-xl mb-2">{title}</div>
         <p class="text-gray-700 text-base">{content}</p>
       </div>
     </div>
@@ -29,12 +36,62 @@ const LandingPage = () => {
       <Navbar />
       <SearchBar />
       <div className=""></div>
-      <div className="flex bg-[#0191B4] mt-10 mx-16 rounded-3xl">
+
+      <div className="flex justify-center mt-24 mx-20">
+        <div className="w-[55%] text-center mt-3">
+          <div className="text-deepblue text-4xl font-bold italic">
+            At demdee, we are on a mission to make child development inclusive
+            and accessible
+          </div>
+          <div className="mt-12 text-gray-600 text-2xl">
+            We want to make finding intervention services and resources
+            effortless , so that you have one less thing to worry about.
+          </div>
+        </div>
+        <img src={Artboard1} alt="" className="h-96 rounded-xl ml-16" />
+      </div>
+      <div className="mt-24">
+        <div className="text-5xl text-gray-600 text-center">
+          Services We Offer{" "}
+        </div>
+        <div className="flex my-10 justify-center">
+          <Cards
+            title="Find Specialists Near You"
+            content="Lorem ipsum dolor sit amet."
+            image={FindSpecialist}
+          />
+          <Cards
+            title="Book Online Sessions"
+            content="Lorem ipsum dolor sit amet."
+            image={OnlineSession}
+          />
+          <Cards
+            title="Take Child Assessment"
+            content="Lorem ipsum dolor sit amet."
+            image={ChildAssesment}
+          />
+          <Cards
+            title="Resources and Programs"
+            content="Lorem ipsum dolor sit amet."
+            image={ResourcesPrograms}
+          />
+          <Cards
+            title="Join Community"
+            content="Lorem ipsum dolor sit amet."
+            image={JoinCommunity}
+          />
+        </div>
+      </div>
+      <div className="flex bg-[#0191B4] my-20 mx-16 rounded-3xl">
         <div className="text-center px-20 py-12 w-[60%]">
           <div className="text-4xl px-20 pt-6 text-white">
             Connect with Child Specialists Online at
           </div>
-          <img src={LogoPro} alt="" className=" w-[50%] relative left-40" />
+          <img
+            src={WhiteProLogo}
+            alt=""
+            className=" w-[50%] relative left-40"
+          />
           <div className="text-xl font-bold text-white">
             Get professional help for children aged 2-10 years with academic,
             speech, behavioral, motor and sensory delays or concerns
@@ -51,33 +108,6 @@ const LandingPage = () => {
           </div>
         </div>
         <img src={Doctors} alt="" className="w-[30%]" />
-      </div>
-      <div className="flex justify-center mt-24">
-        <div className="w-[55%] text-center mt-3">
-          <div className="">WHAT WE DO</div>
-          <div className="uppercase mt-12">
-            We aspire to be your partner in your child's developmental journey.
-            We want make finding intervention services effortless , so that you
-            have one less thing to worry about.
-          </div>
-        </div>
-        <img src={Treatment} alt="" className="h-48" />
-      </div>
-      <div className="mt-24">
-        <div className="text-5xl text-center"> Services we offer</div>
-        <div className="flex my-10 justify-center">
-          <Cards
-            title="Instant Video Consultation"
-            content="Lorem ipsum dolor sit amet."
-          />
-          <Cards
-            title="Find Doctors Near You"
-            content="Lorem ipsum dolor sit amet."
-          />
-          <Cards title="Medicines" content="Lorem ipsum dolor sit amet." />
-          <Cards title="Lab Tests" content="Lorem ipsum dolor sit amet." />
-          <Cards title="Surgeries" content="Lorem ipsum dolor sit amet." />
-        </div>
       </div>
       <Testimonial />
       <div className="py-16">

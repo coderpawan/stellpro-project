@@ -12,7 +12,7 @@ function Navbar() {
           <div className="flex items-center h-20 w-full">
             <div className="flex items-center  mx-20  justify-between w-full">
               <div className="flex justify-center items-center flex-shrink-0 ">
-                <img src={Logo} alt="" className="h-10" />
+                <img src={Logo} alt="" className="h-12" />
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
@@ -22,7 +22,7 @@ function Navbar() {
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
+                    className="cursor-pointer hover:bg-[#FE7A15] text-gray-600 hover:text-white px-2 py-2 rounded-md text-[16px] font-bold"
                   >
                     Home
                   </NavLink>
@@ -32,7 +32,7 @@ function Navbar() {
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
+                    className="cursor-pointer hover:bg-[#FE7A15] text-gray-600 hover:text-white px-2 py-2 rounded-md text-[16px] font-bold"
                   >
                     Find Specialists
                   </NavLink>
@@ -42,18 +42,18 @@ function Navbar() {
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
+                    className="cursor-pointer hover:bg-[#FE7A15] text-gray-600 hover:text-white px-2 py-2 rounded-md text-[16px] font-bold"
                   >
                     Assessments
                   </NavLink>
 
                   <NavLink
                     activeclassname="tab"
-                    to="/"
+                    to="/videoondemand"
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
+                    className="cursor-pointer hover:bg-[#FE7A15] text-gray-600 hover:text-white px-2 py-2 rounded-md text-[16px] font-bold"
                   >
                     Learning Tools
                   </NavLink>
@@ -63,7 +63,7 @@ function Navbar() {
                     smooth={true}
                     offset={50}
                     duration={500}
-                    className="cursor-pointer hover:bg-[#FE7A15] text-black hover:text-white px-2 py-2 rounded-md text-sm font-bold"
+                    className="cursor-pointer hover:bg-[#FE7A15] text-gray-600 hover:text-white px-2 py-2 rounded-md text-[16px] font-bold"
                   >
                     Blog
                   </NavLink>
