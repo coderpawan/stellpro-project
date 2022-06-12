@@ -43,7 +43,7 @@ const Blogs = () => {
               <div class="overflow-hidden shadow-lg rounded-2xl h-90 w-60 md:w-80 cursor-pointer m-auto">
                 <div class="w-full block h-full">
                   <div class="bg-white  w-full p-4">
-                    <Link to="/blogdetails">
+                    <Link to={`/blogs/${post.link}`}>
                       <img
                         alt="blogphoto"
                         src={post.image}

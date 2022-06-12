@@ -8,6 +8,12 @@ import ScreeningPage from "./pages/ScreeningPage";
 import Autism from "./pages/Autism";
 import Specialists from "./pages/Specialists";
 import BlogDetails from "./pages/BlogDetails";
+import Occupationaltherapy from "./blogs/Occupationaltherapy";
+import ADHD from "./blogs/ADHD";
+import AfterADHD from "./blogs/AfterADHD";
+import ManageADHD from "./blogs/ManageADHD";
+import SignofADHD from "./blogs/SignofADHD";
+import TipsADHD from "./blogs/TipsADHD";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import VideoOnDemand from "./pages/VideoOnDemand";
@@ -22,6 +28,16 @@ const App = () => {
           <Route exact path="/searchdetails" element={<SearchDetails />} />
           <Route exact path="care" element={<StellproCare />} />
           <Route exact path="/blogs" element={<Blogs />} />
+          <Route
+            exact
+            path="/blogs/occupationaltherapy"
+            element={<Occupationaltherapy />}
+          />
+          <Route exact path="/blogs/adhd" element={<ADHD />} />
+          <Route exact path="/blogs/afteradhd" element={<AfterADHD />} />
+          <Route exact path="/blogs/manageadhd" element={<ManageADHD />} />
+          <Route exact path="/blogs/signsofadhd" element={<SignofADHD />} />
+          <Route exact path="/blogs/tipsadhd" element={<TipsADHD />} />
           <Route exact path="/assessments" element={<Assessments />} />
           <Route exact path="/screening" element={<ScreeningPage />} />
           <Route exact path="/autism" element={<Autism />} />

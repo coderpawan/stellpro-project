@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import { FaSearchLocation, FaMapMarkerAlt } from "react-icons/fa";
 // import Data from "../data/SearchBarData";
 import { useNavigate } from "react-router-dom";
+import Select from "react-select";
 // import Doodle from "../images/doodle.png";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   // const [error, setError] = useState();
-  // const [item, setItem] = useState([]);
-  // const [filter, setFilter] = useState(item);
-  // const [therapy, setTherapy] = useState();
-  // const [location, setLocation] = useState();
+  const [filter, setFilter] = useState([]);
+  const [item, setItem] = useState([]);
+  const [therapy, setTherapy] = useState();
+  const [location, setLocation] = useState(null);
   // const [filterDoctor, setFilterDoctor] = useState(item);
   const [UniLocation, setUniLocation] = useState([]);
   const [UniTherapy, setUniTherapy] = useState([]);
@@ -34,7 +35,7 @@ const SearchBar = () => {
       .then((result) => {
         // setItem(result.slice());
         // setFilter(result.slice());
-        // setItem(result);
+        setItem(result);
         setTimeout(() => {
           // console.log(item);
           const UniqueLocation = [];
@@ -46,6 +47,7 @@ const SearchBar = () => {
             if (!findItem) {
               UniqueLocation.push(items);
             }
+            return UniqueLocation;
           });
           setUniLocation(UniqueLocation);
           result.map((items) => {
@@ -55,6 +57,7 @@ const SearchBar = () => {
             if (!findItem) {
               UniqueTherapy.push(items);
             }
+            return UniqueTherapy;
           });
           setUniTherapy(UniqueTherapy);
         }, 1000);
@@ -69,15 +72,92 @@ const SearchBar = () => {
   //   }
   // };
 
-  // const handleTherapy = (event) => {
-  //   setTherapy(event.target.value);
-  //   if (item.map((p) => p.Specialization1 === event.target.value)) {
-  //     return true;
-  //   }
-  // };
+  const handleTherapy = (event) => {
+    setTherapy(event.target.value);
+    if (item.map((p) => p.Specialization1 === event.target.value)) {
+      return true;
+    }
+  };
+  const options = UniLocation.map((props) => {
+    return { value: props.Locality, label: props.Locality };
+  });
 
   const SearchDoctors = () => {
     navigate("/searchdetails");
+    console.log(location.value, therapy);
+
+    if (location && therapy) {
+      const updatedList = item.filter(
+        (p) => p.Locality === location.value && p.Specialization1 === therapy
+      );
+      console.log(updatedList);
+      setFilter(updatedList);
+      console.log(filter);
+    }
+
+    if (props.alert) {
+      props.alert(filter);
+    }
+  };
+
+  const handleFilter = (e) => {
+    console.log(e.target.value);
+    e.preventDefault();
+    if (e.target.value === "Speech") {
+      const updatedList = item.filter(
+        (p) => p.Specialization1 === "Speech Therapy"
+      );
+
+      setFilter(updatedList);
+    }
+    if (e.target.value === "Occupational") {
+      const updatedList = item.filter(
+        (p) => p.Specialization1 === "Occupational Therapy"
+      );
+
+      setFilter(updatedList);
+    }
+    if (e.target.value === "Adhd") {
+      const updatedList = item.filter((p) => p.Specialization1 === "ADHD");
+
+      setFilter(updatedList);
+    }
+    if (e.target.value === "Pediatric") {
+      const updatedList = item.filter(
+        (p) => p.Specialization1 === "Pediatric Physiotherapy"
+      );
+
+      setFilter(updatedList);
+    }
+    if (e.target.value === "Audiology") {
+      const updatedList = item.filter((p) => p.Specialization1 === "Audiology");
+
+      setFilter(updatedList);
+    }
+    if (e.target.value === "Behavioural") {
+      const updatedList = item.filter(
+        (p) => p.Specialization1 === "Behavioral Therapist"
+      );
+
+      setFilter(updatedList);
+    }
+    if (e.target.value === "Child") {
+      const updatedList = item.filter(
+        (p) => p.Specialization1 === "Child Psychology"
+      );
+
+      setFilter(updatedList);
+    }
+    if (e.target.value === "Special") {
+      const updatedList = item.filter(
+        (p) => p.Specialization1 === "Special Educator"
+      );
+
+      setFilter(updatedList);
+    }
+    if (props.alert) {
+      props.alert(filter);
+    }
   };
 
   // console.log(UniLocation, UniTherapy);
@@ -91,17 +171,17 @@ const SearchBar = () => {
       <div className="flex justify-center mt-3 bg-white border-[12px] border-opacity-10 border-orange relative left-[15%] top-28 w-[70%] pb-2 pt-5 rounded-2xl">
         <div className="bg-white rounded-2xl w-52 flex items-center mb-3 mx-3 border-2 border-orange">
           <FaMapMarkerAlt className="text-gray-400 m-2" />
-          <select
+          {/* <select
             name="brand"
             value={UniLocation.Locality}
             id=""
             className=""
-            // onChange={handleLocation}
+            onChange={handleLocation}
           >
             <option value="" disabled selected hidden className="">
               Select the Location
             </option>
-            {/* {console.log(UniLocation)} */}
+            
             {UniLocation.map((props) => {
               return (
                 <option value={props.Locality} className="" key={props.id}>
@@ -109,7 +189,14 @@ const SearchBar = () => {
                 </option>
               );
             })}
-          </select>
+          </select> */}
+          <Select
+            defaultValue={location}
+            onChange={setLocation}
+            options={options}
+            className="w-40 text-sm"
+            placeholder="Select Location"
+          />
         </div>
 
         <div className="bg-white rounded-2xl w-[55%] p-2 flex items-center mb-3 border-2 border-orange">
@@ -118,8 +205,8 @@ const SearchBar = () => {
             name="brand"
             value={UniTherapy.Specialization1}
             id=""
-            className="w-full"
-            // onChange={handleTherapy}
+            className="w-full text-sm"
+            onChange={handleTherapy}
           >
             <option value="" disabled selected hidden className="">
               Select the Occupation
@@ -145,22 +232,63 @@ const SearchBar = () => {
         </button>
       </div>
       <div className="flex relative top-44 justify-center">
-        <div className="py-2 px-3 bg-white rounded mx-4">
+        <button
+          className="py-2 px-3 bg-white rounded mx-4"
+          value="Occupational"
+          onClick={handleFilter}
+        >
           Occupational Therapy
-        </div>
-        <div className="py-2 px-3 bg-white rounded mx-4">Speech Therapy</div>
-        <div className="py-2 px-3 bg-white rounded mx-4">Audiology</div>
-        <div className="py-2 px-3 bg-white rounded mx-4">Child Psychology</div>
-        <div className="py-2 px-3 bg-white rounded mx-4">ADHD</div>
-        <div className="py-2 px-3 bg-white rounded mx-4">
+        </button>
+        <button
+          className="py-2 px-3 bg-white rounded mx-4"
+          value="Speech"
+          onClick={handleFilter}
+        >
+          Speech Therapy
+        </button>
+        <button
+          className="py-2 px-3 bg-white rounded mx-4"
+          value="Audiology"
+          onClick={handleFilter}
+        >
+          Audiology
+        </button>
+        <button
+          className="py-2 px-3 bg-white rounded mx-4"
+          value="Child"
+          onClick={handleFilter}
+        >
+          Child Psychology
+        </button>
+        <button
+          className="py-2 px-3 bg-white rounded mx-4"
+          value="Adhd"
+          onClick={handleFilter}
+        >
+          ADHD
+        </button>
+        <button
+          className="py-2 px-3 bg-white rounded mx-4"
+          value="Pediatric"
+          onClick={handleFilter}
+        >
           Pediatric Physiotherapy
-        </div>
-        <div className="py-2 px-3 bg-white rounded mx-4">
+        </button>
+        <button
+          className="py-2 px-3 bg-white rounded mx-4"
+          value="Behavioural"
+          onClick={handleFilter}
+        >
           Behavioural Therapy
-        </div>
-        <div className="py-2 px-3 bg-white rounded mx-4">Special Educator</div>
+        </button>
+        <button
+          className="py-2 px-3 bg-white rounded mx-4"
+          value="Special"
+          onClick={handleFilter}
+        >
+          Special Educator
+        </button>
       </div>
-      {/* {props.alert(location)} */}
     </div>
   );
 };

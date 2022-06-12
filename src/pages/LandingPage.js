@@ -2,10 +2,9 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
 import Doctors from "../images/Picture1.png";
-import LogoPro from "../images/Picture2.png";
+
 import WhiteProLogo from "../images/white pro logo.jpeg";
-import Treatment from "../images/treatment.png";
-import Consultation from "../images/consultation.jpg";
+
 import Footer from "../components/Footer";
 import Care1 from "../images/dravid.webp";
 import Logo from "../images/logo.png";

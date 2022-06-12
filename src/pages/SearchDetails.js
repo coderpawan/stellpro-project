@@ -2,13 +2,26 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
 import Sticker from "../images/verified.svg";
-import Doctor from "../images/Shubhangi.jpg";
-import { AiFillLike } from "react-icons/ai";
-import { BsFillCalendarEventFill } from "react-icons/bs";
+import Doctor from "../images/consultation.jpg";
+
+import {
+  RiStethoscopeLine,
+  RiMoneyDollarCircleFill,
+  RiPinDistanceLine,
+} from "react-icons/ri";
+import { GiStarMedal } from "react-icons/gi";
+import { IoLocationSharp } from "react-icons/io5";
+import { BsFlagFill } from "react-icons/bs";
+import { useGeolocated } from "react-geolocated";
 
 const SearchDetails = () => {
   const [doctors, setDoctors] = useState([]);
 
+  // const [therapy, setTherapy] = useState();
+  // const [location, setLocation] = useState();
+  // const [filter, setFilter] = useState(doctors);
+
+  // console.log(location, therapy);
   useEffect(() => {
     fetch(
       "https://sheet.best/api/sheets/a93e79e9-9876-4270-a558-09e6f0f9db53?_raw=1"
@@ -19,9 +32,51 @@ const SearchDetails = () => {
       });
   }, []);
 
-  function props(data) {
+  const props = (data) => {
     console.log(data);
-  }
+    setDoctors(data);
+  };
+
+  const { coords } = useGeolocated({
+    positionOptions: {
+      enableHighAccuracy: false,
+    },
+    userDecisionTimeout: 5000,
+  });
+
+  const calculateDistance = (lattitude, longittude) => {
+    console.log(longittude);
+    const toRadian = (n) => (n * Math.PI) / 180;
+    let lat2 = lattitude;
+    let lon2 = longittude;
+    let lat1 = coords.latitude;
+    let lon1 = coords.longitude;
+
+    console.log(lat1, lon1 + "===" + lat2, lon2);
+    let R = 6371; // km
+    let x1 = lat2 - lat1;
+    let dLat = toRadian(x1);
+    let x2 = lon2 - lon1;
+    let dLon = toRadian(x2);
+    let a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRadian(lat1)) *
+        Math.cos(toRadian(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    let d = R * c;
+    var e = Math.round(d * 10) / 10;
+    console.log("distance==?", e);
+    return e;
+  };
+
+  // if (doctors.length === 0) {
+  //   setMessage("No Doctors are available in this area");
+  // }
+  // const props1 = (data) => {
+  //   setTherapy(data);
+  // };
 
   return (
     <div>
@@ -32,6 +87,7 @@ const SearchDetails = () => {
           <input type="checkbox" className="mt-[6px] w-[24px] h-[15px] ml-1" />
           <div className="text-lg ml-1 text-white">Video Consult</div>
         </div> */}
+
         <select
           name=""
           id=""
@@ -113,8 +169,8 @@ const SearchDetails = () => {
         </div>
       </div>
 
-      <div className="">
-        <div className="mx-16 my-10">
+      <div className="bg-gray-100">
+        <div className="mx-16 py-10">
           <div className="font-bold text-2xl">
             81 doctors available in Sigra
           </div>
@@ -124,63 +180,158 @@ const SearchDetails = () => {
               Book appointments with minimum wait-time & verified doctor details
             </div>
           </div>
-          {console.log(doctors)}
-          {doctors.map((props) => {
+
+          {doctors?.map((props) => {
             return (
               <div className="">
                 <div className="flex my-7">
                   <div className="">
-                    <img src={Doctor} alt="" className="h-32" />
-                    <div className="font-bold text-sm text-blue-400 underline text-center mt-2">
-                      View Profile
-                    </div>
+                    <img
+                      src={Doctor}
+                      alt=""
+                      className="h-56 bg-white py-6 rounded-l-2xl relative top-8"
+                    />
                   </div>
 
-                  <div className="ml-6 w-[25%]">
-                    <div className="text-xl text-blue-400 ">
-                      {props.TherapistName}
+                  <div className="p-6 bg-white">
+                    <div className="text-2xl text-blue-400 ">
+                      {props.ClinicName}
                     </div>
-                    <div className="text-sm text-gray-500 mt-1">Dentist</div>
-                    <div className="text-sm text-gray-500">
-                      {props.YrsExp} years experience overall
-                    </div>
-                    <div className="flex">
-                      <div className="font-bold text-sm">
-                        {props.Locality},{props.City}
+                    {coords ? (
+                      <div className="">
+                        <div className="flex px-2 py-[3px] rounded-xl mt-3 opacity-50 bg-black text-white w-fit">
+                          <RiPinDistanceLine className="relative top-[4px] mr-1" />
+                          {console.log(props.Latitude, props.Longitude)}
+                          {calculateDistance(
+                            props.Latitude,
+                            props.Longitude
+                          )}{" "}
+                          km
+                        </div>
                       </div>
-                      <div className="font-bold text-xl mx-2 text-gray-400 relative bottom-2">
-                        .
+                    ) : null}
+                    <div className="flex mt-6">
+                      <div className="w-[60%]">
+                        <div className="flex">
+                          <RiStethoscopeLine className="font-bold relative top-[2px] text-emerald-500" />
+                          <div className="text-sm ml-2">
+                            Specialist's Name :&nbsp;
+                          </div>
+                          {props.TherapistName ? (
+                            <div className="text-sm font-bold">
+                              {props.TherapistName}
+                            </div>
+                          ) : (
+                            <div className="text-sm font-bold">
+                              Not Available
+                            </div>
+                          )}
+                        </div>
+                        <div className="flex mt-2">
+                          <GiStarMedal className="font-bold relative top-[2px] text-emerald-500" />
+                          <div className="text-sm ml-2">
+                            Specialization :&nbsp;
+                          </div>
+                          {props.Specialization1 ? (
+                            <div className="text-sm font-bold">
+                              {props.Specialization1}
+                            </div>
+                          ) : (
+                            <div className="text-sm font-bold">
+                              Not Available
+                            </div>
+                          )}
+                          {/* {props.Specialization2 ? (
+                            <div className="text-sm font-bold">
+                              {props.Specialization2}
+                            </div>
+                          ) : (
+                            <div className="text-sm font-bold">
+                              Not Available
+                            </div>
+                          )} */}
+                        </div>
+                        <div className="flex mt-2">
+                          <BsFlagFill className="font-bold relative top-[2px] text-emerald-500" />
+                          <div className="text-sm ml-2">
+                            Years of Experience :&nbsp;
+                          </div>
+                          {props.YrsExp ? (
+                            <div className="text-sm font-bold">
+                              {props.YrsExp}
+                            </div>
+                          ) : (
+                            <div className="text-sm font-bold">
+                              Not Available
+                            </div>
+                          )}
+                        </div>
+                        <div className="flex mt-2">
+                          <IoLocationSharp className="font-bold relative top-[2px] text-emerald-500" />
+                          <div className="text-sm ml-2">Location :&nbsp;</div>
+
+                          {props.Locality ? (
+                            <div className="text-sm font-bold">
+                              {props.Locality}&nbsp;,&nbsp;{props.City}
+                            </div>
+                          ) : (
+                            <div className="text-sm font-bold">
+                              Not Available
+                            </div>
+                          )}
+                        </div>
+                        <div className="flex mt-2">
+                          <RiMoneyDollarCircleFill className="font-bold relative top-[2px] text-emerald-500" />
+                          <div className="text-sm ml-2">
+                            Consultation Fee :&nbsp;
+                          </div>
+
+                          {props.AssessmentFees ? (
+                            <div className="text-sm font-bold">
+                              {props.AssessmentFees}
+                            </div>
+                          ) : (
+                            <div className="text-sm font-bold">
+                              Not Available
+                            </div>
+                          )}
+                        </div>
+
+                        {/* <div className="h-[1px] bg-gray-200 mb-4 mt-2"></div> */}
+                        {/* <div className="flex">
+                          <div className="flex bg-green-500 w-[25%] pl-3 rounded-sm">
+                            <AiFillLike className="text-white mt-1" />
+                            <div className="text-white ml-1">87%</div>
+                          </div>
+                          <div className="font-bold underline text-sm ml-3 mt-[2px]">
+                            7 Patient Stories
+                          </div>
+                        </div> */}
                       </div>
-                      <div className="text-sm">{props.ClinicName}</div>
-                    </div>
-                    <div className="relative bottom-2">
-                      {props.AssessmentFees} Consultation fee at clinic
-                    </div>
-                    <div className="h-[1px] bg-gray-200 mb-4 mt-2"></div>
-                    <div className="flex">
-                      <div className="flex bg-green-500 w-[25%] pl-3 rounded-sm">
-                        <AiFillLike className="text-white mt-1" />
-                        <div className="text-white ml-1">87%</div>
+                      <div className="w-48 text-sm mr-2 ml-10">
+                        {props.Address}
                       </div>
-                      <div className="font-bold underline text-sm ml-3 mt-[2px]">
-                        7 Patient Stories
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative left-40 mt-24">
-                    <div className="flex justify-center">
-                      <BsFillCalendarEventFill className="text-green-600 text-[12px] relative top-[5px]" />
-                      <div className="text-sm text-green-600 font-bold ml-3">
-                        {" "}
-                        Available Today{" "}
-                      </div>
-                    </div>
-                    <div className="bg-blue-500 px-10 py-1 rounded-lg mt-4">
-                      <div className="text-sm font-bold text-white">
-                        Book Appointment
-                      </div>
-                      <div className="text-[10px] font-bold text-center text-white">
-                        No Booking Fee
+                      <div className="w-[1px] h-36 bg-gray-500 mr-5"></div>
+                      <div className="w-[40%]">
+                        {/* <div className="flex justify-center">
+                          <BsFillCalendarEventFill className="text-green-600 text-[12px] relative top-[5px]" />
+                          <div className="text-sm text-green-600 font-bold ml-3">
+                            {" "}
+                            Available Today{" "}
+                          </div>
+                        </div> */}
+                        <div className="bg-blue-500 px-7 py-1 rounded-lg mt-4">
+                          <a href="tel:+91 9749568594">
+                            <div className="text-sm font-bold text-white text-center">
+                              Call Now
+                            </div>
+                          </a>
+                        </div>
+                        <div className="bg-blue-500 px-7 py-1 rounded-lg mt-4">
+                          <div className="text-sm font-bold text-white text-center">
+                            View Details
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -189,121 +340,7 @@ const SearchDetails = () => {
               </div>
             );
           })}
-
-          <div className="">
-            <div className="flex my-7">
-              <div className="">
-                <img src={Doctor} alt="" className="h-32" />
-                <div className="font-bold text-sm text-blue-400 underline text-center mt-2">
-                  View Profile
-                </div>
-              </div>
-
-              <div className="ml-6">
-                <div className="text-xl text-blue-400 ">Dr. Ajay Pal Singh</div>
-                <div className="text-sm text-gray-500 mt-1">Dentist</div>
-                <div className="text-sm text-gray-500">
-                  16 years experience overall
-                </div>
-                <div className="flex">
-                  <div className="font-bold text-sm">Chhittupur,Varanasi</div>
-                  <div className="font-bold text-xl mx-2 text-gray-400 relative bottom-2">
-                    .
-                  </div>
-                  <div className="text-sm">Sanskriti Dental Clinic</div>
-                </div>
-                <div className="relative bottom-2">
-                  ₹200 Consultation fee at clinic
-                </div>
-                <div className="h-[1px] bg-gray-200 mb-4 mt-2"></div>
-                <div className="flex">
-                  <div className="flex bg-green-500 w-[25%] pl-3 rounded-sm">
-                    <AiFillLike className="text-white mt-1" />
-                    <div className="text-white ml-1">87%</div>
-                  </div>
-                  <div className="font-bold underline text-sm ml-3 mt-[2px]">
-                    7 Patient Stories
-                  </div>
-                </div>
-              </div>
-              <div className="ml-60 mt-24">
-                <div className="flex justify-center">
-                  <BsFillCalendarEventFill className="text-green-600 text-[12px] relative top-[5px]" />
-                  <div className="text-sm text-green-600 font-bold ml-3">
-                    {" "}
-                    Available Today{" "}
-                  </div>
-                </div>
-                <div className="bg-blue-500 px-10 py-1 rounded-lg mt-4">
-                  <div className="text-sm font-bold text-white">
-                    Book Appointment
-                  </div>
-                  <div className="text-[10px] font-bold text-center text-white">
-                    No Booking Fee
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="h-[1px] bg-gray-200 w-[70%]"></div>
-          </div>
-          <div className="">
-            <div className="flex my-7">
-              <div className="">
-                <img src={Doctor} alt="" className="h-32" />
-                <div className="font-bold text-sm text-blue-400 underline text-center mt-2">
-                  View Profile
-                </div>
-              </div>
-
-              <div className="ml-6">
-                <div className="text-xl text-blue-400 ">Dr. Ajay Pal Singh</div>
-                <div className="text-sm text-gray-500 mt-1">Dentist</div>
-                <div className="text-sm text-gray-500">
-                  16 years experience overall
-                </div>
-                <div className="flex">
-                  <div className="font-bold text-sm">Chhittupur,Varanasi</div>
-                  <div className="font-bold text-xl mx-2 text-gray-400 relative bottom-2">
-                    .
-                  </div>
-                  <div className="text-sm">Sanskriti Dental Clinic</div>
-                </div>
-                <div className="relative bottom-2">
-                  ₹200 Consultation fee at clinic
-                </div>
-                <div className="h-[1px] bg-gray-200 mb-4 mt-2"></div>
-                <div className="flex">
-                  <div className="flex bg-green-500 w-[25%] pl-3 rounded-sm">
-                    <AiFillLike className="text-white mt-1" />
-                    <div className="text-white ml-1">87%</div>
-                  </div>
-                  <div className="font-bold underline text-sm ml-3 mt-[2px]">
-                    7 Patient Stories
-                  </div>
-                </div>
-              </div>
-              <div className="ml-60 mt-24">
-                <div className="flex justify-center">
-                  <BsFillCalendarEventFill className="text-green-600 text-[12px] relative top-[5px]" />
-                  <div className="text-sm text-green-600 font-bold ml-3">
-                    {" "}
-                    Available Today{" "}
-                  </div>
-                </div>
-                <div className="bg-blue-500 px-10 py-1 rounded-lg mt-4">
-                  <div className="text-sm font-bold text-white">
-                    Book Appointment
-                  </div>
-                  <div className="text-[10px] font-bold text-center text-white">
-                    No Booking Fee
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="h-[1px] bg-gray-200 w-[70%]"></div>
-          </div>
         </div>
-        <div className=""></div>
       </div>
     </div>
   );
