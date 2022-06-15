@@ -1,9 +1,12 @@
-import Consultation from "../images/consultation.jpg";
 import ADHD from "../images/ADHD1.jpg";
 import SignADHD from "../images/SignsADHD.png";
 import TipsADHD from "../images/TipsADHD1.png";
 import ManageADHD from "../images/ManageADHD1.png";
 import AfterADHD from "../images/AfterADHD1.png";
+import VirtualAutism from "../images/virtualautism1.png";
+import SpecialSchool from "../images/specialschool1.png";
+import GiftedChild from "../images/giftedchild1.png";
+
 import OccupationalTherapy from "../images/occupational therapy.jpg";
 
 const Data = [
@@ -57,27 +60,27 @@ const Data = [
   },
   {
     id: 7,
-    image: Consultation,
-    topic: "Parental Involvement In Online Speech Therapy",
+    image: VirtualAutism,
+    topic: "What is Virtual Autism?",
     date: "March 21,2002",
     tag: "Parenting",
-    link: "tipsadhd",
+    link: "virtualautism",
   },
   {
     id: 8,
-    image: Consultation,
-    topic: "Parental Involvement In Online Speech Therapy",
+    image: SpecialSchool,
+    topic: "10 Signs of a gifted child",
     date: "March 21,2002",
     tag: "Parenting",
-    link: "tipsadhd",
+    link: "specialschools",
   },
   {
     id: 9,
-    image: Consultation,
-    topic: "Parental Involvement In Online Speech Therapy",
+    image: GiftedChild,
+    topic: " 10 Best Special Needs Schools in India",
     date: "March 21,2002",
     tag: "Parenting",
-    link: "tipsadhd",
+    link: "giftedchild",
   },
 ];
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
 import Sticker from "../images/verified.svg";
@@ -16,24 +16,31 @@ import { useGeolocated } from "react-geolocated";
 
 const SearchDetails = () => {
   const [doctors, setDoctors] = useState([]);
+  const filtereddata = [];
 
   // const [therapy, setTherapy] = useState();
   // const [location, setLocation] = useState();
   // const [filter, setFilter] = useState(doctors);
 
   // console.log(location, therapy);
-  useEffect(() => {
-    fetch(
-      "https://sheet.best/api/sheets/a93e79e9-9876-4270-a558-09e6f0f9db53?_raw=1"
-    )
-      .then((res) => res.json())
-      .then((result) => {
-        setDoctors(result);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://sheet.best/api/sheets/a93e79e9-9876-4270-a558-09e6f0f9db53?_raw=1"
+  //   )
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       // setDoctors(result);
+  //     });
+  // }, []);
 
   const props = (data) => {
-    console.log(data);
+    // console.log(data[0]);
+    // const updatedList = data[0].map((p) => {
+    //   return console.log(p.TherapyLocation3);
+    // });
+    // console.log(updatedList);
+    filtereddata.push(data[0]);
+    console.log(filtereddata);
     setDoctors(data);
   };
 
@@ -71,6 +78,32 @@ const SearchDetails = () => {
     return e;
   };
 
+  const handleService = (e) => {
+    console.log(doctors[0]);
+    console.log(e.target.value);
+
+    e.preventDefault();
+    if (e.target.value === "Online" && doctors[0]) {
+      console.log(filtereddata);
+      const updatedList = filtereddata[0].filter(
+        (p) => p.TherapyLocation3 === e.target.value
+      );
+      console.log(updatedList);
+    }
+    if (e.target.value === "Home") {
+      const updatedList = filtereddata[0].filter(
+        (p) => p.TherapyLocation2 === e.target.value
+      );
+      console.log(updatedList);
+    }
+    if (e.target.value === "At Centre") {
+      const updatedList = filtereddata[0].filter(
+        (p) => p.TherapyLocation1 === e.target.value
+      );
+      console.log(updatedList);
+    }
+  };
+
   // if (doctors.length === 0) {
   //   setMessage("No Doctors are available in this area");
   // }
@@ -91,18 +124,19 @@ const SearchDetails = () => {
         <select
           name=""
           id=""
+          onChange={handleService}
           className=" bg-white bg-opacity-50 rounded-sm text-lg text-gray-600 font-bold mx-4 px-1"
         >
           <option value="" disabled selected hidden className="">
             Location of service
           </option>
-          <option value="" className="text-black">
+          <option value="Online" className="text-black">
             Online service
           </option>
-          <option value="" className="text-black">
+          <option value="Home" className="text-black">
             At home
           </option>
-          <option value="" className="text-black">
+          <option value="At Centre" className="text-black">
             At centre
           </option>
         </select>
@@ -181,7 +215,7 @@ const SearchDetails = () => {
             </div>
           </div>
 
-          {doctors?.map((props) => {
+          {doctors[0]?.map((props) => {
             return (
               <div className="">
                 <div className="flex my-7">

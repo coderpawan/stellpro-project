@@ -1,11 +1,9 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import OccupationalTherapy from "../images/occupational therapy.jpg";
 import Pic1 from "../images/SignsADHD.png";
 import Pic2 from "../images/SignsADHD2.png";
 import Pic3 from "../images/SignsADHD3.png";
-import Pic4 from "../images/adhdboysvsgirls.png";
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitter } from "react-icons/bs";
 import { BsWhatsapp } from "react-icons/bs";

@@ -14,6 +14,9 @@ import AfterADHD from "./blogs/AfterADHD";
 import ManageADHD from "./blogs/ManageADHD";
 import SignofADHD from "./blogs/SignofADHD";
 import TipsADHD from "./blogs/TipsADHD";
+import GiftedChild from "./blogs/GiftedChild";
+import SpecialSchools from "./blogs/SpecialSchools";
+import VirtualAutism from "./blogs/VirtualAutism";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import VideoOnDemand from "./pages/VideoOnDemand";
@@ -38,6 +41,17 @@ const App = () => {
           <Route exact path="/blogs/manageadhd" element={<ManageADHD />} />
           <Route exact path="/blogs/signsofadhd" element={<SignofADHD />} />
           <Route exact path="/blogs/tipsadhd" element={<TipsADHD />} />
+          <Route
+            exact
+            path="/blogs/virtualautism"
+            element={<VirtualAutism />}
+          />
+          <Route exact path="/blogs/giftedchild" element={<GiftedChild />} />
+          <Route
+            exact
+            path="/blogs/specialschools"
+            element={<SpecialSchools />}
+          />
           <Route exact path="/assessments" element={<Assessments />} />
           <Route exact path="/screening" element={<ScreeningPage />} />
           <Route exact path="/autism" element={<Autism />} />

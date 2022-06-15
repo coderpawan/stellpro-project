@@ -7,7 +7,8 @@ import Select from "react-select";
 
 const SearchBar = (props) => {
   // const [error, setError] = useState();
-  const [filter, setFilter] = useState([]);
+  // const [filter, setFilter] = useState([]);
+  const filter = [];
   const [item, setItem] = useState([]);
   const [therapy, setTherapy] = useState();
   const [location, setLocation] = useState(null);
@@ -36,6 +37,10 @@ const SearchBar = (props) => {
         // setItem(result.slice());
         // setFilter(result.slice());
         setItem(result);
+        filter.push(result);
+        if (props.alert) {
+          props.alert(filter);
+        }
         setTimeout(() => {
           // console.log(item);
           const UniqueLocation = [];
@@ -62,6 +67,7 @@ const SearchBar = (props) => {
           setUniTherapy(UniqueTherapy);
         }, 1000);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // const handleLocation = (event) => {
@@ -88,10 +94,12 @@ const SearchBar = (props) => {
 
     if (location && therapy) {
       const updatedList = item.filter(
-        (p) => p.Locality === location.value && p.Specialization1 === therapy
+        (p) =>
+          (p.Locality && p.City) === location.value &&
+          p.Specialization1 === therapy
       );
       console.log(updatedList);
-      setFilter(updatedList);
+      filter.push(updatedList);
       console.log(filter);
     }
 
@@ -108,52 +116,52 @@ const SearchBar = (props) => {
         (p) => p.Specialization1 === "Speech Therapy"
       );
 
-      setFilter(updatedList);
+      filter.push(updatedList);
     }
     if (e.target.value === "Occupational") {
       const updatedList = item.filter(
         (p) => p.Specialization1 === "Occupational Therapy"
       );
 
-      setFilter(updatedList);
+      filter.push(updatedList);
     }
     if (e.target.value === "Adhd") {
       const updatedList = item.filter((p) => p.Specialization1 === "ADHD");
 
-      setFilter(updatedList);
+      filter.push(updatedList);
     }
     if (e.target.value === "Pediatric") {
       const updatedList = item.filter(
         (p) => p.Specialization1 === "Pediatric Physiotherapy"
       );
 
-      setFilter(updatedList);
+      filter.push(updatedList);
     }
     if (e.target.value === "Audiology") {
       const updatedList = item.filter((p) => p.Specialization1 === "Audiology");
 
-      setFilter(updatedList);
+      filter.push(updatedList);
     }
     if (e.target.value === "Behavioural") {
       const updatedList = item.filter(
         (p) => p.Specialization1 === "Behavioral Therapist"
       );
 
-      setFilter(updatedList);
+      filter.push(updatedList);
     }
     if (e.target.value === "Child") {
       const updatedList = item.filter(
         (p) => p.Specialization1 === "Child Psychology"
       );
 
-      setFilter(updatedList);
+      filter.push(updatedList);
     }
     if (e.target.value === "Special") {
       const updatedList = item.filter(
         (p) => p.Specialization1 === "Special Educator"
       );
 
-      setFilter(updatedList);
+      filter.push(updatedList);
     }
     if (props.alert) {
       props.alert(filter);
@@ -195,7 +203,7 @@ const SearchBar = (props) => {
             onChange={setLocation}
             options={options}
             className="w-40 text-sm"
-            placeholder="Select Location"
+            placeholder="Search Location"
           />
         </div>
 

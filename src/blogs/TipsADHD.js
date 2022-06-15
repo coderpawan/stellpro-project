@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import OccupationalTherapy from "../images/occupational therapy.jpg";
 import Pic1 from "../images/TipsADHD1.png";
 import Pic2 from "../images/TipsADHD2.png";
 import Pic3 from "../images/TipsADHD3.png";
