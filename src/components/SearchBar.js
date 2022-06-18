@@ -249,7 +249,7 @@ const SearchBar = (props) => {
           Search
         </button>
       </div>
-      <div className="flex relative top-44 justify-center">
+      <div className="flex relative top-44 pb-16 justify-center">
         <button
           className="py-2 px-3 bg-white rounded mx-4"
           value="Occupational"
