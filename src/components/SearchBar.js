@@ -36,6 +36,10 @@ const SearchBar = (props) => {
         // setItem(result.slice());
         // setFilter(result.slice());
         setItem(result);
+        const length = result.length;
+        if (props.alert1) {
+          props.alert1(length);
+        }
         filter.push(result);
         if (props.alert) {
           props.alert(filter);
@@ -107,7 +111,9 @@ const SearchBar = (props) => {
       filter.push(updatedList);
       console.log(filter);
     }
-
+    if (props.alert2) {
+      props.alert2(location.value);
+    }
     if (props.alert) {
       props.alert(filter);
     }
@@ -115,61 +121,88 @@ const SearchBar = (props) => {
 
   const handleFilter = (e) => {
     console.log(e.target.value);
-    e.preventDefault();
+
     if (e.target.value === "Speech") {
       const updatedList = item.filter(
         (p) => p.Specialization1 === "Speech Therapy"
       );
-
+      const length = updatedList.length;
+      if (props.alert1) {
+        props.alert1(length);
+      }
       filter.push(updatedList);
     }
     if (e.target.value === "Occupational") {
       const updatedList = item.filter(
         (p) => p.Specialization1 === "Occupational Therapy"
       );
-
+      const length = updatedList.length;
+      if (props.alert1) {
+        props.alert1(length);
+      }
       filter.push(updatedList);
     }
     if (e.target.value === "Adhd") {
       const updatedList = item.filter((p) => p.Specialization1 === "ADHD");
-
+      const length = updatedList.length;
+      if (props.alert1) {
+        props.alert1(length);
+      }
       filter.push(updatedList);
     }
     if (e.target.value === "Pediatric") {
       const updatedList = item.filter(
         (p) => p.Specialization1 === "Pediatrician"
       );
-
+      const length = updatedList.length;
+      if (props.alert1) {
+        props.alert1(length);
+      }
       filter.push(updatedList);
     }
     if (e.target.value === "Audiology") {
       const updatedList = item.filter((p) => p.Specialization1 === "Audiology");
-
+      const length = updatedList.length;
+      if (props.alert1) {
+        props.alert1(length);
+      }
       filter.push(updatedList);
     }
     if (e.target.value === "Child") {
       const updatedList = item.filter(
         (p) => p.Specialization1 === "Child health care centre"
       );
-
+      const length = updatedList.length;
+      if (props.alert1) {
+        props.alert1(length);
+      }
       filter.push(updatedList);
     }
     if (e.target.value === "Psychologist") {
       const updatedList = item.filter(
         (p) => p.Specialization1 === "Psychologist"
       );
-
+      const length = updatedList.length;
+      if (props.alert1) {
+        props.alert1(length);
+      }
       filter.push(updatedList);
     }
     if (e.target.value === "Addiction") {
       const updatedList = item.filter(
         (p) => p.Specialization1 === "Addiction treatment center"
       );
-
+      const length = updatedList.length;
+      if (props.alert1) {
+        props.alert1(length);
+      }
       filter.push(updatedList);
     }
     if (props.alert) {
       props.alert(filter);
+    }
+    if (props.alert3) {
+      props.alert3(therapy);
     }
   };
 
