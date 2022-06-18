@@ -181,7 +181,7 @@ const SearchBar = (props) => {
   // console.log(UniLocation, UniTherapy);
 
   return (
-    <div className="pt-24 bg-[url('images/doodle.png')] h-[70vh] bg-cover">
+    <div className="pt-24 bg-[url('images/doodle.png')] h-[75vh] bg-cover">
       <div className="text-center text-4xl font-bold text-white relative top-14">
         Find Child Specialists,Therapists & Special Educators In Your Area
       </div>
@@ -249,7 +249,7 @@ const SearchBar = (props) => {
           Search
         </button>
       </div>
-      <div className="flex relative top-44 pb-16 justify-center">
+      <div className="flex relative top-44 justify-center">
         <button
           className="py-2 px-3 bg-white rounded mx-4"
           value="Occupational"
