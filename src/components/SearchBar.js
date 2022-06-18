@@ -66,6 +66,7 @@ const SearchBar = (props) => {
           setUniTherapy(UniqueTherapy);
         }, 1000);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // const handleLocation = (event) => {
