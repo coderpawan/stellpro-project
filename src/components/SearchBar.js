@@ -6,7 +6,6 @@ import Select from "react-select";
 // import Doodle from "../images/doodle.png";
 
 const SearchBar = (props) => {
-  // const [error, setError] = useState();
   // const [filter, setFilter] = useState([]);
   const filter = [];
   const [item, setItem] = useState([]);
@@ -30,7 +29,7 @@ const SearchBar = (props) => {
 
   useEffect(() => {
     fetch(
-      "https://sheet.best/api/sheets/a93e79e9-9876-4270-a558-09e6f0f9db53?_raw=1"
+      "https://sheet.best/api/sheets/1824a705-c180-4d14-aeea-379945cbd08b?_raw=1"
     )
       .then((res) => res.json())
       .then((result) => {
@@ -67,7 +66,6 @@ const SearchBar = (props) => {
           setUniTherapy(UniqueTherapy);
         }, 1000);
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // const handleLocation = (event) => {
@@ -95,10 +93,16 @@ const SearchBar = (props) => {
     if (location && therapy) {
       const updatedList = item.filter(
         (p) =>
-          (p.Locality && p.City) === location.value &&
-          p.Specialization1 === therapy
+          (p.Locality === location.value && p.Specialization1 === therapy) ||
+          (p.Locality === location.value && p.Services1 === therapy) ||
+          (p.City === location.value && p.Services1 === therapy) ||
+          (p.City === location.value && p.Specialization1 === therapy)
       );
       console.log(updatedList);
+      const length = updatedList.length;
+      if (props.alert1) {
+        props.alert1(length);
+      }
       filter.push(updatedList);
       console.log(filter);
     }
@@ -132,7 +136,7 @@ const SearchBar = (props) => {
     }
     if (e.target.value === "Pediatric") {
       const updatedList = item.filter(
-        (p) => p.Specialization1 === "Pediatric Physiotherapy"
+        (p) => p.Specialization1 === "Pediatrician"
       );
 
       filter.push(updatedList);
@@ -142,23 +146,23 @@ const SearchBar = (props) => {
 
       filter.push(updatedList);
     }
-    if (e.target.value === "Behavioural") {
-      const updatedList = item.filter(
-        (p) => p.Specialization1 === "Behavioral Therapist"
-      );
-
-      filter.push(updatedList);
-    }
     if (e.target.value === "Child") {
       const updatedList = item.filter(
-        (p) => p.Specialization1 === "Child Psychology"
+        (p) => p.Specialization1 === "Child health care centre"
       );
 
       filter.push(updatedList);
     }
-    if (e.target.value === "Special") {
+    if (e.target.value === "Psychologist") {
       const updatedList = item.filter(
-        (p) => p.Specialization1 === "Special Educator"
+        (p) => p.Specialization1 === "Psychologist"
+      );
+
+      filter.push(updatedList);
+    }
+    if (e.target.value === "Addiction") {
+      const updatedList = item.filter(
+        (p) => p.Specialization1 === "Addiction treatment center"
       );
 
       filter.push(updatedList);
@@ -167,6 +171,11 @@ const SearchBar = (props) => {
       props.alert(filter);
     }
   };
+
+  // if (filter.size() === 0) {
+  //   console.log("No Clinic present in this area");
+  //   setError("No Clinic present in this area");
+  // }
 
   // console.log(UniLocation, UniTherapy);
 
@@ -263,10 +272,10 @@ const SearchBar = (props) => {
         </button>
         <button
           className="py-2 px-3 bg-white rounded mx-4"
-          value="Child"
+          value="Psychologist"
           onClick={handleFilter}
         >
-          Child Psychology
+          Psychologist
         </button>
         <button
           className="py-2 px-3 bg-white rounded mx-4"
@@ -280,21 +289,21 @@ const SearchBar = (props) => {
           value="Pediatric"
           onClick={handleFilter}
         >
-          Pediatric Physiotherapy
+          Pediatrician
         </button>
         <button
           className="py-2 px-3 bg-white rounded mx-4"
-          value="Behavioural"
+          value="Child"
           onClick={handleFilter}
         >
-          Behavioural Therapy
+          Child Health Care
         </button>
         <button
           className="py-2 px-3 bg-white rounded mx-4"
-          value="Special"
+          value="Addiction"
           onClick={handleFilter}
         >
-          Special Educator
+          Addiction Treatment
         </button>
       </div>
     </div>

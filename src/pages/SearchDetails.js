@@ -17,7 +17,7 @@ import { useGeolocated } from "react-geolocated";
 const SearchDetails = () => {
   const [doctors, setDoctors] = useState([]);
   const filtereddata = [];
-
+  const [error, setError] = useState();
   // const [therapy, setTherapy] = useState();
   // const [location, setLocation] = useState();
   // const [filter, setFilter] = useState(doctors);
@@ -43,7 +43,12 @@ const SearchDetails = () => {
     console.log(filtereddata);
     setDoctors(data);
   };
-
+  const props1 = (data) => {
+    if (data === 0) {
+      setError("No Clinic Present in this area for searched Specialization");
+    }
+  };
+  console.log(error);
   const { coords } = useGeolocated({
     positionOptions: {
       enableHighAccuracy: false,
@@ -114,7 +119,7 @@ const SearchDetails = () => {
   return (
     <div>
       <Navbar />
-      <SearchBar alert={props} />
+      <SearchBar alert={props} alert1={props1} />
       <div className="flex bg-green py-3 pl-32">
         {/* <div className="flex bg-white bg-opacity-20 w-[12%] rounded-sm ">
           <input type="checkbox" className="mt-[6px] w-[24px] h-[15px] ml-1" />
@@ -245,36 +250,53 @@ const SearchDetails = () => {
                       </div>
                     ) : null}
                     <div className="flex mt-6">
-                      <div className="w-[60%]">
-                        <div className="flex">
-                          <RiStethoscopeLine className="font-bold relative top-[2px] text-emerald-500" />
-                          <div className="text-sm ml-2">
-                            Specialist's Name :&nbsp;
-                          </div>
-                          {props.TherapistName ? (
+                      <div className="w-[80%]">
+                        {props.TherapistName ? (
+                          <div className="flex">
+                            <RiStethoscopeLine className="font-bold relative top-[2px] text-emerald-500" />
+
+                            <div className="text-sm ml-2">
+                              Specialist's Name :&nbsp;
+                            </div>
                             <div className="text-sm font-bold">
                               {props.TherapistName}
                             </div>
-                          ) : (
-                            <div className="text-sm font-bold">
-                              Not Available
-                            </div>
-                          )}
-                        </div>
+                          </div>
+                        ) : null}
                         <div className="flex mt-2">
                           <GiStarMedal className="font-bold relative top-[2px] text-emerald-500" />
-                          <div className="text-sm ml-2">
-                            Specialization :&nbsp;
-                          </div>
-                          {props.Specialization1 ? (
-                            <div className="text-sm font-bold">
-                              {props.Specialization1}
+                          {props.TherapistName ? (
+                            <div className="flex">
+                              <div className="text-sm ml-2">
+                                Specialization :&nbsp;
+                              </div>
+                              {props.Specialization1 ? (
+                                <div className="text-sm font-bold">
+                                  {props.Specialization1}
+                                </div>
+                              ) : (
+                                <div className="text-sm font-bold">
+                                  Not Available
+                                </div>
+                              )}
                             </div>
                           ) : (
-                            <div className="text-sm font-bold">
-                              Not Available
+                            <div className="flex">
+                              <div className="text-sm ml-2">
+                                Therapy Service :&nbsp;
+                              </div>
+                              {props.Services1 ? (
+                                <div className="text-sm font-bold">
+                                  {props.Services1}
+                                </div>
+                              ) : (
+                                <div className="text-sm font-bold">
+                                  Not Available
+                                </div>
+                              )}
                             </div>
                           )}
+
                           {/* {props.Specialization2 ? (
                             <div className="text-sm font-bold">
                               {props.Specialization2}
@@ -285,6 +307,41 @@ const SearchDetails = () => {
                             </div>
                           )} */}
                         </div>
+                        {props.Services2 ? (
+                          <div className="flex mt-2">
+                            <GiStarMedal className="font-bold relative top-[2px] text-emerald-500" />
+                            <div className="flex">
+                              <div className="text-sm ml-2">
+                                Other Services :&nbsp;
+                              </div>
+                              <div className="text-sm font-bold">
+                                {props.Services2}
+                              </div>
+                              {props.Services3 ? (
+                                <div className="text-sm font-bold">
+                                  ,&nbsp;{props.Services3}
+                                </div>
+                              ) : null}
+                              {props.Services4 ? (
+                                <div className="text-sm font-bold">
+                                  ,&nbsp;{props.Services4}
+                                </div>
+                              ) : null}
+                            </div>
+                          </div>
+                        ) : null}
+                        {props.Specialization2 ? (
+                          <div className="flex mt-2">
+                            <GiStarMedal className="font-bold relative top-[2px] text-emerald-500" />
+                            <div className="flex">
+                              <div className="text-sm ml-2">
+                                Another Specialization :&nbsp;
+                              </div>
+                              <div className="">{props.Specialization2}</div>
+                            </div>
+                          </div>
+                        ) : null}
+
                         <div className="flex mt-2">
                           <BsFlagFill className="font-bold relative top-[2px] text-emerald-500" />
                           <div className="text-sm ml-2">
@@ -355,7 +412,7 @@ const SearchDetails = () => {
                           </div>
                         </div> */}
                         <div className="bg-blue-500 px-7 py-1 rounded-lg mt-4">
-                          <a href="tel:+91 9749568594">
+                          <a href={`tel:+91 ${props.ContactNo}`}>
                             <div className="text-sm font-bold text-white text-center">
                               Call Now
                             </div>
