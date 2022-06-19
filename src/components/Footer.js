@@ -21,13 +21,13 @@ const Footer = () => {
                   <Link to="/">Home</Link>
                 </li>
                 <li class="mb-4 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
-                  <Link to="/">Blog</Link>
+                  <Link to="/blogs">Blog</Link>
                 </li>
                 <li class="mb-4 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
-                  <Link to="/">Find Specialists</Link>
+                  <Link to="/searchdetails">Find Specialists</Link>
                 </li>
                 <li class="mb-4 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
-                  <Link to="/">Assessments</Link>
+                  <Link to="/assessments">Assessments</Link>
                 </li>
               </ul>
             </div>
