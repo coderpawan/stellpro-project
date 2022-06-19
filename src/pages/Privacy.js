@@ -6,7 +6,7 @@ const Privacy = () => {
   return (
     <div>
       <Navbar />
-      <div className="mx-72 my-16">
+      <div className="mx-72 py-32">
         <div className="text-6xl">Privacy Policy</div>
         <div className="mt-6">
           This Privacy Policy explains what information belonging to you will be

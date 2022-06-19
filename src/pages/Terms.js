@@ -6,7 +6,7 @@ const Terms = () => {
   return (
     <div>
       <Navbar />
-      <div className="mx-72 my-16">
+      <div className="mx-72 py-32">
         <div className="text-6xl">Terms and Conditions</div>
 
         <div className="mt-6">
