@@ -23,8 +23,14 @@ const AfterADHD = () => {
       <Navbar />
       <div className="flex mx-28 pt-28 mb-16">
         <div className=" w-[70%]">
-          <div className="text-3xl font-bold my-8">
-            What can you do if your child has been diagnosed with ADHD?
+          <div className="flex">
+            <div className="text-3xl my-4 font-bold">
+              What to do if your child has been diagnosed with ADHD
+            </div>
+            <div className="ml-5 relative  text-sm top-6">
+              {" "}
+              ~ Posted on 23 Jun 2022
+            </div>
           </div>
           <img src={Pic1} alt="" className="w-[60%] relative left-[20%]" />
           <div className="my-4">

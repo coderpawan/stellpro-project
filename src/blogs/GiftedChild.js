@@ -24,8 +24,11 @@ const GiftedChild = () => {
       <Navbar />
       <div className="flex mx-28 pt-28 mb-16">
         <div className=" w-[70%]">
-          <div className="text-4xl my-4 font-bold">
-            10 Signs of a gifted child
+          <div className="flex">
+            <div className="text-3xl my-4 font-bold">
+              10 Best Special Needs Schools in India
+            </div>
+            <div className="ml-20 relative top-6"> ~ Posted on 23 Jun 2022</div>
           </div>
           <img src={Pic1} alt="" className="my-4" />
           <div className="my-4">

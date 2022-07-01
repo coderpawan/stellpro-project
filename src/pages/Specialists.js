@@ -10,7 +10,7 @@ const Specialists = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex bg-gray-100 w-[80%] relative left-[10%] px-20 my-16 rounded-2xl">
+      <div className="flex bg-gray-100 w-[80%] relative left-[10%] px-20 py-16 rounded-2xl">
         <img src={Artboard1} alt="" className="w-[40%] py-16" />
         <div className="w-[40%] ml-16">
           <div className="text-xl font-bold text-gray-600 text-center mt-7">

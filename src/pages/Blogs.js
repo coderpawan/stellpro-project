@@ -53,10 +53,10 @@ const Blogs = () => {
                         {post.topic}
                       </p>
 
-                      <p class="text-gray-400 text-center mt-5 mb-2">
+                      {/* <p class="text-gray-400 text-center mt-5 mb-2">
                         {post.date} in{" "}
                         <span className="text-black">{post.tag}</span>
-                      </p>
+                      </p> */}
                     </Link>
                   </div>
                 </div>

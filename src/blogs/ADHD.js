@@ -23,8 +23,11 @@ const ADHD = () => {
       <Navbar />
       <div className="flex mx-28 pt-28 mb-16">
         <div className=" w-[70%]">
-          <div className="text-3xl my-4 font-bold">
-            A Comprehensive Guide to ADHD Treatment
+          <div className="flex">
+            <div className="text-3xl my-4 font-bold">
+              A Comprehensive Guide to ADHD Treatment
+            </div>
+            <div className="ml-20 relative top-6"> ~ Posted on 23 Jun 2022</div>
           </div>
           <div className="">
             The most effective treatment options for attention deficit

@@ -23,8 +23,11 @@ const SignofADHD = () => {
       <Navbar />
       <div className="flex mx-28 pt-28 mb-16">
         <div className=" w-[70%]">
-          <div className="text-center font-bold text-3xl">
-            Signs of ADHD in Girls
+          <div className="flex">
+            <div className="text-3xl my-4 font-bold">
+              All About ADHD in Girls
+            </div>
+            <div className="ml-20 relative top-6"> ~ Posted on 23 Jun 2022</div>
           </div>
           <img src={Pic1} alt="" className="w-[60%] my-4" />
           <div className="my-4">

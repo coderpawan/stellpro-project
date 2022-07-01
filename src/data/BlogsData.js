@@ -6,6 +6,9 @@ import AfterADHD from "../images/AfterADHD1.png";
 import VirtualAutism from "../images/virtualautism1.png";
 import SpecialSchool from "../images/specialschool1.png";
 import GiftedChild from "../images/giftedchild1.png";
+import MildAutism from "../images/mildautism1.png";
+import Abatherapy from "../images/abatherapy1.png";
+import Babies from "../images/babies1.png";
 
 import OccupationalTherapy from "../images/occupational therapy.jpg";
 
@@ -81,6 +84,30 @@ const Data = [
     date: "March 21,2002",
     tag: "Parenting",
     link: "giftedchild",
+  },
+  {
+    id: 10,
+    image: MildAutism,
+    topic: " Mild Autism: Definition and Signs",
+    date: "March 21,2002",
+    tag: "Parenting",
+    link: "mildautism",
+  },
+  {
+    id: 11,
+    image: Babies,
+    topic: " What are the early signs of autism in babies?",
+    date: "March 21,2002",
+    tag: "Parenting",
+    link: "babies",
+  },
+  {
+    id: 12,
+    image: Abatherapy,
+    topic: " What is ABA therapy for Autism?",
+    date: "March 21,2002",
+    tag: "Parenting",
+    link: "aba",
   },
 ];
 

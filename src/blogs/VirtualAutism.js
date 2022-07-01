@@ -22,7 +22,12 @@ const VirtualAutism = () => {
       <Navbar />
       <div className="flex mx-28 pt-28 mb-16">
         <div className=" w-[70%]">
-          <div className="text-4xl my-4 font-bold">What is Virtual Autism?</div>
+          <div className="flex">
+            <div className="text-3xl my-4 font-bold">
+              What is Virtual Autism?
+            </div>
+            <div className="ml-20 relative top-6"> ~ Posted on 23 Jun 2022</div>
+          </div>
           <img src={Pic1} alt="" className="" />
           <div className="my-4">
             Virtual autism is a disorder occurring in young children upto age

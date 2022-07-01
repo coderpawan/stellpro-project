@@ -22,11 +22,14 @@ const Occupationaltherapy = () => {
       <Navbar />
       <div className="flex mx-28 pt-28 mb-16">
         <div className=" w-[70%]">
-          <img src={OccupationalTherapy} alt="" className="" />
-          <div className="text-4xl my-4">
-            Does my child need Occupational Therapy?
+          <div className="flex">
+            <div className="text-3xl my-4 font-bold">
+              Does my child need Occupational Therapy?
+            </div>
+            <div className="ml-20 relative top-6"> ~ Posted on 23 Jun 2022</div>
           </div>
-          <div className="text-lg">
+          <img src={OccupationalTherapy} alt="" className="" />
+          <div className="text-lg my-4">
             A child's occupation is to play, grow and learn new skills.
             Unfortunately, some children have difficulty learning critical life
             skills due to physical, cognitive, and sensory delays or

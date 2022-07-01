@@ -17,14 +17,16 @@ import OnlineSession from "../images/OnlineSession.jpeg";
 import ResourcesPrograms from "../images/Programs.jpeg";
 import JoinCommunity from "../images/JoinCommunity.jpeg";
 
-const Cards = ({ title, content, image }) => {
+const Cards = ({ title, content, image, link }) => {
   return (
-    <div class="max-w-[230px] rounded-2xl overflow-hidden shadow-2xl mx-5">
-      <img class="w-full" src={image} alt="Sunset in the mountains" />
-      <div class="px-6 py-4">
-        <div class="font-bold text-gray-600 text-xl mb-2">{title}</div>
-        <p class="text-gray-700 text-base">{content}</p>
-      </div>
+    <div class="max-w-[190px] rounded-2xl overflow-hidden shadow-2xl mx-5">
+      <Link to={`${link}`}>
+        <img class="w-full" src={image} alt="Sunset in the mountains" />
+        <div class="px-6 py-4">
+          <div class="font-bold text-gray-600 text-xl mb-2">{title}</div>
+          <p class="text-gray-700 text-base">{content}</p>
+        </div>
+      </Link>
     </div>
   );
 };
@@ -56,28 +58,33 @@ const LandingPage = () => {
         <div className="flex my-10 justify-center">
           <Cards
             title="Find Specialists Near You"
-            content="Lorem ipsum dolor sit amet."
+            // content="Lorem ipsum dolor sit amet."
             image={FindSpecialist}
+            link="/searchdetails"
           />
           <Cards
             title="Book Online Sessions"
-            content="Lorem ipsum dolor sit amet."
+            // content="Lorem ipsum dolor sit amet."
             image={OnlineSession}
+            link="/assessments"
           />
           <Cards
             title="Take Child Assessment"
-            content="Lorem ipsum dolor sit amet."
+            // content="Lorem ipsum dolor sit amet."
             image={ChildAssesment}
+            link="/assessments"
           />
           <Cards
             title="Resources and Programs"
-            content="Lorem ipsum dolor sit amet."
+            // content="Lorem ipsum dolor sit amet."
             image={ResourcesPrograms}
+            link="/videoondemand"
           />
           <Cards
             title="Join Community"
-            content="Lorem ipsum dolor sit amet."
+            // content="Lorem ipsum dolor sit amet."
             image={JoinCommunity}
+            link="/community"
           />
         </div>
       </div>

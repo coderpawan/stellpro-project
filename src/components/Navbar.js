@@ -2,12 +2,42 @@ import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { NavLink, Link } from "react-router-dom";
 import Logo from "../images/logo.png";
+import Modal from "react-modal";
+import SignIn from "./SignIn";
+import { auth } from "./firebase-config";
+import { signOut } from "firebase/auth";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+  const [more, setMore] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  /* const [user, setUser] = useState(); */
+  const user = auth.currentUser;
+  console.log(user);
+  const Signin = () => {
+    setModalIsOpen(true);
+  };
+  const Logout = async (e) => {
+    e.preventDefault();
+    await signOut(auth);
+    window.location.reload(false);
+  };
+
+  /* onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+    setModalIsOpen(!modalIsOpen);
+  }); */
+
   return (
     <div>
-      <nav className="bg-white shadow-sm fixed w-full z-10">
+      <nav
+        onMouseLeave={() => {
+          setDropdown(false);
+          setMore(false);
+        }}
+        className="bg-white shadow-sm fixed w-full z-10"
+      >
         <div className="w-full">
           <div className="flex items-center h-20 w-full">
             <div className="flex items-center  mx-20  justify-between w-full">
@@ -40,25 +70,61 @@ function Navbar() {
                   </NavLink>
                   <NavLink
                     activeclassname="tab"
-                    to="/assessments"
+                    to="/community"
                     smooth={true}
                     offset={50}
                     duration={500}
                     className="cursor-pointer hover:bg-[#FE7A15] text-gray-600 hover:text-white px-2 py-2 rounded-md text-[16px] font-bold"
                   >
-                    Assessments
+                    Community
                   </NavLink>
 
-                  <NavLink
-                    activeclassname="tab"
-                    to="/videoondemand"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
+                  <div className=""></div>
+
+                  <div
+                    onMouseEnter={() => {
+                      setDropdown(true);
+                    }}
                     className="cursor-pointer hover:bg-[#FE7A15] text-gray-600 hover:text-white px-2 py-2 rounded-md text-[16px] font-bold"
                   >
                     Learning Tools
-                  </NavLink>
+                  </div>
+                  {dropdown ? (
+                    <div
+                      onMouseEnter={() => {
+                        setDropdown(true);
+                      }}
+                      onMouseLeave={() => {
+                        setDropdown(false);
+                      }}
+                      className="px-1 py-2 bg-white absolute top-16 rounded-sm right-[400px] border-2 border-solid border-gray-300"
+                    >
+                      <div className="">
+                        <NavLink
+                          activeclassname="tab"
+                          to="/videoondemand"
+                          smooth={true}
+                          offset={50}
+                          duration={500}
+                          className="mt-2 text-lg px-2 py-1 rounded-sm hover:text-[#FE7A15]"
+                        >
+                          Programs
+                        </NavLink>
+                      </div>
+                      <div className="">
+                        <NavLink
+                          activeclassname="tab"
+                          to="/assessments"
+                          smooth={true}
+                          offset={50}
+                          duration={500}
+                          className="mt-5 text-lg px-2 py-1 rounded-sm hover:text-[#FE7A15]"
+                        >
+                          Assessments
+                        </NavLink>
+                      </div>
+                    </div>
+                  ) : null}
                   <NavLink
                     activeclassname="tab"
                     to="/blogs"
@@ -69,17 +135,111 @@ function Navbar() {
                   >
                     Blog
                   </NavLink>
-
-                  <NavLink
-                    activeclassname="contact"
-                    to="/"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer bg-[#FE7A15] text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
+                  <div
+                    onMouseEnter={() => {
+                      setMore(true);
+                    }}
+                    className="cursor-pointer hover:bg-[#FE7A15] text-gray-600 hover:text-white px-2 py-2 rounded-md text-[16px] font-bold"
                   >
-                    SignIn
-                  </NavLink>
+                    More
+                  </div>
+                  {more ? (
+                    <div
+                      onMouseEnter={() => {
+                        setMore(true);
+                      }}
+                      onMouseLeave={() => {
+                        setMore(false);
+                      }}
+                      className="px-1 py-2 bg-white absolute top-16 rounded-sm right-[230px] border-2 border-solid border-gray-300"
+                    >
+                      <div className="">
+                        <NavLink
+                          activeclassname="tab"
+                          to="/aboutus"
+                          smooth={true}
+                          offset={50}
+                          duration={500}
+                          className="mt-2 text-lg px-2 py-1 rounded-sm hover:text-[#FE7A15]"
+                        >
+                          About Us
+                        </NavLink>
+                      </div>
+                      <div className="">
+                        <NavLink
+                          activeclassname="tab"
+                          to="/"
+                          smooth={true}
+                          offset={50}
+                          duration={500}
+                          className="mt-5 text-lg px-2 py-1 rounded-sm hover:text-[#FE7A15]"
+                        >
+                          Our Team
+                        </NavLink>
+                      </div>
+                    </div>
+                  ) : null}
+                  {user ? (
+                    <div
+                      onClick={Logout}
+                      className="cursor-pointer bg-[#FE7A15] text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
+                    >
+                      SignOut
+                    </div>
+                  ) : (
+                    <div
+                      onClick={Signin}
+                      className="cursor-pointer bg-[#FE7A15] text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
+                    >
+                      SignIn
+                    </div>
+                  )}
+
+                  {modalIsOpen && (
+                    <Modal
+                      isOpen={modalIsOpen}
+                      ariaHideApp={false}
+                      onRequestClose={() => setModalIsOpen(false)}
+                      style={{
+                        overlay: {
+                          backgroundColor: "rgba(0, 0, 0, 0.6)",
+                          zIndex: 1000,
+                        },
+                        content: {
+                          backgroundColor: "rgba(250,250,250)",
+                          width: "40%",
+                          height: "100vh",
+                          position: "absolute",
+                          top: "0px",
+                          left: "30%",
+                          right: "40px",
+                          bottom: "40px",
+                          border: "1px solid #ccc",
+                          background: "#fff",
+                          overflow: "auto",
+                          WebkitOverflowScrolling: "touch",
+                          borderRadius: "4px",
+                          outline: "none",
+                          padding: "20px",
+                        },
+                      }}
+
+                      // shouldCloseOnOverlayClick={false}
+                    >
+                      <div>
+                        <div className="flex">
+                          <img src={Logo} alt="" className="h-10" />
+                          <div
+                            onClick={() => setModalIsOpen(false)}
+                            className="relative left-[60%] top-2 cursor-pointer"
+                          >
+                            Close
+                          </div>
+                        </div>
+                        <SignIn />
+                      </div>
+                    </Modal>
+                  )}
                   <NavLink
                     activeclassname="contact"
                     to="/specialists"

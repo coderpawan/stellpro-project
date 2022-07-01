@@ -23,8 +23,11 @@ const ManageADHD = () => {
       <Navbar />
       <div className="flex mx-28 pt-28 mb-16">
         <div className=" w-[70%]">
-          <div className="text-3xl font-bold text-center my-8">
-            Managing child's ADHD in school
+          <div className="flex">
+            <div className="text-3xl my-4 font-bold">
+              Methods to manage a child's ADHD in school
+            </div>
+            <div className="ml-20 relative top-6"> ~ Posted on 23 Jun 2022</div>
           </div>
           <img src={Pic1} alt="" className="w-[60%] relative left-[20%]" />
           <div className="my-4">

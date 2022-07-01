@@ -1,8 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import SearchBar from "../components/SearchBar";
-import LogoPro from "../images/Picture2.png";
-import Care1 from "../images/dravid.webp";
+import LogoPro from "../images/white pro logo.jpeg";
+import Care1 from "../images/care.png";
 import { GrUserManager, GrNotes } from "react-icons/gr";
 import { FaRegHandshake } from "react-icons/fa";
 import { BiRupee } from "react-icons/bi";
@@ -27,7 +26,6 @@ const StellproCare = () => {
   return (
     <div>
       <Navbar />
-      <SearchBar />
 
       <div className="flex bg-[#0191B4] mb-20 pb-20 pt-16 mx-28">
         <div className=" ml-16">
@@ -45,14 +43,8 @@ const StellproCare = () => {
               Call 0804-568-6920
             </button>
           </div>
-          <div className="font-bold text-xl text-white mt-8 relative left-[90%] z-50">
-            You are in safe hands
-          </div>
-          <div className="text-white text-lg mt-1 relative left-[90%] z-50">
-            - Rahul Dravid
-          </div>
         </div>
-        <img src={Care1} alt="" className="w-[120%] relative right-16" />
+        <img src={Care1} alt="" className="h-[60vh] relative top-20 right-16" />
       </div>
       <div className="flex">
         <div className="ml-36 w-[45%]">

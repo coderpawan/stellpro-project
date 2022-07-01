@@ -60,7 +60,9 @@ const SearchBar = (props) => {
           setUniLocation(UniqueLocation);
           result.map((items) => {
             var findItem = UniqueTherapy.find(
-              (e) => e.Specialization1 === items.Specialization1
+              (e) =>
+                e.Specialization1 === items.Specialization1 ||
+                e.Services1 === items.Services1
             );
             if (!findItem) {
               UniqueTherapy.push(items);
@@ -216,7 +218,8 @@ const SearchBar = (props) => {
   return (
     <div className="pt-24 bg-[url('images/doodle.png')] h-[75vh] bg-cover">
       <div className="text-center text-4xl font-bold text-white relative top-14">
-        Find Child Specialists,Therapists & Special Educators In Your Area
+        Find Child Development Specialists,Therapists & Special Educators In
+        Your Area
       </div>
 
       <div className="flex justify-center mt-3 bg-white border-[12px] border-opacity-10 border-orange relative left-[15%] top-28 w-[70%] pb-2 pt-5 rounded-2xl">
@@ -273,72 +276,89 @@ const SearchBar = (props) => {
                 </option>
               );
             })}
+            {/* {UniTherapy.map((props) => {
+              return (
+                {props.Specialization1? (<option
+                  value={props.Specialization1}
+                  className=""
+                  key={props.id}
+                >
+                  {props.Specialization1}
+                </option>): (<option
+                  value={props.Specialization1}
+                  className=""
+                  key={props.id}
+                >
+                  {props.Specialization1}
+                </option>)}
+              );
+            })} */}
           </select>
         </div>
         <button
-          className="border-2 px-5 rounded-2xl mx-6 h-10 relative top-[6px] text-2xl font-bold text-white bg-orange"
+          className="border-2 px-5 rounded-2xl mx-6 h-10 relative top-[6px] text-xl font-bold text-white bg-orange"
           onClick={SearchDoctors}
         >
           Search
         </button>
       </div>
-      <div className="flex relative top-44 justify-center">
+      <div className="flex relative top-40 justify-center">
         <button
-          className="py-2 px-3 bg-white rounded mx-4"
+          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
           value="Occupational"
           onClick={handleFilter}
         >
           Occupational Therapy
         </button>
         <button
-          className="py-2 px-3 bg-white rounded mx-4"
+          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
           value="Speech"
           onClick={handleFilter}
         >
           Speech Therapy
         </button>
         <button
-          className="py-2 px-3 bg-white rounded mx-4"
+          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
           value="Audiology"
           onClick={handleFilter}
         >
           Audiology
         </button>
         <button
-          className="py-2 px-3 bg-white rounded mx-4"
+          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
           value="Psychologist"
           onClick={handleFilter}
         >
           Psychologist
         </button>
-        <button
-          className="py-2 px-3 bg-white rounded mx-4"
+        {/* <button
+          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
           value="Adhd"
           onClick={handleFilter}
         >
           ADHD
-        </button>
+        </button> */}
         <button
-          className="py-2 px-3 bg-white rounded mx-4"
+          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
           value="Pediatric"
           onClick={handleFilter}
         >
           Pediatrician
         </button>
         <button
-          className="py-2 px-3 bg-white rounded mx-4"
+          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
           value="Child"
           onClick={handleFilter}
         >
           Child Health Care
         </button>
-        <button
-          className="py-2 px-3 bg-white rounded mx-4"
+        {/* <button
+          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
           value="Addiction"
           onClick={handleFilter}
         >
           Addiction Treatment
-        </button>
+        </button> */}
       </div>
     </div>
   );
