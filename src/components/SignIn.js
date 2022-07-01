@@ -32,6 +32,7 @@ const SignIn = () => {
   const provider = new GoogleAuthProvider();
   const [loginError, setLoginError] = useState();
   const [registerError, setRegisterError] = useState();
+  const [mobileError, setMobileError] = useState();
 
   const HandleSignIn = () => {
     setTogglepage(!togglepage);
@@ -161,12 +162,14 @@ const SignIn = () => {
           // User signed in successfully.
           const user = result.user;
           console.log(user);
+          setMobileError("Please Enter Correct Credentials");
+          // window.location.reload(false);
         })
         .catch((error) => {
           // User couldn't sign in (bad verification code?)
           // ...
+          console.log(error);
         });
-      window.location.reload(false);
     }
   };
 
@@ -334,6 +337,11 @@ const SignIn = () => {
                   Request OTP
                 </button>
               )}
+              {mobileError ? (
+                <div className="bg-red-500 text-white text-sm py-1 px-2 w-[60%] mt-3 rounded-lg">
+                  {mobileError}
+                </div>
+              ) : null}
 
               <div className="" id="recaptcha"></div>
             </div>
