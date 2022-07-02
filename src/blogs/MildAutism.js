@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Pic1 from "../images/mildautism1.png";
-import Pic2 from "../images/mildautism2.png";
-import Pic3 from "../images/mildautism3.png";
+// import Pic1 from "../images/mildautism1.png";
+// import Pic2 from "../images/mildautism2.png";
+// import Pic3 from "../images/mildautism3.png";
 import { FaFacebookF } from "react-icons/fa";
 import { BsTwitter } from "react-icons/bs";
 import { BsWhatsapp } from "react-icons/bs";

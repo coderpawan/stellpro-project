@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Doctor from "../images/doctors.png";
 import ConsultantData from "../data/ConsultantData";
 import ExpertData from "../data/ExpertData";
 import Pic1 from "../images/aboutus1.jpeg";
