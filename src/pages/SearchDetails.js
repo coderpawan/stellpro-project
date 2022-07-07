@@ -4,6 +4,9 @@ import SearchBar from "../components/SearchBar";
 import Sticker from "../images/verified.svg";
 import Doctor from "../images/consultation.jpg";
 import Map from "../components/Map";
+import Logo from "../images/logo.png";
+import Modal from "react-modal";
+import Review from "../components/Review";
 
 import {
   RiStethoscopeLine,
@@ -24,6 +27,8 @@ const SearchDetails = () => {
   const [error, setError] = useState();
   const [googleLat, setGoogleLat] = useState();
   const [googleLong, setGoogleLong] = useState();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [company, setCompany] = useState();
   // const [therapy, setTherapy] = useState();
   // const [location, setLocation] = useState();
   // const [filter, setFilter] = useState(doctors);
@@ -38,6 +43,10 @@ const SearchDetails = () => {
   //       // setDoctors(result);
   //     });
   // }, []);
+
+  const ReviewClinic = () => {
+    setModalIsOpen(true);
+  };
 
   const props = (data) => {
     // console.log(data[0]);
@@ -512,15 +521,72 @@ const SearchDetails = () => {
                                     View Details
                                   </div>
                                 </div>
+                                <div className="bg-blue-500 px-7 py-1 rounded-lg mt-4">
+                                  <div
+                                    onClick={() => {
+                                      ReviewClinic();
+                                      setCompany(props.ClinicName);
+                                    }}
+                                    className="cursor-pointer text-sm font-bold text-white text-center"
+                                  >
+                                    Review this
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                        
                         <div className="h-[1px] bg-gray-200 w-[70%]"></div>
                       </div>
                     );
                   })}
                 </div>
+                {modalIsOpen && (
+                          <Modal
+                            isOpen={modalIsOpen}
+                            ariaHideApp={false}
+                            onRequestClose={() => setModalIsOpen(false)}
+                            style={{
+                              overlay: {
+                                backgroundColor: "rgba(0, 0, 0, 0.6)",
+                                zIndex: 1000,
+                              },
+                              content: {
+                                backgroundColor: "rgba(250,250,250)",
+                                width: "40%",
+                                height: "100vh",
+                                position: "absolute",
+                                top: "0px",
+                                left: "30%",
+                                right: "40px",
+                                bottom: "40px",
+                                border: "1px solid #ccc",
+                                background: "#fff",
+                                overflow: "auto",
+                                WebkitOverflowScrolling: "touch",
+                                borderRadius: "4px",
+                                outline: "none",
+                                padding: "20px",
+                              },
+                            }}
+
+                            // shouldCloseOnOverlayClick={false}
+                          >
+                            <div>
+                              <div className="flex">
+                                <img src={Logo} alt="" className="h-10" />
+                                <div
+                                  onClick={() => setModalIsOpen(false)}
+                                  className="relative left-[60%] top-2 cursor-pointer"
+                                >
+                                  Close
+                                </div>
+                              </div>
+                              <Review company={company} />
+                            </div>
+                          </Modal>
+                        )}
                 <div className="w-[30%]">
                   <div className="bg-red-300">
                     {/* <iframe

@@ -1,47 +1,41 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Artboard1 from "../images/Picture4.png";
-import Artboard2 from "../images/Picture5.png";
-import Artboard3 from "../images/Picture6.png";
-import Artboard4 from "../images/Picture7.png";
+import Artboard2 from "../images/earning.png";
+import Artboard3 from "../images/hostrecord.png";
+import Artboard4 from "../images/listing.png";
+import Care from "../images/care.png";
 
 const Specialists = () => {
   return (
     <div>
       <Navbar />
       <div className="flex bg-gray-100 w-[80%] relative left-[10%] px-20 py-16 rounded-2xl">
-        <img src={Artboard1} alt="" className="w-[40%] py-16" />
+        <img src={Care} alt="" className="w-[40%] py-16" />
         <div className="w-[40%] ml-16">
-          <div className="text-xl font-bold text-gray-600 text-center mt-7">
-            Are you a Special Educat ?
+          <div className="text-xl font-bold text-gray-600 text-center mt-24">
+            Are you a specialist who can help children 2-12 in their
+            developmental journey?
           </div>
-          <div className="text-2xl mt-6 px-10 font-bold bg-[#0191b4] text-center text-white py-2 rounded-2xl">
+          {/* <div className="text-2xl mt-6 px-10 font-bold bg-[#0191b4] text-center text-white py-2 rounded-2xl">
             Become a DemDee Professional
           </div>
           <div className="text-xl text-gray-400 text-center mt-8">
             Work from home, earn and build your practice
-          </div>
+          </div> */}
           <div className="flex mt-8">
             <div className="bg-[#fe7a15] px-12 py-2 rounded-lg mr-5 text-sm font-bold text-white">
-              Apply Now
+              CTA1: List with us
             </div>
-            <a
-              href="https://wa.me/9749568594"
-              class="whatsapp_float"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="bg-[#d3dd18] px-4 py-2 rounded-lg text-sm font-bold text-white">
-                Know more on Whatsapp
-              </div>
-            </a>
+            <div className="bg-green px-12 py-2 rounded-lg mr-5 text-sm font-bold text-white">
+              CTA2: Become a Program Partner
+            </div>
           </div>
         </div>
       </div>
-      <div className="flex">
-        <div className="w-[20%] ml-20 relative left-[10%] my-20">
-          <img src={Artboard2} alt="" className="relative left-[20%]" />
+      <div className="flex justify-center">
+        <div className="w-[20%] mx-20 my-20">
+          <img src={Artboard2} alt="" className="" />
           <div className=" mt-2">
             <div className="text-center text-2xl font-bold mt-6">
               Secured Earnings
@@ -52,8 +46,8 @@ const Specialists = () => {
             </div>
           </div>
         </div>
-        <div className="w-[20%] ml-20 relative left-[10%] my-20">
-          <img src={Artboard3} alt="" className="relative left-[20%]" />
+        <div className="w-[20%] mx-20 my-20">
+          <img src={Artboard3} alt="" className="" />
           <div className=" mt-2">
             <div className="text-center text-2xl font-bold mt-6">
               Flexibility
@@ -63,8 +57,8 @@ const Specialists = () => {
             </div>
           </div>
         </div>
-        <div className="w-[20%] ml-20 relative left-[10%] my-20">
-          <img src={Artboard4} alt="" className="relative left-[20%]" />
+        <div className="w-[20%] mx-20 my-20">
+          <img src={Artboard4} alt="" className="" />
           <div className=" mt-2">
             <div className="text-center text-2xl font-bold mt-6">
               Grow with Us

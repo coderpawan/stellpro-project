@@ -57,21 +57,20 @@ const Footer = () => {
                   <Link to="/" className="flex">
                     <MdLocationPin />
                     <div className="ml-3 text-sm w-[50%]">
-                      #3, 14th main, HSR Layout Block 5 c/o Social Alpha,
-                      Bengaluru, Karnataka 560102
+                      JASAS C-58/8, SECTOR-62, NOIDA ,UP ,201301
                     </div>
                   </Link>
                 </li>
                 <li class="mb-4 hover:text-gray-800 dark:hover:text-white relative left-32 transition-colors duration-200">
                   <a href="mailto:someone@example.com" className="flex">
                     <GrMail />
-                    <div className=" text-sm w-[35%]">Hello@gmail.com</div>
+                    <div className=" text-sm w-[35%]">connect@demdee.com</div>
                   </a>
                 </li>
                 <li class="mb-4 hover:text-gray-800 dark:hover:text-white relative left-32 transition-colors duration-200">
-                  <a href="tel:+91 9749568594" className="flex">
+                  <a href="tel:+91 8826241114" className="flex">
                     <AiTwotonePhone />
-                    <div className=" text-sm w-[35%]">+91 9749568594</div>
+                    <div className=" text-sm w-[35%]">+91 8826241114</div>
                   </a>
                 </li>
               </ul>
@@ -90,7 +89,7 @@ const Footer = () => {
           </a>
         </div>
         <div class="text-center pt-10 sm:pt-12 font-light flex items-center justify-center">
-          stellprolearning © 2021
+          Stellprolearning © 2022
         </div>
       </div>
     </div>

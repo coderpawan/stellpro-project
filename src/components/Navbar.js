@@ -100,16 +100,14 @@ function Navbar() {
                       className="px-1 py-2 bg-white absolute top-16 rounded-sm right-[400px] border-2 border-solid border-gray-300"
                     >
                       <div className="">
-                        <NavLink
-                          activeclassname="tab"
-                          to="/videoondemand"
-                          smooth={true}
-                          offset={50}
-                          duration={500}
+                        <a
+                          href="https://shashiyadav6219.ongraphy.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="mt-2 text-lg px-2 py-1 rounded-sm hover:text-[#FE7A15]"
                         >
                           Programs
-                        </NavLink>
+                        </a>
                       </div>
                       <div className="">
                         <NavLink

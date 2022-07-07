@@ -6,8 +6,6 @@ import Doctors from "../images/Picture1.png";
 import WhiteProLogo from "../images/white pro logo.jpeg";
 
 import Footer from "../components/Footer";
-import Care1 from "../images/dravid.webp";
-import Logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import Testimonial from "../components/Testimonial";
 import Artboard1 from "../images/whatwedo.jpeg";
@@ -160,7 +158,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="fixed left-[75%] top-[510px] flex bg-gradient-to-r from-[#d3dd18] to-[#ffffff] rounded-2xl z-50">
+      {/* <div className="fixed left-[75%] top-[510px] flex bg-gradient-to-r from-[#d3dd18] to-[#ffffff] rounded-2xl z-50">
         <div className="w-36 ml-3 mt-2">
           <img src={Logo} alt="" className="w-20" />
           <div className="mt-3">
@@ -175,7 +173,7 @@ const LandingPage = () => {
           </Link>
         </div>
         <img src={Care1} alt="" className="w-40 rounded-b-2xl" />
-      </div>
+      </div> */}
 
       <Footer />
     </div>
