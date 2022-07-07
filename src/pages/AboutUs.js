@@ -131,7 +131,7 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="w-[27%]">
-            <div className="p-11 bg-green text-center leading-[53px]">
+            <div className="p-11 bg-green text-center leading-[45px]">
               <span className="text-blue-700 text-2xl font-bold">
                 There is{" "}
               </span>
