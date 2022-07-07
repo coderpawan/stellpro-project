@@ -111,8 +111,8 @@ const AboutUs = () => {
       <div className="">
         <div className="flex justify-center mt-16">
           <div className="w-[27%]">
-            <img src={Pic2} alt="" className="" />
-            <div className="p-10 bg-deepblue">
+            <img src={Pic2} alt="" className="h-[360px]" />
+            <div className="p-10 bg-deepblue h-[360px]">
               <div className="text-5xl font-bold text-center text-green">
                 1 in 8
               </div>
@@ -131,7 +131,7 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="w-[27%]">
-            <div className="p-11 bg-green text-center leading-[45px]">
+            <div className="p-11 bg-green text-center leading-[45px] h-[360px]">
               <span className="text-blue-700 text-2xl font-bold">
                 There is{" "}
               </span>
@@ -151,11 +151,11 @@ const AboutUs = () => {
               <span className="text-blue-700 text-3xl font-bold">with </span>
               <span className="text-white text-3xl font-bold">parents</span>
             </div>
-            <img src={Pic3} alt="" className="" />
+            <img src={Pic3} alt="" className="h-[360px]" />
           </div>
           <div className="w-[27%]">
-            <img src={Pic4} alt="" className="" />
-            <div className="p-10 bg-deepblue leading-8">
+            <img src={Pic4} alt="" className="h-[360px]" />
+            <div className="p-10 bg-deepblue leading-8 h-[360px]">
               <div className="text-center italic">
                 <span className="text-blue-900 text-3xl font-bold ">Low </span>
                 <span className="text-white text-3xl font-bold">
