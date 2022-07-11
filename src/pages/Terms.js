@@ -6,8 +6,10 @@ const Terms = () => {
   return (
     <div>
       <Navbar />
-      <div className="mx-72 py-32">
-        <div className="text-6xl">Terms and Conditions</div>
+      <div className="md:mx-72 mx-3 md:py-32 py-24">
+        <div className="md:text-6xl text-3xl text-center">
+          Terms and Conditions
+        </div>
 
         <div className="mt-6">
           Demdee.pro also makes certain choices available to you when it comes

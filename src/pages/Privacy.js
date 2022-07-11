@@ -6,8 +6,8 @@ const Privacy = () => {
   return (
     <div>
       <Navbar />
-      <div className="mx-72 py-32">
-        <div className="text-6xl">Privacy Policy</div>
+      <div className="md:mx-72 mx-3 md:py-32 py-20">
+        <div className="md:text-6xl text-3xl text-center">Privacy Policy</div>
         <div className="mt-6">
           This Privacy Policy explains what information belonging to you will be
           collected and used by Demdee.pro (“Demdee.pro,” “we,” “us,” or “our”)
