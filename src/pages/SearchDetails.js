@@ -28,6 +28,7 @@ const SearchDetails = () => {
   const [googleLat, setGoogleLat] = useState();
   const [googleLong, setGoogleLong] = useState();
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpenMobile, setModalIsOpenMobile] = useState(false);
   const [company, setCompany] = useState();
   // const [therapy, setTherapy] = useState();
   // const [location, setLocation] = useState();
@@ -44,9 +45,8 @@ const SearchDetails = () => {
   //     });
   // }, []);
 
-  const ReviewClinic = () => {
-    setModalIsOpen(true);
-  };
+  // const ReviewClinic = () => {
+  // };
 
   const props = (data) => {
     // console.log(data[0]);
@@ -244,7 +244,7 @@ const SearchDetails = () => {
       ) : (
         <div className="flex">
           <div className="bg-gray-100 w-full">
-            <div className="mx-16 py-10">
+            <div className="md:mx-16 mx-5 py-10">
               {/* {location ? (
           <div className="">
             <div className="font-bold text-2xl">
@@ -299,21 +299,21 @@ const SearchDetails = () => {
                   </div>
                 </div>
               ) : null}
-              <div className="flex">
-                <div className="w-[70%] pr-5">
+              <div className="md:flex">
+                <div className="md:w-[70%] w-[100%] md:pr-5">
                   {doctors[0]?.map((props) => {
                     return (
                       <div className="">
-                        <div className="flex my-7">
+                        <div className="md:flex block md:my-7">
                           <div className="">
                             <img
                               src={Doctor}
                               alt=""
-                              className="h-56 bg-white py-6 rounded-l-2xl relative top-8"
+                              className="md:h-56 h-40 bg-white py-6 rounded-l-2xl relative top-8 md:left-0 left-[25%]"
                             />
                           </div>
 
-                          <div className="p-6 bg-white">
+                          <div className="md:p-6 py-6 bg-white">
                             <div className="flex">
                               <div className="text-2xl text-blue-400 ">
                                 {props.ClinicName}
@@ -335,7 +335,7 @@ const SearchDetails = () => {
                                     setGoogleLat(props.Latitude);
                                     setGoogleLong(props.Longitude);
                                   }}
-                                  className="flex cursor-pointer px-2 py-[3px] rounded-xl mt-3 opacity-50 bg-black text-white w-fit ml-10"
+                                  className="md:flex hidden cursor-pointer px-2 py-[3px] rounded-xl mt-3 opacity-50 bg-black text-white w-fit ml-10"
                                 >
                                   <MdLocationOn className="text-white mt-1" />
                                   <div className="ml-2 text-white">Map</div>
@@ -343,8 +343,8 @@ const SearchDetails = () => {
                               </div>
                             ) : null}
 
-                            <div className="flex mt-6">
-                              <div className="w-[80%]">
+                            <div className="md:flex mt-6">
+                              <div className="md:w-[80%]">
                                 {props.TherapistName ? (
                                   <div className="flex">
                                     <RiStethoscopeLine className="font-bold relative top-[2px] text-emerald-500" />
@@ -497,11 +497,11 @@ const SearchDetails = () => {
                         </div>
                       </div> */}
                               </div>
-                              <div className="w-48 text-sm mr-2 ml-10">
+                              <div className="md:w-48 text-sm mr-2 md:ml-10 my-2">
                                 {props.Address}
                               </div>
-                              <div className="w-[1px] h-36 bg-gray-500 mr-5"></div>
-                              <div className="w-[40%]">
+                              <div className="md:w-[1px] md:h-36 h-[1px] w-[100%] bg-gray-500 md:mr-5"></div>
+                              <div className="md:w-[40%] flex md:block">
                                 {/* <div className="flex justify-center">
                         <BsFillCalendarEventFill className="text-green-600 text-[12px] relative top-[5px]" />
                         <div className="text-sm text-green-600 font-bold ml-3">
@@ -509,25 +509,36 @@ const SearchDetails = () => {
                           Available Today{" "}
                         </div>
                       </div> */}
-                                <div className="bg-blue-500 px-7 py-1 rounded-lg mt-4">
+                                <div className="bg-blue-500 md:px-7 px-3 mx-1 py-1 rounded-lg md:mt-4 mt-2">
                                   <a href={`tel:+91 ${props.ContactNo}`}>
                                     <div className="text-sm font-bold text-white text-center">
                                       Call Now
                                     </div>
                                   </a>
                                 </div>
-                                <div className="bg-blue-500 px-7 py-1 rounded-lg mt-4">
+                                <div className="bg-blue-500 md:px-7 px-3 mx-1 py-1 rounded-lg md:mt-4 mt-2">
                                   <div className="text-sm font-bold text-white text-center">
                                     View Details
                                   </div>
                                 </div>
-                                <div className="bg-blue-500 px-7 py-1 rounded-lg mt-4">
+                                <div className="bg-blue-500 md:px-7 px-3 mx-1 py-1 rounded-lg md:mt-4 mt-2">
                                   <div
                                     onClick={() => {
-                                      ReviewClinic();
+                                      setModalIsOpen(true);
+
                                       setCompany(props.ClinicName);
                                     }}
-                                    className="cursor-pointer text-sm font-bold text-white text-center"
+                                    className="cursor-pointer hidden md:block text-sm font-bold text-white text-center"
+                                  >
+                                    Review this
+                                  </div>
+                                  <div
+                                    onClick={() => {
+                                      setModalIsOpenMobile(true);
+
+                                      setCompany(props.ClinicName);
+                                    }}
+                                    className="cursor-pointer md:hidden text-sm font-bold text-white text-center"
                                   >
                                     Review this
                                   </div>
@@ -536,58 +547,14 @@ const SearchDetails = () => {
                             </div>
                           </div>
                         </div>
-                        
+
                         <div className="h-[1px] bg-gray-200 w-[70%]"></div>
                       </div>
                     );
                   })}
                 </div>
-                {modalIsOpen && (
-                          <Modal
-                            isOpen={modalIsOpen}
-                            ariaHideApp={false}
-                            onRequestClose={() => setModalIsOpen(false)}
-                            style={{
-                              overlay: {
-                                backgroundColor: "rgba(0, 0, 0, 0.6)",
-                                zIndex: 1000,
-                              },
-                              content: {
-                                backgroundColor: "rgba(250,250,250)",
-                                width: "40%",
-                                height: "100vh",
-                                position: "absolute",
-                                top: "0px",
-                                left: "30%",
-                                right: "40px",
-                                bottom: "40px",
-                                border: "1px solid #ccc",
-                                background: "#fff",
-                                overflow: "auto",
-                                WebkitOverflowScrolling: "touch",
-                                borderRadius: "4px",
-                                outline: "none",
-                                padding: "20px",
-                              },
-                            }}
 
-                            // shouldCloseOnOverlayClick={false}
-                          >
-                            <div>
-                              <div className="flex">
-                                <img src={Logo} alt="" className="h-10" />
-                                <div
-                                  onClick={() => setModalIsOpen(false)}
-                                  className="relative left-[60%] top-2 cursor-pointer"
-                                >
-                                  Close
-                                </div>
-                              </div>
-                              <Review company={company} />
-                            </div>
-                          </Modal>
-                        )}
-                <div className="w-[30%]">
+                <div className="w-[30%] md:block hidden">
                   <div className="bg-red-300">
                     {/* <iframe
                       src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3721465.8528448674!2d87.8504985!3d24.372814!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1656875570255!5m2!1sen!2sin"
@@ -605,6 +572,94 @@ const SearchDetails = () => {
             </div>
           </div>
         </div>
+      )}
+      {modalIsOpen && (
+        <Modal
+          isOpen={modalIsOpen}
+          ariaHideApp={false}
+          onRequestClose={() => setModalIsOpen(false)}
+          style={{
+            overlay: {
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              zIndex: 1000,
+            },
+            content: {
+              backgroundColor: "rgba(250,250,250)",
+              width: "40%",
+              height: "100vh",
+              position: "absolute",
+              top: "0px",
+              left: "30%",
+              right: "40px",
+              bottom: "40px",
+              border: "1px solid #ccc",
+              background: "#fff",
+              overflow: "auto",
+              WebkitOverflowScrolling: "touch",
+              borderRadius: "4px",
+              outline: "none",
+              padding: "20px",
+            },
+          }}
+
+          // shouldCloseOnOverlayClick={false}
+        >
+          <div>
+            <div className="flex">
+              <img src={Logo} alt="" className="h-10" />
+              <div
+                onClick={() => setModalIsOpen(false)}
+                className="relative left-[60%] top-2 cursor-pointer"
+              >
+                Close
+              </div>
+            </div>
+            <Review company={company} />
+          </div>
+        </Modal>
+      )}
+      {modalIsOpenMobile && (
+        <Modal
+          isOpen={modalIsOpenMobile}
+          ariaHideApp={false}
+          onRequestClose={() => setModalIsOpenMobile(false)}
+          style={{
+            overlay: {
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              zIndex: 1000,
+            },
+            content: {
+              backgroundColor: "rgba(250,250,250)",
+              width: "100%",
+              height: "100vh",
+              position: "absolute",
+              top: "0px",
+              left: "0px",
+              border: "1px solid #ccc",
+              background: "#fff",
+              overflow: "auto",
+              WebkitOverflowScrolling: "touch",
+              borderRadius: "4px",
+              outline: "none",
+              padding: "20px",
+            },
+          }}
+
+          // shouldCloseOnOverlayClick={false}
+        >
+          <div>
+            <div className="flex">
+              <img src={Logo} alt="" className="h-10" />
+              <div
+                onClick={() => setModalIsOpenMobile(false)}
+                className="relative md:left-[60%] left-[40%] top-2 cursor-pointer"
+              >
+                Close
+              </div>
+            </div>
+            <Review company={company} />
+          </div>
+        </Modal>
       )}
     </div>
   );

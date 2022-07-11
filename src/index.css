@@ -15,3 +15,6 @@ html {
     @apply cursor-default relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left  transition ease-in-out duration-150;
   }
 }
+.webkit{
+  text-align: -webkit-center;
+}

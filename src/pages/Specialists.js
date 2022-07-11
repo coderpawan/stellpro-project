@@ -10,10 +10,10 @@ const Specialists = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex bg-gray-100 w-[80%] relative left-[10%] px-20 py-16 rounded-2xl">
-        <img src={Care} alt="" className="w-[40%] py-16" />
-        <div className="w-[40%] ml-16">
-          <div className="text-xl font-bold text-gray-600 text-center mt-24">
+      <div className="md:flex bg-gray-100 w-[80%] relative left-[10%] md:px-20 px-3 pt-16 rounded-2xl">
+        <img src={Care} alt="" className="md:w-[45%] pt-10 pb-5" />
+        <div className="md:w-[50%] md:ml-16 md:mt-10">
+          <div className="text-xl font-bold text-gray-600 text-center md:mt-24 ">
             Are you a specialist who can help children 2-12 in their
             developmental journey?
           </div>
@@ -24,53 +24,70 @@ const Specialists = () => {
             Work from home, earn and build your practice
           </div> */}
           <div className="flex mt-8">
-            <div className="bg-[#fe7a15] px-12 py-2 rounded-lg mr-5 text-sm font-bold text-white">
-              CTA1: List with us
-            </div>
-            <div className="bg-green px-12 py-2 rounded-lg mr-5 text-sm font-bold text-white">
-              CTA2: Become a Program Partner
+            <a
+              href="https://forms.gle/WiwgU2ZCHZN2ET157"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="bg-[#fe7a15]  px-3 md:px-7 py-2 rounded-lg mr-5 text-sm md:text-xl font-bold text-white">
+                List with us
+              </div>
+            </a>
+            <div className="bg-green  px-3 md:px-7 py-2 rounded-lg mr-5 text-sm md:text-xl font-bold text-white">
+              Become a Program Partner
             </div>
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
-        <div className="w-[20%] mx-20 my-20">
+      <div className="md:flex justify-center">
+        <div className="md:w-[20%] md:mx-20 mx-3 md:my-20 my-10">
           <img src={Artboard2} alt="" className="" />
           <div className=" mt-2">
             <div className="text-center text-2xl font-bold mt-6">
-              Secured Earnings
+              Incremental Earnings
             </div>
             <div className="text-xl mt-3">
-              Earn per session starting from Rs 250 –Rs 500 depending on your
-              experience
+              <div className="">
+                More leads for any setup (At the centre, online, or at home)
+              </div>
+              <a
+                href="https://forms.gle/WiwgU2ZCHZN2ET157"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="bg-[#fe7a15] px-7 relative md:left-[20%]  left-[30%]  py-1 w-fit mt-3 rounded-lg mr-5 text-xl font-bold text-white">
+                  List here
+                </div>
+              </a>
             </div>
           </div>
         </div>
-        <div className="w-[20%] mx-20 my-20">
+        <div className="md:w-[20%] md:mx-20 mx-3 md:my-20 my-10">
           <img src={Artboard3} alt="" className="" />
           <div className=" mt-2">
             <div className="text-center text-2xl font-bold mt-6">
               Flexibility
             </div>
             <div className="text-xl mt-3">
-              Work from Anywhere, set your own work hours
+              Host Recorded or Live Programs to increase your reach across the
+              globe
             </div>
           </div>
         </div>
-        <div className="w-[20%] mx-20 my-20">
+        <div className="md:w-[20%] md:mx-20 mx-3 md:my-20 my-10">
           <img src={Artboard4} alt="" className="" />
           <div className=" mt-2">
             <div className="text-center text-2xl font-bold mt-6">
               Grow with Us
             </div>
             <div className="text-xl mt-3">
-              Gain experience and visibility Pan India , be part of upskilling
-              programs.
+              Promote with us by listing your course or workshop details with
+              Demdee and as guest blog writer
             </div>
           </div>
         </div>
       </div>
-      <div className="w-[70%] relative left-[15%] pb-12 mb-12">
+      {/* <div className="w-[70%] relative left-[15%] pb-12 mb-12">
         <div className="font-extrabold text-3xl text-center px-48 pt-10">
           If you meet the requirements below,{" "}
           <span className="text-[#0191b4]">APPLY NOW</span>
@@ -141,7 +158,7 @@ const Specialists = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );

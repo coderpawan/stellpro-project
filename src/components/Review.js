@@ -40,15 +40,19 @@ const Review = ({ company }) => {
 
   return (
     <div>
-      <div className="text-center font-bold text-3xl mx-10 mt-3">{company}</div>
-      <div className="text-center text-gray-500 text-3xl mt-5">Rate it </div>
+      <div className="text-center font-bold md:text-3xl text-xl mx-10 mt-3">
+        {company}
+      </div>
+      <div className="text-center text-gray-500 md:text-3xl text-xl mt-5">
+        Rate it{" "}
+      </div>
       <StarsRating
         value={rating}
         count={5}
         onChange={ratingChanged}
         size={50}
         color2={"#FFD700"}
-        className="relative left-[30%]"
+        className="relative md:left-[30%] left-[20%]"
       />
       <input
         type="text"
@@ -98,7 +102,7 @@ const Review = ({ company }) => {
       />
       <div
         onClick={sendMessage}
-        className="rounded-lg py-2 px-5 bg-orange relative left-[40%] text-white mt-4 w-fit"
+        className="rounded-lg py-2 px-5 bg-orange relative left-[30%] md:left-[40%] text-white mt-4 w-fit"
       >
         Send Message
       </div>

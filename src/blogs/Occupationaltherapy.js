@@ -20,13 +20,16 @@ const Occupationaltherapy = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex mx-28 pt-28 mb-16">
-        <div className=" w-[70%]">
-          <div className="flex">
-            <div className="text-3xl my-4 font-bold">
+      <div className="md:flex md:mx-28 mx-3 md:pt-28 pt-20 mb-16">
+        <div className=" md:w-[70%]">
+          <div className="md:flex mb-4">
+            <div className="text-3xl md:my-4 my-2 font-bold">
               Does my child need Occupational Therapy?
             </div>
-            <div className="ml-20 relative top-6"> ~ Posted on 23 Jun 2022</div>
+            <div className="md:ml-20 relative md:top-6">
+              {" "}
+              ~ Posted on 23 Jun 2022
+            </div>
           </div>
           <img src={OccupationalTherapy} alt="" className="" />
           <div className="text-lg my-4">
@@ -59,7 +62,7 @@ const Occupationaltherapy = () => {
               well-functioning, healthy individuals. Occupational therapy serves
               many purposes.
             </div>
-            <div className="ml-16">
+            <div className="md:ml-16 ml-5">
               <span className="text-4xl relative bottom-1">.</span>
               <span className="text-lg">
                 Pediatric occupational therapy can help develop a child's fine
@@ -67,14 +70,14 @@ const Occupationaltherapy = () => {
                 balls. It also enhances children's writing and computer skills.
               </span>
             </div>
-            <div className="ml-16">
+            <div className="md:ml-16 ml-5">
               <span className="text-4xl relative bottom-1">.</span>
               <span className="text-lg">
                 It helps children learn important life skills such as brushing
                 their teeth, eating and bathing.
               </span>
             </div>
-            <div className="ml-16">
+            <div className="md:ml-16 ml-5">
               <span className="text-4xl relative bottom-1">.</span>
               <span className="text-lg">
                 Occupational therapy helps improve children's eye-hand
@@ -83,7 +86,7 @@ const Occupationaltherapy = () => {
                 copy text from the blackboard or computer screen
               </span>
             </div>
-            <div className="ml-16">
+            <div className="md:ml-16 ml-5">
               <span className="text-4xl relative bottom-1">.</span>
               <span className="text-lg">
                 Lastly, occupational therapy teaches children to manage their
@@ -101,42 +104,42 @@ const Occupationaltherapy = () => {
               The signs and symptoms given below may indicate that your child
               may require occupational therapy.{" "}
             </div>
-            <div className="ml-16">
+            <div className="md:ml-16 ml-5">
               <span className="text-4xl relative bottom-1">.</span>
               <span className="text-lg">
                 It helps children learn important life skills such as brushing
                 their teeth, eating and bathing.
               </span>
             </div>
-            <div className="ml-16">
+            <div className="md:ml-16 ml-5">
               <span className="text-4xl relative bottom-1">.</span>
               <span className="text-lg">
                 It helps children learn important life skills such as brushing
                 their teeth, eating and bathing.
               </span>
             </div>
-            <div className="ml-16">
+            <div className="md:ml-16 ml-5">
               <span className="text-4xl relative bottom-1">.</span>
               <span className="text-lg">
                 It helps children learn important life skills such as brushing
                 their teeth, eating and bathing.
               </span>
             </div>
-            <div className="ml-16">
+            <div className="md:ml-16 ml-5">
               <span className="text-4xl relative bottom-1">.</span>
               <span className="text-lg">
                 It helps children learn important life skills such as brushing
                 their teeth, eating and bathing.
               </span>
             </div>
-            <div className="ml-16">
+            <div className="md:ml-16 ml-5">
               <span className="text-4xl relative bottom-1">.</span>
               <span className="text-lg">
                 It helps children learn important life skills such as brushing
                 their teeth, eating and bathing.
               </span>
             </div>
-            <div className="ml-16">
+            <div className="md:ml-16 ml-5">
               <span className="text-4xl relative bottom-1">.</span>
               <span className="text-lg">
                 It helps children learn important life skills such as brushing
@@ -147,7 +150,7 @@ const Occupationaltherapy = () => {
           <img
             src={Picture2}
             alt=""
-            className="my-10 h-[400px] relative left-[25%]"
+            className="my-10 md:h-[400px] relative md:left-[25%]"
           />
           <div className="text-3xl my-4">
             How do Occupational Therapy Specialists Help a Child's Skills?
@@ -194,33 +197,43 @@ const Occupationaltherapy = () => {
             to their surroundings.
           </div>
 
-          <div className="flex mt-12">
+          <div className="md:flex mt-12">
             <div className="">Share This With Your Friends</div>
-            <FacebookShareButton url={url}>
-              <div className="flex cursor-pointer border-solid border-blue-900 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
-                <FaFacebookF className="relative top-1 text-blue-900" />
-                <div className="ml-3 text-blue-900 font-bold">SHARE</div>
+            <div className="flex md:text-lg text-[10px] my-5 md:my-0">
+              <FacebookShareButton url={url}>
+                <div className="flex cursor-pointer border-solid border-blue-900 border-2 px-2 py-1 mx-1 rounded-md relative bottom-1">
+                  <FaFacebookF className="relative top-1 text-blue-900" />
+                  <div className="md:ml-3 ml-2 text-blue-900 font-bold">
+                    SHARE
+                  </div>
+                </div>
+              </FacebookShareButton>
+              <TwitterShareButton url={url}>
+                <div className="flex cursor-pointer border-solid border-blue-400 border-2 px-2 py-1 mx-1 rounded-md relative bottom-1">
+                  <BsTwitter className="relative top-1 text-blue-400" />
+                  <div className="md:ml-3 ml-2 text-blue-400 font-bold">
+                    TWEET
+                  </div>
+                </div>
+              </TwitterShareButton>
+              <WhatsappShareButton url={url}>
+                <div className="flex cursor-pointer border-solid border-emerald-600 border-2 px-2 py-1 mx-1 rounded-md relative bottom-1">
+                  <BsWhatsapp className="relative top-1 text-emerald-600" />
+                  <div className="md:ml-3 ml-2 text-emerald-600 font-bold">
+                    SHARE
+                  </div>
+                </div>
+              </WhatsappShareButton>
+              <div className="flex cursor-pointer border-solid border-orange border-2 px-2 py-1 mx-1 rounded-md relative bottom-1">
+                <RiSignalTowerFill className="relative top-1 text-orange" />
+                <div className="md:ml-3 ml-2 text-orange font-bold">
+                  SUBSCRIBE
+                </div>
               </div>
-            </FacebookShareButton>
-            <TwitterShareButton url={url}>
-              <div className="flex cursor-pointer border-solid border-blue-400 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
-                <BsTwitter className="relative top-1 text-blue-400" />
-                <div className="ml-3 text-blue-400 font-bold">TWEET</div>
-              </div>
-            </TwitterShareButton>
-            <WhatsappShareButton url={url}>
-              <div className="flex cursor-pointer border-solid border-emerald-600 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
-                <BsWhatsapp className="relative top-1 text-emerald-600" />
-                <div className="ml-3 text-emerald-600 font-bold">SHARE</div>
-              </div>
-            </WhatsappShareButton>
-            <div className="flex cursor-pointer border-solid border-orange border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
-              <RiSignalTowerFill className="relative top-1 text-orange" />
-              <div className="ml-3 text-orange font-bold">SUBSCRIBE</div>
             </div>
           </div>
         </div>
-        <div className="w-[27%]">
+        <div className="md:w-[27%]">
           <div className="border-solid border-2 border-gray-200 rounded-lg ml-5">
             <div className="flex relative left-3 mt-3 mb-2">
               <IoDocumentTextOutline className="text-orange-400" />

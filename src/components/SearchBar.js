@@ -217,12 +217,12 @@ const SearchBar = (props) => {
 
   return (
     <div className="pt-24 bg-[url('images/doodle.png')] h-[75vh] bg-cover">
-      <div className="text-center text-4xl font-bold text-white relative top-14">
+      <div className="text-center md:text-4xl text-2xl  font-bold text-white relative top-5 md:top-14">
         Find Child Development Specialists,Therapists & Special Educators In
         Your Area
       </div>
 
-      <div className="flex justify-center mt-3 bg-white border-[12px] border-opacity-10 border-orange relative left-[15%] top-28 w-[70%] pb-2 pt-5 rounded-2xl">
+      <div className="md:flex justify-center mt-3 bg-white border-[12px] border-opacity-10 border-orange relative left-[15%] md:top-28 top-10 w-[70%] pb-2 pt-5 rounded-2xl">
         <div className="bg-white rounded-2xl w-52 flex items-center mb-3 mx-3 border-2 border-orange">
           <FaMapMarkerAlt className="text-gray-400 m-2" />
           {/* <select
@@ -253,7 +253,7 @@ const SearchBar = (props) => {
           />
         </div>
 
-        <div className="bg-white rounded-2xl w-[55%] p-2 flex items-center mb-3 border-2 border-orange">
+        <div className="bg-white rounded-2xl md:w-[55%] md:p-2 p-1 mx-3 md:mx-0 flex items-center mb-3 border-2 border-orange">
           <FaSearchLocation className="text-gray-400 m-2" />
           <select
             name="brand"
@@ -296,36 +296,36 @@ const SearchBar = (props) => {
           </select>
         </div>
         <button
-          className="border-2 px-5 rounded-2xl mx-6 h-10 relative top-[6px] text-xl font-bold text-white bg-orange"
+          className="border-2 px-5 mb-3 left-[15%] md:left-0 rounded-2xl mx-6 h-10 relative top-[6px] text-xl font-bold text-white bg-orange"
           onClick={SearchDoctors}
         >
           Search
         </button>
       </div>
-      <div className="flex relative top-40 justify-center">
+      <div className="flex relative md:top-40 top-16 justify-center">
         <button
-          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
+          className="py-2 md:px-3 px-1 bg-white rounded md:mx-4 mx-1 text-[12px] md:text-sm lg:text-xl"
           value="Occupational"
           onClick={handleFilter}
         >
           Occupational Therapy
         </button>
         <button
-          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
+          className="py-2 md:px-3 px-1 bg-white rounded md:mx-4 mx-1 text-[12px] md:text-sm lg:text-xl"
           value="Speech"
           onClick={handleFilter}
         >
           Speech Therapy
         </button>
         <button
-          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
+          className="py-2 md:px-3 px-1 bg-white rounded md:mx-4 mx-1 text-[12px] md:text-sm lg:text-xl"
           value="Audiology"
           onClick={handleFilter}
         >
           Audiology
         </button>
         <button
-          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
+          className="py-2 md:px-3 px-1 bg-white rounded md:mx-4 mx-1 text-[12px] md:text-sm lg:text-xl"
           value="Psychologist"
           onClick={handleFilter}
         >
@@ -339,14 +339,14 @@ const SearchBar = (props) => {
           ADHD
         </button> */}
         <button
-          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
+          className="py-2 px-3 hidden md:block bg-white rounded mx-4 md:text-sm lg:text-xl"
           value="Pediatric"
           onClick={handleFilter}
         >
           Pediatrician
         </button>
         <button
-          className="py-2 px-3 bg-white rounded mx-4 md:text-sm lg:text-xl"
+          className="py-2 px-3 hidden md:block bg-white rounded mx-4 md:text-sm lg:text-xl"
           value="Child"
           onClick={handleFilter}
         >

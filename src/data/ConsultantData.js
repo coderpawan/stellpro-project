@@ -3,34 +3,19 @@ const Data = [
   {
     id: 1,
     Image: Doctor,
-    Name: "Dr. Raj Kumar Thapa",
-    Specialisation: "Occupational Therapist and Sensory Integration Therapist",
+    Name: "Ms Ridhima Sharma",
+    Specialisation:
+      "Pediatric Psychologist ((BCaBA)Board Certified Assistant Behavior Analyst(USA))",
     About:
-      " 13 years of experience in working with children having special needs. Certified in Astronaut Training, Therapeutic Listening,Integrated Listening System and Handwriting Without Tears from USA",
+      "BCaBA and Child Psychologist with over 6 years of experience in teaching functional skills to people with special needs. Masters in counselling psychology with passion for promoting awareness regarding mental health conditions",
   },
   {
     id: 2,
     Image: Doctor,
-    Name: "Dr. Raj Kumar Thapa",
-    Specialisation: "Occupational Therapist and Sensory Integration Therapist",
+    Name: "Dr Snehal Deshpande",
+    Specialisation: "Developmental and Neonatal Therapist",
     About:
-      " 13 years of experience in working with children having special needs. Certified in Astronaut Training, Therapeutic Listening,Integrated Listening System and Handwriting Without Tears from USA",
-  },
-  {
-    id: 3,
-    Image: Doctor,
-    Name: "Dr. Raj Kumar Thapa",
-    Specialisation: "Occupational Therapist and Sensory Integration Therapist",
-    About:
-      " 13 years of experience in working with children having special needs. Certified in Astronaut Training, Therapeutic Listening,Integrated Listening System and Handwriting Without Tears from USA",
-  },
-  {
-    id: 4,
-    Image: Doctor,
-    Name: "Dr. Raj Kumar Thapa",
-    Specialisation: "Occupational Therapist and Sensory Integration Therapist",
-    About:
-      " 13 years of experience in working with children having special needs. Certified in Astronaut Training, Therapeutic Listening,Integrated Listening System and Handwriting Without Tears from USA",
+      " Experience in the field of Developmental Physical Therapy since 1989. NDT Therapist and Sensory Integration therapist, Connections and Attachment therapist, Theraband trainer, Wellness consultant, Heartfulness Trainer, Director- CME Heartfulness Institute INDIA",
   },
 ];
 

@@ -21,13 +21,16 @@ const TipsADHD = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex mx-28 pt-28 mb-16">
-        <div className=" w-[70%]">
-          <div className="flex">
-            <div className="text-3xl my-4 font-bold">
+      <div className="md:flex md:mx-28 mx-3 md:pt-28 pt-20 mb-16">
+        <div className=" md:w-[70%]">
+          <div className="md:flex mb-4">
+            <div className="text-3xl md:my-4 my-2 font-bold">
               Tips to parent children with ADHD
             </div>
-            <div className="ml-20 relative top-6"> ~ Posted on 23 Jun 2022</div>
+            <div className="md:ml-20 relative md:top-6">
+              {" "}
+              ~ Posted on 23 Jun 2022
+            </div>
           </div>
           <img src={Pic1} alt="" className="w-[60%] relative left-[20%]" />
           <div className="my-4">
@@ -193,33 +196,43 @@ const TipsADHD = () => {
             and emotional support.{" "}
           </div>
 
-          <div className="flex mt-12">
+          <div className="md:flex mt-12">
             <div className="">Share This With Your Friends</div>
-            <FacebookShareButton url={url}>
-              <div className="flex cursor-pointer border-solid border-blue-900 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
-                <FaFacebookF className="relative top-1 text-blue-900" />
-                <div className="ml-3 text-blue-900 font-bold">SHARE</div>
+            <div className="flex md:text-lg text-[10px] my-5 md:my-0">
+              <FacebookShareButton url={url}>
+                <div className="flex cursor-pointer border-solid border-blue-900 border-2 px-2 py-1 mx-1 rounded-md relative bottom-1">
+                  <FaFacebookF className="relative top-1 text-blue-900" />
+                  <div className="md:ml-3 ml-2 text-blue-900 font-bold">
+                    SHARE
+                  </div>
+                </div>
+              </FacebookShareButton>
+              <TwitterShareButton url={url}>
+                <div className="flex cursor-pointer border-solid border-blue-400 border-2 px-2 py-1 mx-1 rounded-md relative bottom-1">
+                  <BsTwitter className="relative top-1 text-blue-400" />
+                  <div className="md:ml-3 ml-2 text-blue-400 font-bold">
+                    TWEET
+                  </div>
+                </div>
+              </TwitterShareButton>
+              <WhatsappShareButton url={url}>
+                <div className="flex cursor-pointer border-solid border-emerald-600 border-2 px-2 py-1 mx-1 rounded-md relative bottom-1">
+                  <BsWhatsapp className="relative top-1 text-emerald-600" />
+                  <div className="md:ml-3 ml-2 text-emerald-600 font-bold">
+                    SHARE
+                  </div>
+                </div>
+              </WhatsappShareButton>
+              <div className="flex cursor-pointer border-solid border-orange border-2 px-2 py-1 mx-1 rounded-md relative bottom-1">
+                <RiSignalTowerFill className="relative top-1 text-orange" />
+                <div className="md:ml-3 ml-2 text-orange font-bold">
+                  SUBSCRIBE
+                </div>
               </div>
-            </FacebookShareButton>
-            <TwitterShareButton url={url}>
-              <div className="flex cursor-pointer border-solid border-blue-400 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
-                <BsTwitter className="relative top-1 text-blue-400" />
-                <div className="ml-3 text-blue-400 font-bold">TWEET</div>
-              </div>
-            </TwitterShareButton>
-            <WhatsappShareButton url={url}>
-              <div className="flex cursor-pointer border-solid border-emerald-600 border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
-                <BsWhatsapp className="relative top-1 text-emerald-600" />
-                <div className="ml-3 text-emerald-600 font-bold">SHARE</div>
-              </div>
-            </WhatsappShareButton>
-            <div className="flex cursor-pointer border-solid border-orange border-2 px-2 py-1 mx-2 rounded-md relative bottom-1">
-              <RiSignalTowerFill className="relative top-1 text-orange" />
-              <div className="ml-3 text-orange font-bold">SUBSCRIBE</div>
             </div>
           </div>
         </div>
-        <div className="w-[27%]">
+        <div className="md:w-[27%]">
           <div className="border-solid border-2 border-gray-200 rounded-lg ml-5">
             <div className="flex relative left-3 mt-3 mb-2">
               <IoDocumentTextOutline className="text-orange-400" />

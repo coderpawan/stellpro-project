@@ -10,7 +10,7 @@ const Autism = () => {
         <div className="text-center text-4xl font-bold text-white pt-10">
           Autism Disorder
         </div>
-        <div className="mx-28 mt-10 text-xl font-semibold text-white pb-16">
+        <div className="md:mx-28 mx-5 mt-10 md:text-xl text-sm font-semibold text-white pb-16">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus
           inventore corporis nostrum sunt harum modi quidem officiis labore,
           mollitia voluptatum itaque recusandae, quis asperiores eaque quam

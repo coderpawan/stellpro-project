@@ -255,7 +255,7 @@ const SignIn = () => {
     navigate("/");
   };
   return (
-    <div className="ml-1 mr-8">
+    <div className="ml-1 md:mr-8 mr-0">
       {!togglepage ? (
         <div className="">
           <div className="text-2xl font-bold mt-6">Sign In</div>
@@ -267,9 +267,9 @@ const SignIn = () => {
               onClick={() => {
                 setOtpPage(false);
               }}
-              className={`bg-white ${
+              className={`bg-white md:text-xl text-sm ${
                 otpPage === false ? "text-deepblue  border-black" : null
-              } hover:border-black border-gray-100 text-black border-solid border-2 cursor-pointer px-12 py-2 rounded-xl font-bold`}
+              } hover:border-black border-gray-100 text-black border-solid border-2 cursor-pointer md:px-12 px-3 py-2 rounded-xl font-bold`}
             >
               Sign In with Email
             </div>
@@ -277,9 +277,9 @@ const SignIn = () => {
               onClick={() => {
                 setOtpPage(true);
               }}
-              className={`bg-white ml-6 ${
+              className={`bg-white md:ml-6 ml-3 md:text-xl text-sm ${
                 otpPage === true ? "text-deepblue  border-black" : null
-              } border-gray-100 hover:border-black text-black  border-solid border-2 cursor-pointer px-12 py-2 rounded-xl font-bold`}
+              } border-gray-100 hover:border-black text-black  border-solid border-2 cursor-pointer md:px-12 px-3 py-2 rounded-xl font-bold`}
             >
               Sign In with OTP
             </div>
@@ -332,7 +332,7 @@ const SignIn = () => {
               ) : (
                 <button
                   onClick={HandleOtp}
-                  className="px-10  cursor-pointer relative left-[40%] mt-4 py-2 rounded-2xl text-white bg-deepblue font-bold text-sm hover:text-white hover:bg-orange"
+                  className="px-10  cursor-pointer relative md:left-[40%] left-[30%] mt-4 py-2 rounded-2xl text-white bg-deepblue font-bold text-sm hover:text-white hover:bg-orange"
                 >
                   Request OTP
                 </button>
@@ -381,7 +381,7 @@ const SignIn = () => {
               <button
                 onClick={Login}
                 // onClick={EmailVerify}
-                className="px-10  cursor-pointer relative left-[40%] mt-4 py-2 rounded-2xl text-white bg-deepblue font-bold text-sm hover:text-white hover:bg-orange"
+                className="px-10  cursor-pointer relative md:left-[40%] left-[30%] mt-4 py-2 rounded-2xl text-white bg-deepblue font-bold text-sm hover:text-white hover:bg-orange"
               >
                 SIGN IN
               </button>
@@ -400,7 +400,7 @@ const SignIn = () => {
 
           <div
             onClick={GoogleSign}
-            className="px-10 flex w-fit relative left-[30%] mt-6 py-2 rounded-2xl text-white bg-red-500 font-bold text-sm hover:text-red-500 hover:bg-white cursor-pointer"
+            className="px-10 flex w-fit relative md:left-[30%] left-[15%] mt-6 py-2 rounded-2xl text-white bg-red-500 font-bold text-sm hover:text-red-500 hover:bg-white cursor-pointer"
           >
             <AiOutlineGooglePlus className="text-xl" />
             <div className="ml-3">Sign In With Google</div>
@@ -486,7 +486,7 @@ const SignIn = () => {
             ) : null}
             <button
               onClick={Register}
-              className="px-10 relative left-[40%] mt-10 py-2 rounded-2xl text-white bg-deepblue font-bold text-sm hover:text-white hover:bg-orange cursor-pointer"
+              className="px-10 relative md:left-[40%] left-[30%] mt-10 py-2 rounded-2xl text-white bg-deepblue font-bold text-sm hover:text-white hover:bg-orange cursor-pointer"
             >
               SIGN UP
             </button>

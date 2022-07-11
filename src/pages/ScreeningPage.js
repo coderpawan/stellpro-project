@@ -8,10 +8,10 @@ const ScreeningPage = () => {
     <div>
       <Navbar />
       <div className="bg-[#0191B4]">
-        <div className="text-center text-4xl font-bold text-white pt-28">
+        <div className="text-center md:text-4xl  text-2xl font-bold text-white pt-28">
           Autism Screening Tool
         </div>
-        <div className="mx-28 mt-10 text-xl font-semibold text-white pb-16">
+        <div className="md:mx-28 mx-5 md:mt-10 mt-5 md:text-xl text-sm font-semibold text-white pb-16">
           1 in 58 children is estimated to have Autism Spectrum Disorder. ASD
           affects child’s social interaction and communication skills and these
           children display restricted and repetitive behaviour patterns. ASD can
@@ -21,15 +21,15 @@ const ScreeningPage = () => {
         </div>
       </div>
       <div className="mt-10">
-        <div className="text-4xl text-center font-bold">
+        <div className="md:text-4xl text-2xl text-center font-bold">
           Know if your child is showing ASD traits?
         </div>
       </div>
-      <div className="justify-center my-20">
+      <div className="justify-center md:my-20 my-10">
         <iframe
           src="https://www.cognitoforms.com/f/bVGDwp8FUUSd87xqjt8kag/1"
           height="869"
-          width="1400"
+          className="md:w-[1400px] w-[350px]"
         ></iframe>
       </div>
 

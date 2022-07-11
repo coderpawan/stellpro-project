@@ -18,22 +18,26 @@ const Blogs = () => {
             All Posts
           </button>
         </div>
-        <div className="flex justify-center mt-5 mb-20">
-          <button className="px-3 py-1 mx-3 bg-white shadow-xl rounded-lg">
-            Activities
-          </button>
-          <button className="px-3 py-1 mx-3 bg-white shadow-xl rounded-lg">
-            Community
-          </button>
-          <button className="px-3 py-1 mx-3 bg-white shadow-xl rounded-lg">
-            Parenting
-          </button>
-          <button className="px-3 py-1 mx-3 bg-white shadow-xl rounded-lg">
-            Resources
-          </button>
-          <button className="px-3 py-1 mx-3 bg-white shadow-xl rounded-lg">
-            Demdee
-          </button>
+        <div className="md:flex justify-center mt-5 md:mb-20 mb-5">
+          <div className="flex">
+            <button className="px-3 py-1 border-solid border-2 border-gray-100 mx-3 bg-white shadow-xl rounded-lg">
+              Activities
+            </button>
+            <button className="px-3 py-1 border-solid border-2 border-gray-100 mx-3 bg-white shadow-xl rounded-lg">
+              Community
+            </button>
+            <button className="px-3 py-1 border-solid border-2 border-gray-100 mx-3 bg-white shadow-xl rounded-lg">
+              Parenting
+            </button>
+          </div>
+          <div className="flex justify-center mt-3">
+            <button className="px-3 py-1 border-solid border-2 border-gray-100 mx-3 bg-white shadow-xl rounded-lg">
+              Resources
+            </button>
+            <button className="px-3 py-1 border-solid border-2 border-gray-100 mx-3 bg-white shadow-xl rounded-lg">
+              Demdee
+            </button>
+          </div>
         </div>
       </div>
       <div className="bg-gray-100 pb-10">
@@ -65,7 +69,7 @@ const Blogs = () => {
           })}
         </div>
 
-        <div className="bg-[#FE7A15] w-[8%] h-10 mb-5 relative left-[45%] py-auto px-auto rounded-xl">
+        <div className="bg-[#FE7A15] md:w-[8%] w-[30%] h-10 mb-5 relative left-[35%] md:left-[45%] py-auto px-auto rounded-xl">
           <div className="relative left-6 top-1">
             <div className="text-lg text-white font-semibold ">Next</div>
             <MdKeyboardArrowRight className="text-3xl relative left-10 bottom-7 text-white" />

@@ -12,11 +12,15 @@ function Navbar() {
   const [dropdown, setDropdown] = useState(false);
   const [more, setMore] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpenMobile, setModalIsOpenMobile] = useState(false);
   /* const [user, setUser] = useState(); */
   const user = auth.currentUser;
   console.log(user);
   const Signin = () => {
     setModalIsOpen(true);
+  };
+  const MobileSignin = () => {
+    setModalIsOpenMobile(true);
   };
   const Logout = async (e) => {
     e.preventDefault();
@@ -41,7 +45,7 @@ function Navbar() {
         <div className="w-full">
           <div className="flex items-center h-20 w-full">
             <div className="flex items-center  mx-20  justify-between w-full">
-              <div className="flex justify-center items-center flex-shrink-0 ">
+              <div className="flex lg:justify-center lg:items-center flex-shrink-0 ">
                 <Link to="/">
                   <img src={Logo} alt="" className="h-12" />
                 </Link>
@@ -185,11 +189,13 @@ function Navbar() {
                       SignOut
                     </div>
                   ) : (
-                    <div
-                      onClick={Signin}
-                      className="cursor-pointer bg-[#FE7A15] text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
-                    >
-                      SignIn
+                    <div>
+                      <div
+                        onClick={Signin}
+                        className="cursor-pointer bg-[#FE7A15] text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
+                      >
+                        SignIn
+                      </div>
                     </div>
                   )}
 
@@ -230,6 +236,50 @@ function Navbar() {
                           <div
                             onClick={() => setModalIsOpen(false)}
                             className="relative left-[60%] top-2 cursor-pointer"
+                          >
+                            Close
+                          </div>
+                        </div>
+                        <SignIn />
+                      </div>
+                    </Modal>
+                  )}
+                  {modalIsOpenMobile && (
+                    <Modal
+                      isOpen={modalIsOpenMobile}
+                      ariaHideApp={false}
+                      onRequestClose={() => setModalIsOpenMobile(false)}
+                      style={{
+                        overlay: {
+                          backgroundColor: "rgba(0, 0, 0, 0.6)",
+                          zIndex: 1000,
+                        },
+                        content: {
+                          backgroundColor: "rgba(250,250,250)",
+                          width: "100%",
+                          height: "100vh",
+                          position: "absolute",
+                          top: "0px",
+                          left: "0",
+
+                          border: "1px solid #ccc",
+                          background: "#fff",
+                          overflow: "auto",
+                          WebkitOverflowScrolling: "touch",
+                          borderRadius: "4px",
+                          outline: "none",
+                          padding: "20px",
+                        },
+                      }}
+
+                      // shouldCloseOnOverlayClick={false}
+                    >
+                      <div>
+                        <div className="flex">
+                          <img src={Logo} alt="" className="h-10" />
+                          <div
+                            onClick={() => setModalIsOpenMobile(false)}
+                            className="relative left-[40%] top-2 cursor-pointer"
                           >
                             Close
                           </div>
@@ -311,64 +361,106 @@ function Navbar() {
             <div className="md:hidden" id="mobile-menu">
               <div
                 ref={ref}
-                className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
+                className="bg-white px-2 webkit pt-2 pb-3 space-y-1 sm:px-3"
               >
                 <NavLink
-                  href="/home"
                   activeclassname="home"
-                  to="home"
+                  to="/"
                   smooth={true}
                   offset={50}
                   duration={500}
-                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  className="cursor-pointer hover:bg-orange w-fit text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Home
                 </NavLink>
                 <NavLink
-                  href="/about"
                   activeclassname="about"
-                  to="about"
+                  to="/searchdetails"
                   smooth={true}
                   offset={50}
                   duration={500}
-                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  className="cursor-pointer hover:bg-orange w-fit text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  About
+                  Find Specialists
                 </NavLink>
 
                 <NavLink
-                  href="/work"
                   activeclassname="work"
-                  to="work"
+                  to="/community"
                   smooth={true}
                   offset={50}
                   duration={500}
-                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  className="cursor-pointer hover:bg-orange w-fit text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Projects
+                  Community
                 </NavLink>
+
+                <a
+                  href="https://shashiyadav6219.ongraphy.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer hover:text-orange w-fit text-black block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Programs
+                </a>
+
                 <NavLink
-                  href="/services"
-                  activeclassname="services"
-                  to="services"
+                  activeclassname="work"
+                  to="/assessments"
                   smooth={true}
                   offset={50}
                   duration={500}
-                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  className="cursor-pointer hover:text-orange w-fit text-black block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Services
+                  Assessments
                 </NavLink>
 
                 <NavLink
-                  href="/contact"
                   activeclassname="work"
-                  to="work"
+                  to="/blogs"
                   smooth={true}
                   offset={50}
                   duration={500}
-                  className="cursor-pointer hover:bg-blue-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  className="cursor-pointer hover:bg-orange w-fit text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Contact
+                  Blog
+                </NavLink>
+                <NavLink
+                  activeclassname="tab"
+                  to="/aboutus"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer hover:bg-orange w-fit text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  About Us
+                </NavLink>
+                {user ? (
+                  <div
+                    onClick={Logout}
+                    className="cursor-pointer bg-[#FE7A15] text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
+                  >
+                    SignOut
+                  </div>
+                ) : (
+                  <div>
+                    <div
+                      onClick={MobileSignin}
+                      className="cursor-pointer bg-[#FE7A15] text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-black"
+                    >
+                      SignIn
+                    </div>
+                  </div>
+                )}
+                <NavLink
+                  activeclassname="work"
+                  to="/specialists"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="cursor-pointer hover:bg-black text-white bg-orange block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  For Specialists
                 </NavLink>
               </div>
             </div>
