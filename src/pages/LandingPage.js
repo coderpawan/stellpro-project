@@ -15,21 +15,56 @@ import OnlineSession from "../images/OnlineSession.jpeg";
 import ResourcesPrograms from "../images/Programs.jpeg";
 import JoinCommunity from "../images/JoinCommunity.jpeg";
 
-const Cards = ({ title, content, image, link }) => {
+const Cards = ({ title, content, image, link, externallink }) => {
   return (
-    <Link to={`${link}`}>
-      <div class="md:max-w-[190px] my-3 md:my-auto md:border-none border-solid border-gray-100 border-2 flex md:block rounded-2xl overflow-hidden shadow-2xl mx-5">
-        <img
-          class="md:w-full w-[50%] h-20 md:h-auto md:mt-auto md:ml-auto mt-2 ml-3"
-          src={image}
-          alt="Sunset in the mountains"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-gray-600 text-xl mb-2">{title}</div>
-          <p class="text-gray-700 text-base">{content}</p>
+    <div>
+      {link ? (
+        <Link to={`${link}`}>
+          <div class="md:max-w-[190px] my-3 md:my-auto md:border-none border-solid border-gray-100 border-2 flex md:block rounded-2xl overflow-hidden shadow-2xl mx-5">
+            <img
+              class="md:w-full w-[50%] h-20 md:h-auto md:mt-auto md:ml-auto mt-2 ml-3"
+              src={image}
+              alt="Sunset in the mountains"
+            />
+            <div class="px-6 py-4">
+              <div class="font-bold text-gray-600 text-xl mb-2">{title}</div>
+              <p class="text-gray-700 text-base">{content}</p>
+            </div>
+          </div>
+        </Link>
+      ) : externallink ? (
+        <a href={externallink} target="_blank" rel="noopener noreferrer">
+          <div class="md:max-w-[190px] my-3 md:my-auto md:border-none border-solid border-gray-100 border-2 flex md:block rounded-2xl overflow-hidden shadow-2xl mx-5">
+            <img
+              class="md:w-full w-[50%] h-20 md:h-auto md:mt-auto md:ml-auto mt-2 ml-3"
+              src={image}
+              alt="Sunset in the mountains"
+            />
+            <div class="px-6 py-4">
+              <div class="font-bold text-gray-600 text-xl mb-2">{title}</div>
+              <p class="text-gray-700 text-base">{content}</p>
+            </div>
+          </div>
+        </a>
+      ) : (
+        <div
+          onClick={() => {
+            alert("This Service will be coming soon");
+          }}
+          class="md:max-w-[190px] my-3 md:my-auto md:border-none border-solid border-gray-100 border-2 flex md:block rounded-2xl overflow-hidden shadow-2xl mx-5"
+        >
+          <img
+            class="md:w-full w-[50%] h-20 md:h-auto md:mt-auto md:ml-auto mt-2 ml-3"
+            src={image}
+            alt="Sunset in the mountains"
+          />
+          <div class="px-6 py-4">
+            <div class="font-bold text-gray-600 text-xl mb-2">{title}</div>
+            <p class="text-gray-700 text-base">{content}</p>
+          </div>
         </div>
-      </div>
-    </Link>
+      )}
+    </div>
   );
 };
 
@@ -72,7 +107,6 @@ const LandingPage = () => {
             title="Book Online Sessions"
             // content="Lorem ipsum dolor sit amet."
             image={OnlineSession}
-            link="/assessments"
           />
           <Cards
             title="Take Child Assessment"
@@ -84,7 +118,7 @@ const LandingPage = () => {
             title="Resources and Programs"
             // content="Lorem ipsum dolor sit amet."
             image={ResourcesPrograms}
-            link="/videoondemand"
+            externallink="https://shashiyadav6219.ongraphy.com/"
           />
           <Cards
             title="Join Community"
@@ -126,49 +160,54 @@ const LandingPage = () => {
         />
       </div>
       <Testimonial />
-      <div className="md:py-16 my-10">
-        <div className="md:text-5xl text-2xl text-gray-600 text-center">
+      <div className="md:py-16 mb-10 mt-10 md:mt-0">
+        <div className="md:text-5xl text-3xl font-bold text-gray-600 text-center">
           Blogs
         </div>
         <div className="md:flex justify-center md:mt-20 mt-5">
           <div className="md:w-[30%] md:pr-20 pr-4 pl-4 ">
-            <div className="text-3xl md:w-[80%] ">
-              10 Quick Tips About Blogging
+            <div className="text-2xl md:w-[80%] ">
+              Does my child need Occupational Therapy?
             </div>
-            <div className="md:mt-8 mt-3 text-gray-500">FEB 21,2019</div>
+            <div className="md:mt-5 mt-3 text-gray-500">Jun 23,2022</div>
             <div className="text-xl mt-2 text-gray-500">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Duis cursus,
-              mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam
-              libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum
-              lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+              A child's occupation is to play, grow and learn new skills.
+              Unfortunately, some children have difficulty learning critical
+              life skills due to physical, cognitive, and sensory delays or
+              impairments. They frequently have problems with sensory
+              processing, fine or gross motor skills, visual-perceptual skills,
+              and other tasks. In such cases, occupational therapy for children
+              can have a significant positive effect.
             </div>
           </div>
           <div className="md:w-[30%] md:pr-20 mt-5 md:mt-0 pr-4 pl-4">
-            <div className="text-3xl md:w-[90%]">
-              15 Best Blogs To Follow About Web Design
+            <div className="text-2xl md:w-[90%]">
+              A Comprehensive Guide to ADHD Treatment
             </div>
-            <div className="md:mt-8 mt-3 text-gray-500">FEB 21,2019</div>
+            <div className="md:mt-5 mt-3 text-gray-500">Jun 23,2022</div>
             <div className="text-xl mt-2 text-gray-500">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Duis cursus,
-              mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam
-              libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum
-              lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+              The most effective treatment options for attention deficit
+              hyperactivity disorder (ADHD) combine multiple complementary
+              therapies and treatments to lessen symptoms. This optimum mix may
+              include ADHD medication, exercise, behavioral therapies, and
+              dietary changes. Other options for wholistic improvement include
+              taking vitamin supplements, nature walks, meditation and
+              practicing mindfulness.
             </div>
           </div>
           <div className="md:w-[30%] md:pr-20 mt-5 md:mt-0 pr-4 pl-4">
-            <div className="text-3xl md:w-[90%]">
+            <div className="text-2xl md:w-[90%]">
               {" "}
-              7 of the Best Examples of Beautiful Blog Design{" "}
+              Tips to parent children with ADHD{" "}
             </div>
-            <div className="md:mt-8 mt-3 text-gray-500">FEB 21,2019</div>
+            <div className="md:mt-5 mt-3 text-gray-500">Jun 23,2022</div>
             <div className="text-xl mt-2 text-gray-500">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Duis cursus,
-              mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam
-              libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum
-              lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+              Parenting is difficult. It's very fulfilling but also challenging,
+              demanding, and exhausting. When children have ADHD, parenting
+              issues magnify in quantity and severity. Signs of ADHD such as
+              inattention, impulsivity, and emotional dysregulation have an
+              unavoidable influence on everyday living. Thus, they inevitably
+              affect parenting and the bond you build with your children.
             </div>
           </div>
         </div>

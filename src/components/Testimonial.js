@@ -10,15 +10,23 @@ import "swiper/scss/pagination";
 const Testimonial = () => {
   return (
     <div>
-      <div className="bg-back lg:block hidden">
+      <div className="">
         <div className="text-[40px] font-medium text-center mb-20">
           Testimonial
         </div>
 
         <Swiper
+          breakpoints={{
+            576: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+          }}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={10}
-          slidesPerView={3}
+          // slidesPerView={3}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
@@ -30,23 +38,25 @@ const Testimonial = () => {
             return (
               <div className="">
                 <SwiperSlide className="relative left-[59px]">
-                  <div className="w-[75%] bg-white relative top-20 rounded-2xl h-[440px]">
-                    <div className="text-center h-[155px] bg-blue-100 rounded-t-2xl">
+                  <div className="w-[75%] bg-white relative top-20 rounded-2xl">
+                    <div className="text-center bg-waterblue rounded-t-2xl">
                       <img
                         src={post.picture}
                         alt="testimonial"
-                        className="h-36 w-36 relative left-[102px] bottom-20"
+                        className="h-36 w-36 relative md:left-[30%] left-[20%] bottom-20"
                       />
-                      <div className="text-[15px] font-semibold relative bottom-14">
+                      <div className="text-[15px] text-white font-semibold relative bottom-14">
                         {post.name}
                       </div>
-                      <div className="text-[15px] relative bottom-12">
+                      <div className="text-[15px] text-white relative bottom-12">
                         {post.position}
                       </div>
                     </div>
                     <div className="m-10">
                       <img src={Colon} alt="colon" className="" />
-                      <div className="mt-8">{post.about}</div>
+                      <div className="mt-8 md:h-[30vh] h-[40vh]">
+                        {post.about}
+                      </div>
                     </div>
                   </div>
                 </SwiperSlide>
