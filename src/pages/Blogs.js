@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Data from "../data/BlogsData";
@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Blogs = () => {
+  const [visible, setVisible] = useState(9);
+  const ShowMore = () => {
+    setVisible((prevValue) => prevValue + 3);
+  };
   return (
     <div>
       <Navbar />
@@ -42,7 +46,7 @@ const Blogs = () => {
       </div>
       <div className="bg-gray-100 pb-10">
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12  py-10">
-          {Data.map((post) => {
+          {Data.slice(0, visible).map((post) => {
             return (
               <div class="overflow-hidden shadow-lg rounded-2xl h-90 w-60 md:w-80 cursor-pointer m-auto">
                 <div class="w-full block h-full">
@@ -69,7 +73,10 @@ const Blogs = () => {
           })}
         </div>
 
-        <div className="bg-[#FE7A15] md:w-[8%] w-[30%] h-10 mb-5 relative left-[35%] md:left-[45%] py-auto px-auto rounded-xl">
+        <div
+          onClick={ShowMore}
+          className="bg-[#FE7A15] md:w-[8%] w-[30%] h-10 mb-5 relative left-[35%] md:left-[45%] py-auto px-auto rounded-xl"
+        >
           <div className="relative left-6 top-1">
             <div className="text-lg text-white font-semibold ">Next</div>
             <MdKeyboardArrowRight className="text-3xl relative left-10 bottom-7 text-white" />

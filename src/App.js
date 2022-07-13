@@ -7,7 +7,6 @@ import Assessments from "./pages/Assessments";
 import ScreeningPage from "./pages/ScreeningPage";
 import Autism from "./pages/Autism";
 import Specialists from "./pages/Specialists";
-import BlogDetails from "./pages/BlogDetails";
 import Occupationaltherapy from "./blogs/Occupationaltherapy";
 import ADHD from "./blogs/ADHD";
 import AfterADHD from "./blogs/AfterADHD";
@@ -64,7 +63,6 @@ const App = () => {
           <Route exact path="/screening" element={<ScreeningPage />} />
           <Route exact path="/autism" element={<Autism />} />
           <Route exact path="/specialists" element={<Specialists />} />
-          <Route exact path="/blogdetails" element={<BlogDetails />} />
           <Route exact path="/privacy" element={<Privacy />} />
           <Route exact path="/terms" element={<Terms />} />
           <Route exact path="/videoondemand" element={<VideoOnDemand />} />
