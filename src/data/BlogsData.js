@@ -9,6 +9,7 @@ import GiftedChild from "../images/giftedchild1.png";
 import MildAutism from "../images/mildautism1.png";
 import Abatherapy from "../images/abatherapy1.png";
 import Babies from "../images/babies1.png";
+import Toddlers from "../images/Toddlers1.png";
 
 import OccupationalTherapy from "../images/occupational therapy.jpg";
 
@@ -108,6 +109,14 @@ const Data = [
     date: "March 21,2002",
     tag: "Parenting",
     link: "aba",
+  },
+  {
+    id: 13,
+    image: Toddlers,
+    topic: "10 most effective speech activities for toddlers",
+    date: "March 21,2002",
+    tag: "Parenting",
+    link: "speechfortoddlers",
   },
 ];
 

@@ -25,6 +25,7 @@ import AbaTreatment from "./blogs/AbaTreatment";
 import Babies from "./blogs/Babies";
 import MildAutism from "./blogs/MildAutism";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SpeechforToddlers from "./blogs/SpeechforToddlers";
 
 const App = () => {
   return (
@@ -59,6 +60,11 @@ const App = () => {
           <Route exact path="/blogs/aba" element={<AbaTreatment />} />
           <Route exact path="/blogs/babies" element={<Babies />} />
           <Route exact path="/blogs/mildautism" element={<MildAutism />} />
+          <Route
+            exact
+            path="/blogs/speechfortoddlers"
+            element={<SpeechforToddlers />}
+          />
           <Route exact path="/assessments" element={<Assessments />} />
           <Route exact path="/screening" element={<ScreeningPage />} />
           <Route exact path="/autism" element={<Autism />} />

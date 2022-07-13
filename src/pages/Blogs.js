@@ -75,7 +75,7 @@ const Blogs = () => {
 
         <div
           onClick={ShowMore}
-          className="bg-[#FE7A15] md:w-[8%] w-[30%] h-10 mb-5 relative left-[35%] md:left-[45%] py-auto px-auto rounded-xl"
+          className="bg-[#FE7A15] cursor-pointer md:w-[8%] w-[30%] h-10 mb-5 relative left-[35%] md:left-[45%] py-auto px-auto rounded-xl"
         >
           <div className="relative left-6 top-1">
             <div className="text-lg text-white font-semibold ">Next</div>
