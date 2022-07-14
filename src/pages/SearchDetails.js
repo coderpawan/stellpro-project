@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
 import Sticker from "../images/verified.svg";
-import Doctor from "../images/consultation.jpg";
+import Doctor from "../images/dummyimage.png";
 import Map from "../components/Map";
 import Logo from "../images/logo.png";
 import Modal from "react-modal";
@@ -306,11 +306,19 @@ const SearchDetails = () => {
                       <div className="">
                         <div className="md:flex block md:my-7">
                           <div className="">
-                            <img
-                              src={Doctor}
-                              alt=""
-                              className="md:h-56 h-40 bg-white py-6 rounded-l-2xl relative top-8 md:left-0 left-[25%]"
-                            />
+                            {props.image ? (
+                              <img
+                                src={props.image}
+                                alt=""
+                                className="md:h-56 h-40 bg-white py-6 rounded-l-2xl relative top-8 md:left-0 left-[25%]"
+                              />
+                            ) : (
+                              <img
+                                src={Doctor}
+                                alt=""
+                                className="md:h-56 h-40 bg-white py-6 rounded-l-2xl relative top-8 md:left-0 left-[25%]"
+                              />
+                            )}
                           </div>
 
                           <div className="md:p-6 py-6 bg-white">

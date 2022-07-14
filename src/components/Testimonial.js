@@ -43,7 +43,7 @@ const Testimonial = () => {
                       <img
                         src={post.picture}
                         alt="testimonial"
-                        className="h-36 w-36 relative md:left-[30%] left-[20%] bottom-20"
+                        className="h-36 rounded-full w-36 relative md:left-[30%] left-[20%] bottom-20"
                       />
                       <div className="text-[15px] text-white font-semibold relative bottom-14">
                         {post.name}

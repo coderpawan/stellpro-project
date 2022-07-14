@@ -10,27 +10,27 @@ const Privacy = () => {
         <div className="md:text-6xl text-3xl text-center">Privacy Policy</div>
         <div className="mt-6">
           This Privacy Policy explains what information belonging to you will be
-          collected and used by Demdee.pro (“Demdee.pro,” “we,” “us,” or “our”)
-          when you access our website located at https://www.Demdee.pro, the
-          mobile applications available on Google Play provided by us (the
-          “Apps”), and other services (collectively, together with the website
-          and the Apps, therein called our “Service”). We will not use or share
-          your information with anyone except as described in this Privacy
-          Policy. Each time you use our Service, you are accepting the practices
-          described in this Privacy Policy at that time. The Demdee.pro Website
-          is intended for adults only and does not allow any form of gameplay.
-          The Apps downloaded to your device allow gameplay and are intended for
-          families and users across all age groups. Please read this policy in
-          its entirety, including our Children’s Privacy Policy section, before
-          using our Services. The Children’s Privacy Policy will control over
-          any conflicting provisions in our general Privacy Policy as it
-          concerns children’s data.
+          collected and used by StellPro learning (“StellPro learning,” “we,”
+          “us,” or “our”) when you access our website located Error! Hyperlink
+          reference not valid., the mobile applications available on Google Play
+          provided by us (the “Apps”), and other services (collectively,
+          together with the website and the Apps, therein called our “Service”).
+          We will not use or share your information with anyone except as
+          described in this Privacy Policy. Each time you use our Service, you
+          are accepting the practices described in this Privacy Policy at that
+          time. The StellPro learning Website is intended for adults only and
+          does not allow any form of gameplay. The Apps downloaded to your
+          device allow gameplay and are intended for families and users across
+          all age groups. Please read this policy in its entirety, including our
+          Children’s Privacy Policy section, before using our Services. The
+          Children’s Privacy Policy will control over any conflicting provisions
+          in our general Privacy Policy as it concerns children’s data.
         </div>
         <div className="my-1 text-xl font-bold">Individual Rights</div>
         <div className="">
-          Demdee.pro also makes certain choices available to you when it comes
-          to your personal data. Please review the below information outlining
-          your choices and how to exercise them.
+          StellPro learning also makes certain choices available to you when it
+          comes to your personal data. Please review the below information
+          outlining your choices and how to exercise them.
         </div>
         <div className="my-1 text-xl font-bold">
           Review and Update Your Data
@@ -39,12 +39,12 @@ const Privacy = () => {
           You have the right to access and update any personal data that we have
           collected. Some personal data, such as the account holder’s name,
           email address and phone number can be found and updated using the
-          account setting tool on our website at https://www.Demdee.pro. For any
-          personal data beyond this, please submit a request using the contact
-          information provided below. We may request more information to confirm
-          your identity before modifying any personal data. If you want to
-          ensure the complete removal of your data, send us an email, requesting
-          for the same at hello@Demdee.pro.
+          account setting tool on our website at Error! Hyperlink reference not
+          valid. . For any personal data beyond this, please submit a request
+          using the contact information provided below. We may request more
+          information to confirm your identity before modifying any personal
+          data. If you want to ensure the complete removal of your data, send us
+          an email, requesting for the same at connect@demdee.com.
         </div>
         <div className="my-1 text-xl font-bold">Restrict Processing</div>
         <div className="">
@@ -95,7 +95,7 @@ const Privacy = () => {
           communications channels. We will make all efforts to respond to your
           request within a reasonable timeframe.
         </div>
-        <div className="">Email: hello@Demdee.pro</div>
+        <div className="">Email: connect@demdee.com</div>
         <div className="my-1 text-xl font-bold">
           Data Collected From Our Website
         </div>
@@ -158,96 +158,117 @@ const Privacy = () => {
         </div>
         <div className="">
           <div className="text-lg">
-            The signs and symptoms given below may indicate that your child may
-            require occupational therapy.{" "}
+            We use or may use the information we collect for a variety of
+            purposes, including:
           </div>
           <div className="ml-6">
             <span className="text-4xl relative bottom-1">.</span>
             <span className="text-lg">
-              It helps children learn important life skills such as brushing
-              their teeth, eating and bathing.
+              To operate the Service, monitor the effectiveness of the Service,
+              to improve the content of the Service, and layout and design.
             </span>
           </div>
           <div className="ml-6">
             <span className="text-4xl relative bottom-1">.</span>
             <span className="text-lg">
-              It helps children learn important life skills such as brushing
-              their teeth, eating and bathing.
+              To help provide you with a smooth, efficient user experience.
             </span>
           </div>
           <div className="ml-6">
             <span className="text-4xl relative bottom-1">.</span>
             <span className="text-lg">
-              It helps children learn important life skills such as brushing
-              their teeth, eating and bathing.
+              To monitor, analyze and describe usage patterns and performance of
+              the Service, including aggregate metrics such as the total number
+              of visitors, traffic, and demographic patterns.
             </span>
           </div>
           <div className="ml-6">
             <span className="text-4xl relative bottom-1">.</span>
             <span className="text-lg">
-              It helps children learn important life skills such as brushing
-              their teeth, eating and bathing.
+              To conduct system administration and system troubleshooting and to
+              diagnose or fix technology problems.
             </span>
           </div>
           <div className="ml-6">
             <span className="text-4xl relative bottom-1">.</span>
             <span className="text-lg">
-              It helps children learn important life skills such as brushing
-              their teeth, eating and bathing.
+              To comply with legal requirements and process (for example, in
+              response to subpoenas, court orders, and law enforcement or
+              governmental requests or investigations), and to protect our legal
+              rights or the rights of others (for example, by working to reduce
+              the risk of fraud or misuse of the Service).
             </span>
           </div>
           <div className="ml-6">
             <span className="text-4xl relative bottom-1">.</span>
             <span className="text-lg">
-              It helps children learn important life skills such as brushing
-              their teeth, eating and bathing.
+              To enforce our Terms of Use or other policies or agreements.
+            </span>
+          </div>
+          <div className="ml-6">
+            <span className="text-4xl relative bottom-1">.</span>
+            <span className="text-lg">
+              With respect to information collected through the Website
+              described in the “Information Collected Automatically” section
+              above, to assist in marketing efforts, including, for example, by
+              tailoring and serving advertisements, and by tracking the
+              effectiveness of marketing efforts.
+            </span>
+          </div>
+          <div className="ml-6">
+            <span className="text-4xl relative bottom-1">.</span>
+            <span className="text-lg">
+              In connection with an unusual business transaction, such as the
+              bankruptcy or liquidation of, the sale of, purchase of, or merger
+              with our business or another business.
             </span>
           </div>
         </div>
         <div className="my-1 text-xl font-bold">Children Privacy Policy</div>
         <div className="">
           Protecting the privacy of children is especially important. The
-          Demdee.pro website is not intended for children, does not market to
-          children, and does not knowingly collect personal information from
-          children. All references to “children” or “child” in this Children’s
-          Privacy Policy shall mean children under 16 years of age, and all
-          references to the term “parent” shall include legal guardians. Inside
-          the Play Experience, all play is locally stored, and no Personal
-          Information is collected or solicited from a child user. Our Play
-          Experience contains no external links to third party websites or
-          services. The Demdee.pro Experience is directed at users of all ages,
-          including children. We encourage parents and teachers to supervise
-          their child or student’s use of the Apps and supervise the overall
-          Demdee.pro Experience. Simply downloading any Demdee.pro App to your
-          device does not trigger the collection of any personally identifiable
-          information. We only collect information essential for installing
-          necessary administrative updates to your device (such as software
-          updates and administrative messages). We may collect analytics data
-          (which does not contain Personal Information) from your use of the
-          Service in order to offer and develop the Service, and we may collect
-          information such as age and nickname from you as part of your use of
-          the Apps and the Service and the creation of your user profile. If the
-          Service is being used by a school and/or teacher (the “Educational
-          Institution”) with students that are under 16 years of age, such
-          Educational Institution agrees that it has reviewed our Terms of Use
-          and our Privacy Policy. Demdee.pro only requests Personal Information
-          from parents and/or teachers and we will never knowingly solicit, nor
-          will we accept, Personal Information from users known to be under 16
-          years of age. We collect only the minimum amount of information needed
-          about students from teachers, and any such information is used only in
-          connection with the Educational Institution’s use of the Demdee.pro
-          Experience. If you are under 16 years of age, then please do not use
-          or access the Website at any time or in any manner. If we learn that
-          personally identifiable information has been provided to us and/or
-          collected on the Website from persons under 16 years of age and
-          without verifiable parental consent, such as through a support
-          request, we take the appropriate steps to delete or hash this
-          information in a secure manner. If you are a parent and discover that
-          your child under 16 years of age has obtained an account on the
-          Website, then you may alert us at hello@Demdee.pro and request that we
-          delete that child’s personally identifiable information from our
-          systems. A parent or teacher can visit his or her account online at
-          any time to delete any information and/or the account.
+          StellPro learning website is not intended for children, does not
+          market to children, and does not knowingly collect personal
+          information from children. All references to “children” or “child” in
+          this Children’s Privacy Policy shall mean children under 16 years of
+          age, and all references to the term “parent” shall include legal
+          guardians. Inside the Play Experience, all play is locally stored, and
+          no Personal Information is collected or solicited from a child user.
+          Our Play Experience contains no external links to third party websites
+          or services. The StellPro learning Experience is directed at users of
+          all ages, including children. We encourage parents and teachers to
+          supervise their child or student’s use of the Apps and supervise the
+          overall StellPro learning Experience. Simply downloading any StellPro
+          learning App to your device does not trigger the collection of any
+          personally identifiable information. We only collect information
+          essential for installing necessary administrative updates to your
+          device (such as software updates and administrative messages). We may
+          collect analytics data (which does not contain Personal Information)
+          from your use of the Service in order to offer and develop the
+          Service, and we may collect information such as age and nickname from
+          you as part of your use of the Apps and the Service and the creation
+          of your user profile. If the Service is being used by a school and/or
+          teacher (the “Educational Institution”) with students that are under
+          16 years of age, such Educational Institution agrees that it has
+          reviewed our Terms of Use and our Privacy Policy. StellPro learning
+          only requests Personal Information from parents and/or teachers and we
+          will never knowingly solicit, nor will we accept, Personal Information
+          from users known to be under 16 years of age. We collect only the
+          minimum amount of information needed about students from teachers, and
+          any such information is used only in connection with the Educational
+          Institution’s use of the StellPro learning Experience. If you are
+          under 16 years of age, then please do not use or access the Website at
+          any time or in any manner. If we learn that personally identifiable
+          information has been provided to us and/or collected on the Website
+          from persons under 16 years of age and without verifiable parental
+          consent, such as through a support request, we take the appropriate
+          steps to delete or hash this information in a secure manner. If you
+          are a parent and discover that your child under 16 years of age has
+          obtained an account on the Website, then you may alert us at
+          connect@demdee.com and request that we delete that child’s personally
+          identifiable information from our systems. A parent or teacher can
+          visit his or her account online at any time to delete any information
+          and/or the account.
         </div>
         <div className="my-1 text-xl font-bold">
           Updates to Our Privacy Policy
@@ -265,9 +286,14 @@ const Privacy = () => {
           and obtain the verifiable consent of a parent or legal guardian.
         </div>
         <div className="my-1 text-xl font-bold">Contacting us</div>
-        <div className="">
-          If you have any remaining questions about how we treat your privacy,
-          just let us know at hello@Demdee.pro
+        <div className="flex">
+          <div className="">
+            If you have any remaining questions about how we treat your privacy,
+            just let us know at &nbsp;
+          </div>
+          <a href="mailto:connect@demdee.com" className="text-blue-500">
+            connect@demdee.com
+          </a>
         </div>
       </div>
 

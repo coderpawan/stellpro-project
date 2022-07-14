@@ -14,6 +14,7 @@ import FindSpecialist from "../images/FindSpecialist.jpeg";
 import OnlineSession from "../images/OnlineSession.jpeg";
 import ResourcesPrograms from "../images/Programs.jpeg";
 import JoinCommunity from "../images/JoinCommunity.jpeg";
+import Data from "../data/BlogsData";
 
 const Cards = ({ title, content, image, link, externallink }) => {
   return (
@@ -143,14 +144,14 @@ const LandingPage = () => {
             speech, behavioral, motor and sensory delays or concerns
           </div>
           <div className="flex justify-center">
-            <button className="md:px-6 px-2 md:py-2 md:text-lg text-[12px] font-bold text-white border-2 mt-6 rounded-xl bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4]">
+            <button className="md:px-6 px-2 md:py-2 py-1 md:text-lg text-[12px] font-bold text-white border-2 mt-6 rounded-xl bg-[#FE7A15] hover:bg-[#f8d90f] hover:text-[#0191B4]">
               BOOK A FREE CONSULTATION
             </button>
-            <Link to="care">
+            {/* <Link to="care">
               <button className="px-6 ml-3 md:py-3 py-1 font-bold text-white md:text-sm border-2 mt-6 rounded-xl bg-[#35bbca] hover:bg-[#f8d90f] hover:text-[#0191B4]">
                 KNOW MORE
               </button>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <img
@@ -164,52 +165,33 @@ const LandingPage = () => {
         <div className="md:text-5xl text-3xl font-bold text-gray-600 text-center">
           Blogs
         </div>
-        <div className="md:flex justify-center md:mt-20 mt-5">
-          <div className="md:w-[30%] md:pr-20 pr-4 pl-4 ">
-            <div className="text-2xl md:w-[80%] ">
-              Does my child need Occupational Therapy?
-            </div>
-            <div className="md:mt-5 mt-3 text-gray-500">Jun 23,2022</div>
-            <div className="text-xl mt-2 text-gray-500">
-              A child's occupation is to play, grow and learn new skills.
-              Unfortunately, some children have difficulty learning critical
-              life skills due to physical, cognitive, and sensory delays or
-              impairments. They frequently have problems with sensory
-              processing, fine or gross motor skills, visual-perceptual skills,
-              and other tasks. In such cases, occupational therapy for children
-              can have a significant positive effect.
-            </div>
-          </div>
-          <div className="md:w-[30%] md:pr-20 mt-5 md:mt-0 pr-4 pl-4">
-            <div className="text-2xl md:w-[90%]">
-              A Comprehensive Guide to ADHD Treatment
-            </div>
-            <div className="md:mt-5 mt-3 text-gray-500">Jun 23,2022</div>
-            <div className="text-xl mt-2 text-gray-500">
-              The most effective treatment options for attention deficit
-              hyperactivity disorder (ADHD) combine multiple complementary
-              therapies and treatments to lessen symptoms. This optimum mix may
-              include ADHD medication, exercise, behavioral therapies, and
-              dietary changes. Other options for wholistic improvement include
-              taking vitamin supplements, nature walks, meditation and
-              practicing mindfulness.
-            </div>
-          </div>
-          <div className="md:w-[30%] md:pr-20 mt-5 md:mt-0 pr-4 pl-4">
-            <div className="text-2xl md:w-[90%]">
-              {" "}
-              Tips to parent children with ADHD{" "}
-            </div>
-            <div className="md:mt-5 mt-3 text-gray-500">Jun 23,2022</div>
-            <div className="text-xl mt-2 text-gray-500">
-              Parenting is difficult. It's very fulfilling but also challenging,
-              demanding, and exhausting. When children have ADHD, parenting
-              issues magnify in quantity and severity. Signs of ADHD such as
-              inattention, impulsivity, and emotional dysregulation have an
-              unavoidable influence on everyday living. Thus, they inevitably
-              affect parenting and the bond you build with your children.
-            </div>
-          </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12  py-10">
+          {Data.slice(0, 3).map((post) => {
+            return (
+              <div class="overflow-hidden shadow-lg rounded-2xl h-90 w-60 md:w-80 cursor-pointer m-auto">
+                <div class="w-full block h-full">
+                  <div class="bg-white  w-full p-4">
+                    <Link to={`/blogs/${post.link}`}>
+                      <img
+                        alt="blogphoto"
+                        src={post.image}
+                        class="max-h-40 w-full object-cover mb-4 rounded-3xl"
+                      />
+                      <p class="text-black text-xl font-bold text-center px-3 text-md">
+                        {post.topic}
+                      </p>
+
+                      {/* <p class="text-gray-400 text-center mt-5 mb-2">
+                        {post.date} in{" "}
+                        <span className="text-black">{post.tag}</span>
+                      </p> */}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
         <Link to="/blogs">
           <div className="bg-orange cursor-pointer px-8 py-2 rounded-xl mt-6 w-fit relative left-[45%] text-white font-bold">

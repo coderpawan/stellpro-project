@@ -33,9 +33,15 @@ const Specialists = () => {
                 List with us
               </div>
             </a>
-            <div className="bg-green  px-3 md:px-7 py-2 rounded-lg mr-5 text-sm md:text-xl font-bold text-white">
-              Become a Program Partner
-            </div>
+            <a
+              href="https://forms.gle/6ttB8CwSkFkLZxK19"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="bg-green  px-3 md:px-7 py-2 rounded-lg mr-5 text-sm md:text-xl font-bold text-white">
+                Become a Program Partner
+              </div>
+            </a>
           </div>
         </div>
       </div>

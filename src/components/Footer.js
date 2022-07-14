@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MdLocationPin } from "react-icons/md";
+import { IoLocationSharp } from "react-icons/io5";
 import { GrMail } from "react-icons/gr";
 import { AiTwotonePhone, AiFillInstagram } from "react-icons/ai";
 import { FaFacebookF } from "react-icons/fa";
@@ -55,14 +55,14 @@ const Footer = () => {
               <ul>
                 <li class="md:mb-4 mb-1 hover:text-gray-800 dark:hover:text-white relative md:left-32 transition-colors duration-200">
                   <Link to="/" className="flex">
-                    <MdLocationPin className="text-3xl md:text-xl relative md:bottom-0 bottom-1" />
-                    <div className="ml-3 md:text-sm text-[10px] md:left-0 md:bottom-0 md:w-[50%] relative right-4 top-1 leading-4">
+                    <IoLocationSharp className="text-3xl md:text-xl relative md:bottom-0 bottom-1" />
+                    <div className="md:ml-0 ml-3 md:text-sm text-[9px] md:left-0 md:bottom-0 md:w-[50%] relative right-4 top-1 leading-4">
                       JASAS C-58/8, SECTOR-62, NOIDA ,UP ,201301
                     </div>
                   </Link>
                 </li>
                 <li class="md:mb-4 mb-1 hover:text-gray-800 dark:hover:text-white relative md:left-32 transition-colors duration-200">
-                  <a href="mailto:someone@example.com" className="flex">
+                  <a href="mailto:connect@demdee.com" className="flex">
                     <GrMail />
                     <div className="md:text-sm text-[10px] relative md:left-4 md:bottom-0 left-2 bottom-1 md:w-[35%]">
                       connect@demdee.com

@@ -27,7 +27,7 @@ const Data = [
     image: ADHD,
     topic: "A Comprehensive Introduction to ADHD Treatment",
     date: "March 21,2002",
-    tag: "Parenting",
+    tag: "Activity",
     link: "adhd",
   },
   {
@@ -35,7 +35,7 @@ const Data = [
     image: SignADHD,
     topic: "All About ADHD in Girls",
     date: "March 21,2002",
-    tag: "Parenting",
+    tag: "Resources",
     link: "signsofadhd",
   },
   {
@@ -43,7 +43,7 @@ const Data = [
     image: TipsADHD,
     topic: "Tips to parent children with ADHD",
     date: "March 21,2002",
-    tag: "Parenting",
+    tag: "Demdee",
     link: "tipsadhd",
   },
   {
@@ -51,7 +51,7 @@ const Data = [
     image: ManageADHD,
     topic: "Methods to manage a child's ADHD in school",
     date: "March 21,2002",
-    tag: "Parenting",
+    tag: "Community",
     link: "manageadhd",
   },
   {
@@ -59,7 +59,7 @@ const Data = [
     image: AfterADHD,
     topic: "What to do if your child has been diagnosed with ADHD",
     date: "March 21,2002",
-    tag: "Parenting",
+    tag: "Demdee",
     link: "afteradhd",
   },
   {
@@ -67,7 +67,7 @@ const Data = [
     image: VirtualAutism,
     topic: "What is Virtual Autism?",
     date: "March 21,2002",
-    tag: "Parenting",
+    tag: "Resources",
     link: "virtualautism",
   },
   {
@@ -75,7 +75,7 @@ const Data = [
     image: SpecialSchool,
     topic: "10 Signs of a gifted child",
     date: "March 21,2002",
-    tag: "Parenting",
+    tag: "Activity",
     link: "specialschools",
   },
   {
