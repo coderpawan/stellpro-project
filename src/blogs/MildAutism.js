@@ -15,6 +15,7 @@ import {
   FacebookShareButton,
   TwitterShareButton,
 } from "react-share";
+import { Link } from "react-router-dom";
 
 const MildAutism = () => {
   const url = window.location.href;
@@ -97,16 +98,18 @@ const MildAutism = () => {
             <div className="h-[2px] bg-gray-200 w-[90%] relative left-3"></div>
             {Recommended.map((props) => {
               return (
-                <div className="flex my-3">
-                  <img
-                    src={props.image}
-                    alt=""
-                    className="h-14 relative left-3"
-                  />
-                  <div className="ml-5 text-[12px] mr-14 text-blue-500">
-                    {props.description}
+                <Link to={`${props.link}`}>
+                  <div className="flex my-3">
+                    <img
+                      src={props.image}
+                      alt=""
+                      className="h-14 relative left-3"
+                    />
+                    <div className="ml-5 text-[12px] mr-14 text-blue-500">
+                      {props.description}
+                    </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

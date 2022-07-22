@@ -4,22 +4,26 @@ const Recommended = [
   {
     id: 1,
     image: Consultation,
-    description: "Things You Can Do on Good Friday | 5 Good Friday Traditions",
+    description: "A Comprehensive Guide to ADHD Treatment",
+    link: "/blogs/adhd",
   },
   {
     id: 2,
     image: Consultation,
-    description: "Things You Can Do on Good Friday | 5 Good Friday Traditions",
+    description: "What to do if your child has been diagnosed with ADHD",
+    link: "/blogs/afteradhd",
   },
   {
     id: 3,
     image: Consultation,
-    description: "Things You Can Do on Good Friday | 5 Good Friday Traditions",
+    description: "Does my child need Occupational Therapy?",
+    link: "/blogs/occupationaltherapy",
   },
   {
     id: 4,
     image: Consultation,
-    description: "Things You Can Do on Good Friday | 5 Good Friday Traditions",
+    description: "10 Best Special Needs Schools in India",
+    link: "/blogs/giftedchild",
   },
 ];
 
